@@ -1,0 +1,38 @@
+/*@font-face {
+  font-family: 'Klavika';
+	font-weight: 300;
+	src: url('https://www.tripwire.com/state-of-security/font/light/KlavikaWebBasic-Light.eot') format('embedded-opentype'),
+		url('https://www.tripwire.com/state-of-security/font/light/KlavikaWebBasic-Light.woff2') format('woff2'),
+		url('https://www.tripwire.com/state-of-security/font/light/KlavikaWebBasic-Light.woff') format('woff'),
+		url('https://www.tripwire.com/state-of-security/font/light/KlavikaWebBasic-Light.otf') format('opentype'),
+		url('https://www.tripwire.com/state-of-security/font/light/KlavikaWebBasic-Light.ttf') format('truetype'),
+		url('https://www.tripwire.com/state-of-security/font/light/KlavikaWebBasic-Light.svg#Klavika_Web_Basic_Light') format('svg');
+}
+
+@font-face {
+  font-family: 'Klavika';
+  font-weight: 400;
+	src: url('https://www.tripwire.com/state-of-security/font/regular/KlavikaWebBasic-Regular.eot') format('embedded-opentype'),
+		url('https://www.tripwire.com/state-of-security/font/regular/KlavikaWebBasic-Regular.woff2') format('woff2'),
+		url('https://www.tripwire.com/state-of-security/font/regular/KlavikaWebBasic-Regular.woff') format('woff'),
+		url('https://www.tripwire.com/state-of-security/font/regular/KlavikaWebBasic-Regular.otf') format('opentype'),
+		url('https://www.tripwire.com/state-of-security/font/regular/KlavikaWebBasic-Regular.ttf') format('truetype'),
+		url('https://www.tripwire.com/state-of-security/font/regular/KlavikaWebBasic-Regular.svg#Klavika_Web_Basic_Regular') format('svg');
+}*/
+
+body{
+  font-family: 'Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif !important;
+}
+
+nav#nav-main ul.navbar-nav {
+  font-family: 'Klavika-Regular', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif !important;
+  text-transform: uppercase !important;
+  color: rgb(102, 102, 102) !important;
+  line-height: 22px !important;
+  font-weight: normal !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+p#breadcrumbs span.breadcrumb_last {
+  text-transform: uppercase !important;
+}

@@ -1,0 +1,2436 @@
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="">
+		<meta name="description" content="">
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>P&#225;gina principal</title>
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Le styles -->
+        <link href="/Content/css/d3andJQueryCss?v=siZwy-Pf2Ag0A21Yjk9n8ZYAv9jmGZP5y6UAq9w2TCw1" rel="stylesheet"/>
+
+		<link href="/Content/css/bootstrapPluginsCss?v=tN-c3fn924jSGj10eR5WzmSVitwp9FAuEaLx323dEtI1" rel="stylesheet"/>
+
+
+		<link href="/Content/VerticalMenu?v=4XuRJMBIKVV6qXr3H9QzjMgpNlFxAXCp0thVvgWRPaE1" rel="stylesheet"/>
+
+				
+        
+
+				<link href="/Content/Layouts/LPVMFP_MODICO/themes/ina/stylesheets/style.less" rel="stylesheet" type="text/css" />
+
+        
+		<link href="/Content/Layouts/customstyles.less" rel="stylesheet" type="text/css" />
+
+
+		<!-- BEGIN [MANUAL GFO LAYOUT_INCLUDECSS] -->
+        
+		<!-- END [MANUAL  GFO LAYOUT_INCLUDECSS] -->
+
+		<!-- Le javascripts -->
+		<script src="/Scripts/jqueryCoreJs?v=rzZUexPjYN-pbcJSytkni7afBRlMsjekeDPEE4ZSgUo1"></script>
+
+		<script type="application/javascript">
+			var logErrorUrl = '/pt-PT/0/Public/Errors/LogJavaScriptError';
+
+			// jQuery Mask Plugin default values
+			$.jMaskGlobals = {
+                maskElements: 'input,td,span,div',
+                dataMaskAttr: '*[data-mask]',
+                dataMask: false,
+                watchInterval: 300,
+                watchInputs: false,
+                watchDataMask: false,
+                byPassKeys: [9, 16, 17, 18, 36, 37, 38, 39, 40, 91],
+                translation: {
+                    '0': { pattern: /\d/ },
+                    '9': { pattern: /\d/, optional: true },
+                    '#': { pattern: /\d/, recursive: true },
+                    'A': { pattern: /[a-zA-Z0-9]/ },
+                    'S': { pattern: /[a-zA-Z]/ },
+                    'N': { pattern: /-/, optional: true }
+                }
+            };
+
+		
+			$(document).ready(function () {
+			    var urlFormado = "/pt-PT/0/GFA/Funci/GFA_Menu_PERFILFORMANDO";
+                    $("[href*=GFA] img").parent().prop("href", urlFormado);
+            });
+
+		</script>
+        <script src="/Scripts/otherCoreJs?v=XhKt75ynUjhrbGqYcqj4zmgnmlJDyukJCxWD52gTqHQ1"></script>
+
+        <script src="/Scripts/bootstrapCoreJs?v=yD8Hsq3QBu-FcSfU6Z5J055SgiPl-jYh6gAcLzJlCsY1"></script>
+
+            <script type="text/javascript" src="/Scripts/bootstrap/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.pt.js"></script>
+		<script src="/Scripts/VerticalMenu?v=PHVuudWrtoJ77BpBHuN6cenxtSmmo-8zWnT2Aj0yiG41"></script>
+
+	</head>
+
+	<body>
+		<div id="wrap">		
+				<div id="header-container">
+					<!-- BEGIN Navigational bar -->
+<div id="header">
+    <div class="container">
+			<div class="pull-right userLogon">
+        <div class="profileOptions">
+			
+            <a onclick="ShowAlert();" class="btn btn-primary">Entrar</a>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+<div class="navigation">
+	<div class="navbar navbar-static-top">
+		<div class="navbar-inner">
+			<div class="container">
+                <p class="navbar-text pull-left">
+
+				</p>
+                <p class="navbar-text pull-right">
+ 
+
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- END of Navigational bar -->
+
+				</div>
+
+			<!-- BEGIN Breadcrumb content -->
+
+			<!-- END Breadcrumb content-->
+
+			<!-- BEGIN Main content -->
+
+
+			<div class="container content">
+				<div id="result-report"></div>
+                <!-- BEGIN Noty -->
+                
+                <!-- END Noty -->
+				<!-- BEGIN MVC Flash messages -->
+				
+				<!-- END MVC Flash messages -->
+				
+
+
+
+
+<script src="/Scripts/validateJs?v=dWdk8Wjjzkt02C4WNzSObszfNyLp_IAw6psSyck_45Y1"></script>
+
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<form action="/pt-PT/Account/LogOn" data-ajax="true" data-ajax-failure="onFailure" data-ajax-success="onSuccess" id="form0" method="post" style="margin:0 !important;">        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Autentica&#231;&#227;o de Perfil</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                Para se autenticar insira o seu e-mail e a sua palavra-chave!<br />
+                <span id="register_block" style="display: none;">
+                    <a href="javascript:showLogonDialog3();">Criar / ativar perfil</a>
+                    &nbsp;se ainda n&#227;o tiver uma conta.<br />
+                </span>
+                Se pretender recuperar a palavra-chave clique <a href="javascript:showLogonDialog2();">Aqui</a>
+            </p>
+            <fieldset>
+                <div class="clearfix">
+                    <label for="UserName">Utilizador</label>
+                    <div class="input">
+                        <input data-val="true" data-val-required="The Utilizador field is required." id="UserName" name="UserName" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <label for="Password">Palavra-chave</label>
+                    <div class="input">
+                        <input data-val="true" data-val-required="The Palavra-chave field is required." id="Password" name="Password" type="password" />
+                        <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+<input data-val="true" data-val-required="The Ano field is required." id="Year" name="Year" type="hidden" value="0" />            </fieldset>
+            <div style="margin-top: 10px;" id="recInfo2">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Entrar</button>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Sair</button>
+        </div>
+</form></div>
+
+
+
+<div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+<form action="/pt-PT/Account/RecPassword" data-ajax="true" data-ajax-begin="onBeginRecpassword" data-ajax-failure="onFailureRecpassword" data-ajax-success="onSuccessRecpassword" id="form1" method="post" style="margin:0 !important;">        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Recuperar Palavra-chave</h3>
+        </div>
+        <div class="modal-body">
+            <fieldset>
+                <div class="clearfix">
+                    <label for="Email">Endere&#231;o de e-mail</label>
+                    <div class="input">
+                        <input data-val="true" data-val-required="The Endereço de e-mail field is required." id="Email" name="Email" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+            </fieldset>
+            <div style="margin-top: 10px;" id="recInfo">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" id="btnRecpassword" class="btn btn-primary">Enviar</button>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Sair</button>
+        </div>
+</form></div>
+
+<script type="text/javascript">
+    function onBeginRecpassword() {
+        $('#btnRecpassword').html('A processar...');
+        $('#btnRecpassword').attr("disabled", true);
+    }
+
+    function onFailureRecpassword(xhr, status, error) {
+
+        //DEBUG
+        console.log("Ajax form submission", "onFailure2");
+        console.log("xhr", xhr);
+        console.log("status", status);
+        console.log("error", error);
+
+        //clear submit btn state
+        $('#btnRecpassword').html('Enviar');
+        $('#btnRecpassword').attr("disabled", false);
+
+        // TODO: improve
+        alert(error);
+    }
+
+    function onSuccessRecpassword(data, status, xhr) {
+
+        //DEBUG
+        /*console.log("Ajax form submission", "onTestSuccess");
+        console.log("data", data);
+        console.log("status", status);
+        console.log("xhr", xhr);*/
+
+        //clear submit btn state
+        $('#btnRecpassword').html('Enviar');
+        $('#btnRecpassword').attr("disabled", false);
+
+        if (data.success == true) {
+            $("#recInfo").attr('class', 'alert alert-success')
+            $("#recInfo").html(data.message)
+            $("#recInfo").show("slow").delay(20000).hide("slow")
+        }
+        else {
+            $("#recInfo").attr('class', 'alert alert-error')
+            $("#recInfo").html(data.message)
+            $("#recInfo").show("slow").delay(20000).hide("slow")
+        }
+    }
+</script>
+
+
+
+
+<div id="myModal3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+<form action="/pt-PT/Account/Register" data-ajax="true" data-ajax-begin="onBeginRegister" data-ajax-failure="onFailureRegister" data-ajax-success="onSuccessRegister" id="form2" method="post" style="margin:0 !important;">        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                ×</button>
+            <h3 id="myModalLabel">Crie uma nova conta</h3>
+            <p style="margin: 10px 0 0 0;">Utilize o formul&#225;rio abaixo para criar uma nova conta</p>
+            
+        </div>
+        <div class="modal-body">
+            <fieldset>
+                <legend>Informa&#231;&#245;es de conta</legend>
+                
+				<div class="form-flow">
+			        <div class="row-fluid">
+				        <div class="span6">
+					        <div class="row-controls">
+                                <div class="row-group">
+							        <label class="flow-label" for="UserName">Utilizador</label>
+							        <input data-val="true" data-val-required="The Utilizador field is required." id="UserName" name="UserName" type="text" value="" />
+							        <span class="field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+						        </div>
+					        </div>
+				        </div>
+                        <div class="span6">
+					        <div class="row-controls">
+						        <div class="row-group">
+							        <label class="flow-label" for="Email">Email</label>
+							        <input data-val="true" data-val-required="The Email field is required." id="Email" name="Email" type="text" value="" />
+							        <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+						        </div>
+					        </div>
+				        </div>
+			        </div>
+                    <div class="row-fluid">
+				        <div class="span6">
+					        <div class="row-controls">
+						        <div class="row-group">
+							        <label class="flow-label" for="Nif">N&#186; Contribuinte</label>
+							        <input class="Nif" data-val="true" data-val-length="The field Nº Contribuinte must be a string with a maximum length of 9." data-val-length-max="9" data-val-required="The Nº Contribuinte field is required." id="Nif" name="Nif" type="text" value="" />
+							        <span class="field-validation-valid" data-valmsg-for="Nif" data-valmsg-replace="true"></span>
+						        </div>
+					        </div>
+				        </div>
+				        <div class="span6">
+					        <div class="row-controls">
+						        <div class="row-group">
+							        <label class="flow-label" for="ValDatanasc">Data Nasc.</label>
+							        <div class="input-append date date-picker"><input data-format="dd-MM-yyyy" id="ValDatanasc" name="ValDatanasc" type="text"></input><span class="add-on"><i data-date-icon="icon-calendar" data-time-icon="icon-time"></i></span></div>
+							        <span class="field-validation-valid" data-valmsg-for="ValDatanasc" data-valmsg-replace="true"></span>
+						        </div>
+					        </div>
+				        </div>
+			        </div>
+                    <div class="row-fluid">
+                        <div class="span6">
+					        <div class="row-controls">
+						        <div class="row-group">
+							        <label class="flow-label" for="Password">Palavra-chave</label>
+							        <input data-val="true" data-val-required="The Palavra-chave field is required." id="Password" maxlength="9" name="Password" type="password" />
+							        <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+						        </div>
+					        </div>
+				        </div>
+                        <div class="span6">
+					        <div class="row-controls">
+						        <div class="row-group">
+							        <label class="flow-label" for="ConfirmPassword">Confirmar</label>
+							        <input data-val="true" data-val-equalto="A nova palavra-chave e a confirmação não são iguais." data-val-equalto-other="*.Password" id="ConfirmPassword" maxlength="9" name="ConfirmPassword" type="password" />
+							        <span class="field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+						        </div>
+					        </div>
+				        </div>
+			        </div>
+                    <div class="row-fluid">
+				        <div class="span6">
+					        <div class="row-controls">
+						        <div class="row-group">
+							        <label class="flow-label" for="ValTelefon">Telefone</label>
+							        <input data-val="true" data-val-length="The field Telefone must be a string with a maximum length of 12." data-val-length-max="12" data-val-required="The Telefone field is required." id="ValTelefon" name="ValTelefon" type="text" value="" />
+							        <span class="field-validation-valid" data-valmsg-for="ValTelefon" data-valmsg-replace="true"></span>
+						        </div>
+					        </div>
+				        </div>
+                        <div class="span6">
+					        <div class="row-controls">
+						        <div class="row-group">
+									<label class="flow-label" for="ValHabilita">Habilita&#231;&#245;es</label>
+									<select class="chosen-dropdown" data-is-array="true" data-no-results-text="Não há resultados para" data-placeholder="Escolha..." data-val="true" data-val-required="The Habilitações field is required." data-value="" db-field="ValHabilita" id="ValHabilita" name="ValHabilita" pers-cs-area="Funci" pers-cs-field="ValHabilita" title="Habilitações literárias"><option value=""></option>
+<option value="1">Menor 4&#186; Ano</option>
+<option value="2">1&#186; ciclo (4&#186; ano)</option>
+<option value="3">2&#186; ciclo (6&#186; ano)</option>
+<option value="4">3&#186; ciclo (9&#186; ano)</option>
+<option value="5">Ensino Secund&#225;rio</option>
+<option value="6">Bacharelato e Licenciatura</option>
+<option value="7">Mestrado</option>
+<option value="8">Doutoramento</option>
+<option value="9">P&#243;s-doutorado</option>
+<option value="11">P&#243;s-Gradua&#231;&#227;o</option>
+</select>
+									<span class="field-validation-valid" data-valmsg-for="ValHabilita" data-valmsg-replace="true"></span>
+								</div>
+					        </div>
+				        </div>
+			        </div>
+
+                </div>
+				
+            </fieldset>
+            <div style="margin-top: 10px;" id="recInfo3">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" id="btnRegister" class="btn btn-primary">Registar</button>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Sair</button>
+        </div>
+</form></div>
+
+<script type="text/javascript">
+    function onBeginRegister() {
+        //new state to the submit button
+        $('#btnRegister').html('A processar...');
+        $('#btnRegister').attr("disabled", true);
+    }
+
+    function onFailureRegister(xhr, status, error) {
+
+        //DEBUG
+        console.log("Ajax form submission", "onFailureRegister");
+        console.log("xhr", xhr);
+        console.log("status", status);
+        console.log("error", error);
+
+        //clear submit btn state
+        $('#btnRegister').html('Registar');
+        $('#btnRegister').attr("disabled", false);
+
+        // TODO: improve
+        alert(error);
+    }
+
+    function onSuccessRegister(data, status, xhr) {
+
+        //DEBUG
+        /*console.log("Ajax form submission", "onTestSuccess");
+        console.log("data", data);
+        console.log("status", status);
+        console.log("xhr", xhr);*/
+
+        //clear submit btn state
+        $('#btnRegister').html('Registar');
+        $('#btnRegister').attr("disabled", false);
+
+        if (data.success == true) {
+			redirectToAction(window.location.hash, '/');
+            //var url = '/' + '?redirectTo=' + window.location.hash;
+			//window.location.href = url;
+        }
+        else {
+            if (isArray(data.message)) {
+                $("#recInfo3").empty();
+                $("#recInfo3").append("<ul>")
+                $.each(data.message, function (key, value) {
+                    $("#recInfo3 > ul").append($('<li>').append(value));
+                });
+            } else {
+                $("#recInfo3").html(data.message)
+            }
+            $("#recInfo3").attr('class', 'alert alert-error');
+            $("#recInfo3").show("slow").delay(20000).hide("slow");
+        }
+    }
+
+    function isArray(_object) {
+        return Object.prototype.toString.call(_object) === '[object Array]';
+    }
+</script>
+
+
+<script type="text/javascript">
+    function showLogonDialog() {
+        $('#myModal').modal('show')
+            .on('shown', function () {
+                if (window.location.hash != "#areaOrganismo")
+                    $('#myModal span#register_block').show();
+            })
+            .on('hidden', function () {
+                    $('#myModal span#register_block').hide();
+            });
+        return false;
+    }
+
+    function showLogonDialog2() {
+        $('#myModal').modal('hide');
+        setTimeout(function () {
+            $('#myModal2').modal('show');
+        }, 600);
+    }
+	
+    function onFailure(xhr, status, error) {
+        bootbox.alert(error);
+    }
+
+    function onSuccess(data, status, xhr) {
+
+        if (data.Success == true) {
+            $('#myModal').modal('hide');
+            redirectToAction(window.location.hash, data.Redirect);
+        }
+        else {
+            if (isArray(data.Message)) {
+                $("#recInfo2").empty();
+                $("#recInfo2").append("<ul>")
+                $.each(data.Message, function (key, value) {
+                    $("#recInfo2 > ul").append($('<li>').append(value));
+                });
+            }
+            else {
+                $("#recInfo2").html(data.Message);
+            }
+            $("#recInfo2").attr('class', 'alert alert-error');
+            $("#recInfo2").show("slow").delay(20000).hide("slow");
+        }
+    }
+
+    function isArray(_object) {
+        return Object.prototype.toString.call(_object) === '[object Array]';
+    }
+</script>
+<div class="page-header">
+    <h5><small>&nbsp;</small></h5>
+</div>
+
+<div class="row-fluid text-center">
+    <div class="span4">
+        <div class="well well-small areasIndex">
+            <div>
+                <img src='/pt-PT/0/Public/Home/GetLayoutFile?filePath=%2Fimg%2Ficon_inicio_formador.png' alt="formador"/>
+            </div>
+            <div class ="textEntrada"> 
+                <span>&#193;rea de acesso para consulta, atualiza&#231;&#227;o e gest&#227;o de dados relativos &#224; forma&#231;&#227;o a que est&#225; associado(a)</span>
+            </div>
+            <div class="buttonsEntrada">
+			    <a class="btn btn-mini" href="/pt-PT/0/GFF/Forma/GFF_Menu_PERFILFORMADOR"><h5>&#193;rea do Formador</h5></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="span4">
+        <div class="well well-small areasIndex">
+            <div>
+                <img src='/pt-PT/0/Public/Home/GetLayoutFile?filePath=%2Fimg%2Ficon_inicio_formando.png' alt="formando"/>
+            </div>
+            <div class ="textEntrada"> 
+                <span>&#193;rea de acesso para inscri&#231;&#245;es, consulta e atualiza&#231;&#227;o de dados relativos &#224; forma&#231;&#227;o a que est&#225; associado(a)</span>
+            </div>
+            <div class="buttonsEntrada">   
+			    <a class="btn btn-mini" href="/pt-PT/0/GFA/Funci/GFA_Menu_PERFILFORMANDO"><h5>&#193;rea do Formando</h5></a>
+            </div>
+        </div>
+    </div>
+
+        <div class="span4">
+            <div class="well well-small areasIndex">
+                <div> 
+                    <img src='/pt-PT/0/Public/Home/GetLayoutFile?filePath=%2Fimg%2Ficon_inicio_organismo.png' alt="organismo"/>
+                </div>
+                <div class ="textEntrada"> 
+                    <span>&#193;rea de acesso para consulta, atualiza&#231;&#227;o de dados  e gest&#227;o de inscri&#231;&#245;es e forma&#231;&#227;o</span>
+                </div>
+                <div class="buttonsEntrada"> 
+				    <a class="btn btn-mini" href="/pt-PT/0/GFC/ACCOE/GFC_Menu_NEWINSCR"><h5>&#193;rea do Organismo</h5></a>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="well well-small" >
+    <h1><small style="color: #b32e39;">Edi&#231;&#245;es a iniciar</small></h1>
+</div>
+<hr />
+
+<div id="ModalNif" class="modal hide fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+</div>
+<div id="Homeacc_ValExpacoes_Show">
+
+<div class="form-horizontal">
+<div class="form-flow">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="row-controls">
+						<div class="row-group" >
+							<div class="flow-label">&#193;rea de forma&#231;&#227;o</div>
+							<select class="chosen-dropdown input-xlarge" data-identifier="IFF_PESQACAOPSEUDAREAFORM" data-is-array="true" data-no-results-text="Não há resultados para" data-placeholder="Escolha..." data-value="" id="ValAreaform" name="ValAreaform"><option value=""></option>
+<option value="a5998c6b-d59f-415e-aac3-06c1c146f8d5">CONTABILIDADE E FINAN&#199;AS</option>
+<option value="ea2dfdae-9c5d-48e4-8e19-123a9cd7ecb6">FORMA&#199;&#195;O INICIAL</option>
+<option value="434f30c9-7206-4123-856a-1e26bb6de7c4">LIDERAN&#199;A E DESENVOLVIMENTO PESSOAL</option>
+<option value="b3c9a26e-9275-4c90-9743-2569cd800b57">CONHECIMENTO E FORMA&#199;&#195;O</option>
+<option value="76f9e0c1-9e27-4ca0-970b-2a4217757485">DESIGN</option>
+<option value="7d0fc35b-5ba8-4493-a2cb-3f433eab75ac">L&#205;NGUAS ESTRANGEIRAS</option>
+<option value="aba63405-c36d-4b6d-9591-451a9e565041">GEST&#195;O DE PESSOAS</option>
+<option value="fd33d620-5381-4363-8c1f-4ddd88243a22">COMUNICA&#199;&#195;O ORGANIZACIONAL E PESSOAL</option>
+<option value="8da8d397-0f78-488f-9cef-5c4c5a8870b8">GOVERNA&#199;&#195;O E GEST&#195;O P&#218;BLICA</option>
+<option value="90c200a8-b102-4ed9-b292-676fb2026c93">CONTRATA&#199;&#195;O P&#218;BLICA</option>
+<option value="9d310482-548d-4bc0-8461-73be2f45cd1b">ASSUNTOS EUROPEUS E COOPERA&#199;&#195;O</option>
+<option value="2480ab4d-cc3f-4b73-92de-8c32b3198585">MATEM&#193;TICA E ESTAT&#205;STICA</option>
+<option value="2c1cf07b-f208-4d2d-9986-9907bd72cd66">FORMA&#199;&#195;O DE DIRIGENTES</option>
+<option value="9e4a63d7-0657-4818-a144-9cf57a0384bf">AUDITORIA, FISCALIZA&#199;&#195;O E CONTROLE</option>
+<option value="674e95c0-f221-44c1-8ec0-a1a5ac9dba11">ASSUNTOS JUR&#205;DICOS</option>
+<option value="7a6e205b-1037-408d-9cd9-a6833b50a6d5">ADMINISTRA&#199;&#195;O E POL&#205;TICAS P&#218;BLICAS</option>
+<option value="5e4b9266-abf7-4745-926d-aa642bf7692a">AUDITORIA FISCALIZA&#199;&#195;O E CONTROLO</option>
+<option value="2ae8fe94-f2af-4d49-8c01-cf1bff60722d">COMUNICA&#199;&#195;O, LIDERAN&#199;A E DESENVOLVIMENTO PESSOAL</option>
+<option value="56e91115-b417-4c62-a0ef-d968745f978f">TECNOLOGIAS DA INFORMA&#199;&#195;O</option>
+<option value="2da027e9-263e-4b92-9f27-db669b23dc8e">GEST&#195;O ORGANIZACIONAL</option>
+</select>
+						</div>
+						<div class="row-group" >
+							<div class="flow-label">Tipo de forma&#231;&#227;o</div>
+							<select class="chosen-dropdown input-large" data-identifier="IFF_PESQACAOPSEUDTIPOFORM" data-is-array="true" data-no-results-text="Não há resultados para" data-placeholder="Escolha..." data-value="" id="ValTipoform" name="ValTipoform"><option value=""></option>
+<option value="I">Forma&#231;&#227;o Inicial</option>
+<option value="C">Forma&#231;&#227;o Cont&#237;nua</option>
+</select>
+						</div>
+						<div class="row-group" >
+							<div class="flow-label">Curso</div>
+							<select class="chosen-dropdown input-large" data-identifier="IFF_PESQACAOPSEUDCURSO___" data-is-array="true" data-no-results-text="Não há resultados para" data-placeholder="Escolha..." data-value="" id="ValCurso" name="ValCurso"><option value=""></option>
+<option value="28435475-3ee5-44db-ae52-002830625d29">GEST&#195;O DE TESOURARIA E FUNDO DE MANEIO</option>
+<option value="262b6630-920e-40db-946e-01d373ecc7fe">SABER ELABORAR CONVITES E CADERNOS DE ENCARGOS</option>
+<option value="8ddf5dc1-3b4b-45d5-b406-022f530b461d">GEST&#195;O DA INFORMA&#199;&#195;O ARQUIV&#205;STICA NA ADMINISTRA&#199;&#195;O P&#218;BLICA EM REDE</option>
+<option value="b064d4e8-1f02-4107-8fcb-07766d349297">BASE DE DADOS (MODELO RELACIONAL E LINGUAGEM  SQL)</option>
+<option value="cf186e43-75b7-4dca-bbe5-085b0cb7faa2">DESENVOLVER RESILI&#202;NCIA EM CONTEXTOS DESAFIANTES</option>
+<option value="1101568b-ebc4-4747-a5ba-111f61f35604">GEST&#195;O DE TECNOLOGIAS PARA VIRTUALIZA&#199;&#195;O DE SERVIDORES (HIPER-V)</option>
+<option value="7559b3bb-c418-41f9-bafd-1259e5d0762c">METODOLOGIAS PARA AVALIA&#199;&#195;O DE COMPET&#202;NCIAS NO &#194;MBITO DO SIADAP3</option>
+<option value="28569ac7-4464-4648-b37c-167ec66e45e5">FOLHA DE C&#193;LCULO EXCEL</option>
+<option value="8911b48c-e3e4-4788-9299-1a0d672a48e0">RESPONSABILIDADE SOCIAL DAS ORGANIZA&#199;&#213;ES: A NORMA ISO 26000</option>
+<option value="103da7ab-735f-450d-bdfd-1cb1f070518b">ADMINISTRA&#199;&#195;O P&#218;BLICA E A PROTE&#199;&#195;O DE DADOS</option>
+<option value="94601106-cbe1-417d-9cf7-20ff52acade4">PARENTALIDADE: A PROTE&#199;&#195;O NA MATERNIDADE, PATERNIDADE E ADO&#199;&#195;O</option>
+<option value="87505361-e592-4ad2-acf8-2899a86b7749">SABER  GERIR EQUIPAS DE ATENDIMENTO AO P&#218;BLICO</option>
+<option value="2ec412df-40d3-413e-ab1d-28d1a5a267c6">PREPARA&#199;&#195;O E ELABORA&#199;&#195;O  DO OR&#199;AMENTO NOS SERVI&#199;OS P&#218;BLICOS</option>
+<option value="b617f493-e6c4-4c3d-bfb4-318d1cb22f16">GEST&#195;O ADMINISTRATIVA E MATERIAL DE STOCKS</option>
+<option value="7224f02d-7d0f-4951-b038-31ed3777436b">DIREITO COLETIVO</option>
+<option value="a71114fe-4656-4c7d-bacf-3235920258f8">SISTEMA INTEGRADO DE AVALIA&#199;&#195;O DE DESEMPENHO NA AP</option>
+<option value="148bd054-53e7-47a9-8525-3262b4934c72">FISCALIDADE: O IVA E O IRS</option>
+<option value="ff3d3031-750b-4031-8e23-357094f74329">ASSIDUIDADE, PONTUALIDADE E TRABALHO EXTRAORDIN&#193;RIO - SUPLEMENTAR NA AP</option>
+<option value="ad59b7f3-ca56-4881-9681-36e4ac1fc68b">T&#201;CNICAS DE TRABALHO COLABORATIVO</option>
+<option value="a163625b-b652-4f94-9999-37e0a634e123">O PROTOCOLO NOS SERVI&#199;OS P&#218;BLICOS</option>
+<option value="c959dfa2-193c-4f11-b53c-3bcea5486340">SEGURAN&#199;A DA INFORMA&#199;&#195;O: SEGMENTA&#199;&#195;O DE REDES IP</option>
+<option value="eb81102c-e20d-4cb5-886f-3dbd2ccb5cb2">SABER SISTEMATIZAR INFORMA&#199;&#195;O ESCRITA</option>
+<option value="3d7a3a0b-78d8-441a-b2a7-3f7b2275ebfc">T&#201;CNICAS DE PLANEAMENTO E  MODERA&#199;&#195;O  DE REUNI&#213;ES</option>
+<option value="93a48cc5-3700-48a1-8c83-3fad6536c108">ESTRAT&#201;GIAS DE ATENDIMENTO AO P&#218;BLICO</option>
+<option value="a721be66-a3ef-4099-a5af-437fff089f36">DIREITO PARA N&#195;O JURISTAS</option>
+<option value="8ca15e8e-1c6c-4e0b-ac9b-438ba57bae0b">DOS DADOS &#192;S DECIS&#213;ES: AN&#193;LISE PREVISIONAL</option>
+<option value="090dfd61-19d2-4ca0-a046-4914c1770652">ARQUIVO: ORGANIZA&#199;&#195;O E MANUTEN&#199;&#195;O</option>
+<option value="cbd4befe-a586-48bf-af4a-5066164a4795">WINDOWS: ADMINISTRA&#199;&#195;O</option>
+<option value="c1c9a234-e419-4725-bb1a-52ac5d653e1c">FORMA&#199;&#195;O DE AUDITORES INTERNOS DA QUALIDADE (NORMA NP EN ISO 19011:2012)</option>
+<option value="cd61763e-be49-4fa3-9bab-551321e27a15">PREVEN&#199;&#195;O DE RISCOS DE CORRUP&#199;&#195;O</option>
+<option value="ef647171-4d71-4134-bc00-58c903c2840c">CONTENCIOSO ADMINISTRATIVO</option>
+<option value="6897d72c-2d6d-40c2-913c-5a16b0be6aa2">ESTRATEGIA, INOVA&#199;&#195;O E VALOR NO SERVI&#199;O P&#218;BLICO</option>
+<option value="5b57cff5-a623-411b-8780-5a3d3cbd0e93">ADMINISTRA&#199;&#195;O DE BASES DE DADOS EM SQL SERVER </option>
+<option value="f02053a1-103e-4acb-8d32-5f355bc95203">LEG&#205;STICA PARA N&#195;O JURISTAS: INTRODU&#199;&#195;O &#192; PREPARA&#199;&#195;O T&#201;CNICA E REDA&#199;&#195;O DE LEIS E REGULAMENTOS</option>
+<option value="f5732737-1046-485c-b0b9-60f701e8880f">FORMA&#199;&#195;O JOOMLA PARA GESTORES DE CONTE&#218;DOS</option>
+<option value="24457cfb-757a-4abf-9778-619dbd7e1e9a">REGIME DE  F&#201;RIAS, FALTAS E LICEN&#199;AS   </option>
+<option value="ce93bf02-ae5b-4324-ab15-669ea37c0706">DESENVOLVIMENTO DE APLICA&#199;&#213;ES EM ACCESS</option>
+<option value="5457e31d-9b28-4f77-8587-67ee15afc468">A INTELIG&#202;NCIA EMOCIONAL NA GEST&#195;O DE PESSOAS</option>
+<option value="03a7fb15-be67-4c1f-bb36-68421921df98">CONTABILIDADE ANAL&#205;TICA</option>
+<option value="8240f4fd-dbd4-4f25-ab30-6ccdccdc33dc">ORGANIZA&#199;&#195;O DE EVENTOS NACIONAIS E INTERNACIONAIS</option>
+<option value="f693caeb-dcb1-4dd1-9bd6-7c11ca682497">CEN&#193;RIOS E POL&#205;TICA P&#218;BLICA: PLANEAR EM CONTEXTO DE INCERTEZA</option>
+<option value="d6780d65-dab0-4e19-a520-7cfcdeacc88c">SEGURAN&#199;A E SA&#218;DE NO TRABALHO: NORMATIVOS LEGAIS APLICADOS &#192; ATIVIDADE ADMINISTRATIVA</option>
+<option value="adb26936-03cd-47ca-978c-7fbb28bce09e">T&#201;CNICAS DE GEST&#195;O DO TEMPO</option>
+<option value="34dfb696-e841-4f95-9c2f-8031d4674db0">CONTROLO DA GEST&#195;O FINANCEIRA E CONTRATA&#199;&#195;O P&#218;BLICA</option>
+<option value="50c6f304-98f2-4f41-9696-82d904c933a2">PROGRAMA&#199;&#195;O EM EXCEL</option>
+<option value="9ee59f4a-470f-4652-a89f-843020a39e3d">FORMA&#199;&#195;O AVAN&#199;ADA EM CONTROLO E AN&#193;LISE DE PROCESSOS  (FACOP)  </option>
+<option value="943d1fca-6cbb-4b89-89ad-845e3bf66eaa">PLANOS ORGANIZACIONAIS PARA A IGUALDADE</option>
+<option value="f64d73ba-93d0-477d-b395-849887725389">T&#201;CNICAS PARA MELHORAR O RELACIONAMENTO INTERPESSOAL</option>
+<option value="4c6699b9-870e-4b22-b1d0-8530e76a07b9">BASE DE DADOS ACCESS  </option>
+<option value="740e469e-651b-4dc8-be95-866670960edf">SHAREPOINT :SOLU&#199;&#213;ES PARA O TRABALHO EM EQUIPA</option>
+<option value="9db77214-3818-483b-b12a-878a3059155d">SISTEMA DE CONTROLO EXTERNO NA ADMINISTRA&#199;&#195;O P&#218;BLICA</option>
+<option value="465eeca6-d0e0-4501-9578-8dc97dbc1baa">NOVO C&#211;DIGO DO PROCEDIMENTO ADMINISTRATIVO PARA N&#195;O JURISTAS</option>
+<option value="08291d01-2fef-4694-9317-98774ff623d4">GEST&#195;O DE ATIVOS  PATRIMONIAIS</option>
+<option value="7bd116b8-7ad6-4599-8d8e-99766ef3a8a4">GEST&#195;O DE PROJETOS - CERTIFICA&#199;&#195;O IPMA  </option>
+<option value="17e86e41-853a-400e-92e4-9f8cc5436d77">AUDITORIA FINANCEIRA</option>
+<option value="e70ff7ba-0763-4d41-b47a-a3f615ae3d22">GEST&#195;O DA QUALIDADE: DESENVOLVIMENTO, IMPLEMENTA&#199;&#195;O E CERTIFICA&#199;&#195;O (NORMA NP EN ISO 9001:2015)</option>
+<option value="73de8434-c2bb-46fc-a065-ac5d9aabada8">T&#201;CNICAS DE APRESENTA&#199;&#195;O E PERSUAS&#195;O</option>
+<option value="1de0e0e6-a796-46fd-bec1-b0c08a9b709c">&#201;TICA E DEONTOLOGIA PROFISSIONAL NA ADMINISTRA&#199;&#195;O P&#218;BLICA</option>
+<option value="3a78a83b-d10d-4d53-978f-b1d6f09faaec">LEI GERAL DO TRABALHO EM FUN&#199;&#213;ES P&#218;BLICAS  </option>
+<option value="f28681e6-6051-4898-b7ed-b52ae4b1108b">NOVO C&#211;DIGO DO PROCEDIMENTO ADMINISTRATIVO PARA JURISTAS</option>
+<option value="5b1c7281-4c38-48e7-a28b-b57bc31502ac">O SISTEMA DE NORMALIZA&#199;&#195;O CONTABIL&#205;STICA PARA AS ADMINISTRA&#199;&#213;ES P&#218;BLICAS: WORKSHOP</option>
+<option value="06231956-398f-47b1-b91c-ba91ec6f9000">EXECU&#199;&#195;O  DO OR&#199;AMENTO NOS SERVI&#199;OS P&#218;BLICOS</option>
+<option value="96fef4c8-62b4-44b4-806b-be07d4f7169c">PORTUGAL NO CONTEXTO INTERNACIONAL: DESAFIOS E OPORTUNIDADES</option>
+<option value="73d698e1-8f81-4b3b-bb86-be523587ebad">T&#201;CNICAS DE REDA&#199;&#195;O ONLINE: INTERNET, INTRANET, E-MAIL, NEWSLETTER</option>
+<option value="192c67b1-7d1c-48a2-984f-becc2c3e79ef">ACROBAT: FORMUL&#193;RIOS, SEGURAN&#199;A E ASSINATURAS DIGITAIS</option>
+<option value="8ac54545-b883-45d7-9187-c376d1735f0d">ESTILOS E COMPETENCIAS DE LIDERAN&#199;A</option>
+<option value="a444dc66-eb01-49ec-8fb0-c46e8ba6d5ea">AUTOMATIZA&#199;&#195;O DE PROCESSOS ADMINISTRATIVOS: DA UTILIZA&#199;&#195;O DO OFFICE &#192;S FERRAMENTAS WORKFLOW</option>
+<option value="920b2226-7a09-491e-abf7-c551bc0e69d4">SABER ELABORAR PARECERES E INFORMA&#199;&#213;ES JUR&#205;DICAS</option>
+<option value="d5aa3da1-00f6-4728-99be-c63c84962f38">ENTREVISTA DE AVALIA&#199;&#195;O DE COMPET&#202;NCIAS (EAC)</option>
+<option value="dbedb19e-4036-4117-a02d-c6bcee42d5af">CIDADANIA ORGANIZACIONAL, PRODUTIVIDADE E CLIMA DE TRABALHO</option>
+<option value="b6d3a273-9400-4d48-a67d-c82fefa82baf">GEST&#195;O DE PROJETOS FINANCIADOS PELO &quot;PORTUGAL 2020&quot;</option>
+<option value="c671d366-94d1-4d4d-98c9-c86eb0f99d8d">CONSTRU&#199;&#195;O DO DIRET&#211;RIO DE COMPET&#202;NCIAS E GEST&#195;O DA FORMA&#199;&#195;O</option>
+<option value="ef69fd3e-6d3a-45f3-975c-c8cded7d2ba0">COMUNICA&#199;&#195;O E MARKETING P&#218;BLICO</option>
+<option value="bdc9896c-07bc-4c2f-a578-cb413ef40ad1">GEST&#195;O DE DOCUMENTOS DE ARQUIVO ELECTR&#211;NICOS</option>
+<option value="70db276f-4d2d-4a9f-b853-cd12a5c2e939">CRIA&#199;&#195;O E PUBLICA&#199;&#195;O DE CONTE&#218;DOS PARA WEB COM HTML</option>
+<option value="77b0beb2-9c53-4dfe-91f1-d4dc04a678ee">O SISTEMA DE NORMALIZA&#199;&#195;O CONTAB&#205;LISTICA PARA AS ADMINISTRA&#199;&#213;ES P&#218;BLICAS </option>
+<option value="c94db7d3-185b-4126-bebf-d5df50983898">CONCE&#199;&#195;O, GEST&#195;O E AVALIA&#199;&#195;O DE PROJETOS</option>
+<option value="bfea065e-e7f3-4a8f-b5a4-d65f90628955">NOVOS STANDARDS DE CONTROLO EM SISTEMAS DE INFORMA&#199;&#195;O: COBIT, ITIL E ISO 27002</option>
+<option value="c4b32d11-3d18-4dbe-8105-d7ee7eec8f44">DESENHO E IMPLEMENTA&#199;&#195;O DE INDICADORES DE APOIO &#192; DECIS&#195;O</option>
+<option value="7cb5dec6-afbc-44fa-bdff-d8a7f7d4422e">T&#201;CNICAS DE ELABORA&#199;&#195;O DE RELAT&#211;RIOS DE INSPE&#199;&#195;O</option>
+<option value="d67c9e80-ef7b-4ac6-a072-ddc25b0dbd6c">ESTRAT&#201;GIAS DE COMUNICA&#199;&#195;O EM SITUA&#199;&#195;O DE CRISE</option>
+<option value="9b35a3b2-0162-4d6e-90d1-ddf5d3759d31">ENTENDER O PROJECT CYCLE MANAGEMENT DA UNI&#195;O EUROPEIA (UE)</option>
+<option value="485613cc-eec7-434d-aeb3-de11ee21f1dd">DIREITO ADMINISTRATIVO EUROPEU</option>
+<option value="616848ec-b9c3-4ed0-b4b8-e02390ca1097">PROCEDIMENTOS DISCIPLINARES: ASPETOS PR&#193;TICOS</option>
+<option value="07b2f5f5-714b-4223-b517-e0962ef89051">T&#201;CNICAS DE NEGOCIA&#199;&#195;O E MEDIA&#199;&#195;O</option>
+<option value="4c1f1758-9862-4001-8717-e1b18d4ddf2b">GEST&#195;O PATRIMONIAL NA ADMINISTRA&#199;&#195;O P&#218;BLICA</option>
+<option value="81821f81-ca76-47b5-b352-eaf8ed44a1a6">PRODU&#199;&#195;O DE WEBSITES: DREAMWEAVER AVAN&#199;ADO</option>
+<option value="8fc9f0f5-ad89-482a-9a90-eb7e979f5e45">DIPLOMA DE ESPECIALIZA&#199;&#195;O EM ASSUNTOS JUR&#205;DICO-ADMINISTRATIVOS</option>
+<option value="b0b63028-6a3b-4aec-a154-f1d0dcb8e5ad">TRANSPOSI&#199;&#195;O DE DIRETIVAS COMUNIT&#193;RIAS</option>
+<option value="075a897c-9606-48e6-b8b7-f2b419afe8ff">SEGURAN&#199;A DA INFORMA&#199;&#195;O: SOLU&#199;&#213;ES T&#201;CNICAS</option>
+<option value="f04681ab-6ba6-4ba9-a908-f350e2b653ab">RESPONSABILIDADE CIVIL EXTRACONTRATUAL DOS PODERES P&#218;BLICOS</option>
+<option value="46b600c3-90a3-4cff-942f-f5eb15c60047">MODELA&#199;&#195;O DE PROCESSOS COM BPMN 2.0</option>
+<option value="6d11f9c5-22de-4f58-960c-f7f2dbd4622b">GEST&#195;O DA FORMA&#199;&#195;O: PLANEAR, ORGANIZAR E AVALIAR PROJETOS DE FORMA&#199;&#195;O</option>
+<option value="968ad7fe-a49a-4fdf-a2e2-f96d4dfb6595">AUDITORIA DE SISTEMAS DE INFORMA&#199;&#195;O: CONCEITOS E METODOLOGIAS</option>
+</select>
+						</div>
+						<div class="row-group" >
+							<div class="flow-label">Local</div>
+							<select class="chosen-dropdown input-large" data-identifier="IFF_PESQACAOPSEUDLOCAL___" data-is-array="true" data-no-results-text="Não há resultados para" data-placeholder="Escolha..." data-value="" id="ValLocal" name="ValLocal"><option value=""></option>
+<option value="9be347fb-b15b-479d-8468-fe639a1a4195">INA - Alg&#233;s</option>
+</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="row-controls">
+						<div class="row-group" >
+							<div class="flow-label">In&#237;cio</div>
+							<div class="input-append date date-picker"><input class="input-small" data-format="dd-MM-yyyy" data-identifier="IFF_PESQACAOPSEUDINICIO__" id="ValInicio" name="ValInicio" type="text"></input><span class="add-on"><i data-date-icon="icon-calendar" data-time-icon="icon-time"></i></span></div>
+						</div>
+						<div class="row-group" >
+							<div class="flow-label">Fim</div>
+							<div class="input-append date date-picker"><input class="input-small" data-format="dd-MM-yyyy" data-identifier="IFF_PESQACAOPSEUDFIM_____" id="ValFim" name="ValFim" type="text"></input><span class="add-on"><i data-date-icon="icon-calendar" data-time-icon="icon-time"></i></span></div>
+						</div>
+						<div class="row-group" >
+							<div class="flow-label">Financiado</div>
+							<select class="chosen-dropdown input-large" data-identifier="IFF_PESQACAOPSEUDFINANCIA" data-is-array="true" data-no-results-text="Não há resultados para" data-placeholder="Escolha..." data-value="" id="ValFinancia" name="ValFinancia"><option value=""></option>
+<option value="S">Sim</option>
+<option value="N">N&#227;o</option>
+</select>
+						</div>
+						<div class="row-group" >
+							<div class="flow-label">Destinat&#225;rios</div>
+							<select class="chosen-dropdown input-large" data-identifier="IFF_PESQACAOPSEUDDESTINAT" data-is-array="true" data-no-results-text="Não há resultados para" data-placeholder="Escolha..." data-value="" id="ValDestinat" name="ValDestinat"><option value=""></option>
+<option value="013b83e1-de7c-426f-89c4-4d561d2770f0">Assistentes Operacionais</option>
+<option value="4253693e-f165-4fc2-abb8-76952115d49e">Dirigentes</option>
+<option value="6772d880-dd28-4e87-9c3f-86fbdd49e4ec">Inspetores e Auditores</option>
+<option value="afdf83b3-5847-4f2e-a9a4-9eca2c7c4ae0">Especialistas e T&#233;cnicos de Inform&#225;tica</option>
+<option value="15777c3d-c963-4d61-9d50-a5b71b3e43d3">Coordenadores t&#233;cnicos</option>
+<option value="e91791ac-9de3-4e56-a7f7-b40311d21cf1">Trabalhadores do setor privado detentores de habilita&#231;&#227;o de n&#237;vel superior</option>
+<option value="84ee4218-8daf-4387-9c7c-c6d2f88adbd5">T&#233;cnicos Superiores</option>
+<option value="7cdf81c5-cec1-480c-9a45-d4939059ccdb">Trabalhadores do setor privado detentores de habilita&#231;&#227;o de n&#237;vel secund&#225;rio</option>
+<option value="7559e89f-943c-4c04-893c-d735f1d56d63">Assistentes T&#233;cnicos</option>
+<option value="23dadaab-b7f4-4ea6-ba2b-e8e4b715d16f">Chefias</option>
+</select>
+						</div>
+						<div class="row-group" >
+							<div class="flow-label">Modalidade</div>
+							<select class="chosen-dropdown input-large" data-identifier="IFF_PESQACAOPSEUDMODALIDA" data-is-array="true" data-no-results-text="Não há resultados para" data-placeholder="Escolha..." data-value="" id="ValModalida" name="ValModalida"><option value=""></option>
+<option value="P">Presencial</option>
+<option value="CT">Em Contexto de Trabalho</option>
+<option value="D">A Dist&#226;ncia</option>
+<option value="M">Regime Misto</option>
+</select>
+						</div>
+						<div class="row-group" >
+									<button type="button" id="pesqacao_Procurar"onclick="window.ValExpacoes.Reload();" name="PROCURAR" class="btn button-with-inputs">Procurar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<table class="table table-striped " id="ValExpacoes"><thead><tr><th style=""><a href="javascript:void(0);" onclick="window.ValExpacoes.Sort(&#39;ValNaccao&#39;,&#39;ASC&#39;);">N&#186; Edi&#231;&#227;o</a></th><th style=""><a href="javascript:void(0);" onclick="window.ValExpacoes.Sort(&#39;Curso.Area1.ValArea&#39;,&#39;ASC&#39;);">&#193;rea de Forma&#231;&#227;o</a></th><th style=""><a href="javascript:void(0);" onclick="window.ValExpacoes.Sort(&#39;Curso.ValNome&#39;,&#39;ASC&#39;);">Curso</a></th><th style=""><a href="javascript:void(0);" onclick="window.ValExpacoes.Sort(&#39;Curso.ValOrganiza&#39;,&#39;ASC&#39;);">Modalidade</a></th><th style=""><a href="javascript:void(0);" onclick="window.ValExpacoes.Sort(&#39;ValDatainic&#39;,&#39;ASC&#39;);">In&#237;cio</a></th><th style=""><a href="javascript:void(0);" onclick="window.ValExpacoes.Sort(&#39;ValDatafim&#39;,&#39;ASC&#39;);">Fim</a></th><th style=""><a href="javascript:void(0);" onclick="window.ValExpacoes.Sort(&#39;ValValorcur&#39;,&#39;ASC&#39;);">Propina</a></th><th style=""></th><th style=""></th></tr><tr class="filtersRow" id="ValExpacoes_complex_filter" style="display:none"><th><input id="ValExpacoes_ValNaccao" name="ValExpacoes_ValNaccao" style="width: 100%" type="text" value="" /></th><th><input id="ValExpacoes_Curso_Area1_ValArea" name="ValExpacoes_Curso_Area1_ValArea" style="width: 100%" type="text" value="" /></th><th><input id="ValExpacoes_Curso_ValNome" name="ValExpacoes_Curso_ValNome" style="width: 100%" type="text" value="" /></th><th><select class="chosen-dropdown" data-is-array="True" data-no-results-text="Não há resultados para" data-placeholder="Escolha..." id="ValExpacoes_Curso_ValOrganiza" name="ValExpacoes_Curso_ValOrganiza" style="width: 100%" value=""><option value="">Escolha...</option>
+<option value="P">Presencial</option>
+<option value="CT">Em Contexto de Trabalho</option>
+<option value="D">A Dist&#226;ncia</option>
+<option value="M">Regime Misto</option>
+</select></th><th><div class="input-append date date-picker"><input class="bootstrap-date" data-format="dd-MM-yyyy" id="ValExpacoes_ValDatainic" style="width: 64px;" type="text" value=""></input><span class="add-on"><i data-date-icon="icon-calendar" data-time-icon="icon-time"></i></span></div> até <div class="input-append date date-picker"><input class="bootstrap-date" data-format="dd-MM-yyyy" id="ValExpacoes_ValDatainic2" style="width: 64px;" type="text" value=""></input><span class="add-on"><i data-date-icon="icon-calendar" data-time-icon="icon-time"></i></span></div></th><th><div class="input-append date date-picker"><input class="bootstrap-date" data-format="dd-MM-yyyy" id="ValExpacoes_ValDatafim" style="width: 64px;" type="text" value=""></input><span class="add-on"><i data-date-icon="icon-calendar" data-time-icon="icon-time"></i></span></div> até <div class="input-append date date-picker"><input class="bootstrap-date" data-format="dd-MM-yyyy" id="ValExpacoes_ValDatafim2" style="width: 64px;" type="text" value=""></input><span class="add-on"><i data-date-icon="icon-calendar" data-time-icon="icon-time"></i></span></div></th><th><input id="ValExpacoes_ValValorcur" name="ValExpacoes_ValValorcur" style="width: 100%" type="text" value="" /></th><th></th><th><div class="btn-group"><button class="btn " id="applyComplexFilter" onclick="window.ValExpacoes.Reload();" type="button"><i class="icon-search"></i></button><button class="dropup btn dropdown-toggle " onclick="changeFilters(&#39;ValExpacoes_simple_filter&#39;, &#39;ValExpacoes_complex_filter&#39;, &#39;ValExpacoes_tableFilters&#39;)" title="Pesquisa simples" type="button"><span class="caret"></span></button></div></th></tr></thead><tbody><tr data-key="a439f3e9-a9f7-49b1-938d-6a79f3a21966"><td class="" data-col-field="ValNaccao" style="">50</td><td class="" data-col-field="Curso.Area1.ValArea" style="">GESTÃO DE PESSOAS</td><td class="" data-col-field="Curso.ValNome" style="">LEI GERAL DO TRABALHO EM FUNÇÕES PÚBLICAS  </td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">30-05-2017</td><td class="" data-col-field="ValDatafim" style="">02-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">280,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/a439f3e9-a9f7-49b1-938d-6a79f3a21966">Ver</a></div></td><td></td></tr><tr data-key="e4076019-628e-4723-892e-ef324b2d1118"><td class="" data-col-field="ValNaccao" style="">7</td><td class="" data-col-field="Curso.Area1.ValArea" style="">COMUNICAÇÃO, LIDERANÇA E DESENVOLVIMENTO PESSOAL</td><td class="" data-col-field="Curso.ValNome" style="">TÉCNICAS DE REDAÇÃO ONLINE: INTERNET, INTRANET, E-MAIL, NEWSLETTER</td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">01-06-2017</td><td class="" data-col-field="ValDatafim" style="">02-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">140,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/e4076019-628e-4723-892e-ef324b2d1118">Ver</a></div></td><td></td></tr><tr data-key="50f1bf10-8e77-419b-b7d2-252fde347ee0"><td class="" data-col-field="ValNaccao" style="">2</td><td class="" data-col-field="Curso.Area1.ValArea" style="">FORMAÇÃO DE DIRIGENTES</td><td class="" data-col-field="Curso.ValNome" style="">CENÁRIOS E POLÍTICA PÚBLICA: PLANEAR EM CONTEXTO DE INCERTEZA</td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">05-06-2017</td><td class="" data-col-field="ValDatafim" style="">26-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">240,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/50f1bf10-8e77-419b-b7d2-252fde347ee0">Ver</a></div></td><td></td></tr><tr data-key="94038cce-4714-475a-b31c-6769660a6601"><td class="" data-col-field="ValNaccao" style="">3</td><td class="" data-col-field="Curso.Area1.ValArea" style="">CONTABILIDADE E FINANÇAS</td><td class="" data-col-field="Curso.ValNome" style="">O SISTEMA DE NORMALIZAÇÃO CONTABILÍSTICA PARA AS ADMINISTRAÇÕES PÚBLICAS: WORKSHOP</td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">05-06-2017</td><td class="" data-col-field="ValDatafim" style="">06-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">140,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/94038cce-4714-475a-b31c-6769660a6601">Ver</a></div></td><td></td></tr><tr data-key="dd0ff9b4-a1bd-4954-bb48-bd8623cc8607"><td class="" data-col-field="ValNaccao" style="">7</td><td class="" data-col-field="Curso.Area1.ValArea" style="">ASSUNTOS EUROPEUS E COOPERAÇÃO</td><td class="" data-col-field="Curso.ValNome" style="">FINANCIAMENTO, PROCUREMENT E GESTÃO DE CONTRATOS DE APOIO AO DESENVOLVIMENTO</td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">05-06-2017</td><td class="" data-col-field="ValDatafim" style="">09-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">280,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/dd0ff9b4-a1bd-4954-bb48-bd8623cc8607">Ver</a></div></td><td></td></tr><tr data-key="700df446-281a-4054-b2e1-4b15bd3a5106"><td class="" data-col-field="ValNaccao" style="">1</td><td class="" data-col-field="Curso.Area1.ValArea" style="">COMUNICAÇÃO, LIDERANÇA E DESENVOLVIMENTO PESSOAL</td><td class="" data-col-field="Curso.ValNome" style="">ESTRATÉGIAS DE COMUNICAÇÃO EM SITUAÇÃO DE CRISE</td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">08-06-2017</td><td class="" data-col-field="ValDatafim" style="">09-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">140,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/700df446-281a-4054-b2e1-4b15bd3a5106">Ver</a></div></td><td></td></tr><tr data-key="a4946d9c-83d8-47cb-80f9-5677850bb906"><td class="" data-col-field="ValNaccao" style="">5</td><td class="" data-col-field="Curso.Area1.ValArea" style="">ASSUNTOS EUROPEUS E COOPERAÇÃO</td><td class="" data-col-field="Curso.ValNome" style="">TRANSPOSIÇÃO DE DIRETIVAS COMUNITÁRIAS</td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">08-06-2017</td><td class="" data-col-field="ValDatafim" style="">09-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">140,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/a4946d9c-83d8-47cb-80f9-5677850bb906">Ver</a></div></td><td></td></tr><tr data-key="f71c080d-9759-49cb-a239-145512d4d63d"><td class="" data-col-field="ValNaccao" style="">7</td><td class="" data-col-field="Curso.Area1.ValArea" style="">GOVERNAÇÃO E GESTÃO PÚBLICA</td><td class="" data-col-field="Curso.ValNome" style="">ARQUIVO: ORGANIZAÇÃO E MANUTENÇÃO</td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">19-06-2017</td><td class="" data-col-field="ValDatafim" style="">21-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">210,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/f71c080d-9759-49cb-a239-145512d4d63d">Ver</a></div></td><td></td></tr><tr data-key="2523e6a0-5f76-492d-a5d8-5f00a9d9ea3f"><td class="" data-col-field="ValNaccao" style="">6</td><td class="" data-col-field="Curso.Area1.ValArea" style="">GOVERNAÇÃO E GESTÃO PÚBLICA</td><td class="" data-col-field="Curso.ValNome" style="">GESTÃO DA FORMAÇÃO: PLANEAR, ORGANIZAR E AVALIAR PROJETOS DE FORMAÇÃO</td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">19-06-2017</td><td class="" data-col-field="ValDatafim" style="">22-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">280,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/2523e6a0-5f76-492d-a5d8-5f00a9d9ea3f">Ver</a></div></td><td></td></tr><tr data-key="51fcd47a-a180-4095-848d-7853d3d046dd"><td class="" data-col-field="ValNaccao" style="">10</td><td class="" data-col-field="Curso.Area1.ValArea" style="">TECNOLOGIAS DA INFORMAÇÃO</td><td class="" data-col-field="Curso.ValNome" style="">BASE DE DADOS ACCESS  </td><td class="" data-col-field="Curso.ValOrganiza" style="">Presencial</td><td class="" data-col-field="ValDatainic" style="">19-06-2017</td><td class="" data-col-field="ValDatafim" style="">22-06-2017</td><td class="" data-col-field="ValValorcur" style=""><div class="text-right">280,00 €</div></td><td class="" data-col-field="" style=""><div class="btn-group"><a class="btn" href="/pt-PT/0/Public/Accoe/Accoes_Show/51fcd47a-a180-4095-848d-7853d3d046dd">Ver</a></div></td><td></td></tr></tbody><tfoot><tr><td colspan="9"><div class="pagination pull-right"><span></span><ul><li class="active"><a class="current-page">1</a></li><li><a href="javascript:void(0);" onclick="window.ValExpacoes.Page(&#39;2&#39;);" title="Página 2">2</a></li><li><a href="javascript:void(0);" onclick="window.ValExpacoes.Page(&#39;3&#39;);" title="Página 3">3</a></li><li><a href="javascript:void(0);" onclick="window.ValExpacoes.Page(&#39;4&#39;);" title="Página 4">4</a></li><li><a href="javascript:void(0);" onclick="window.ValExpacoes.Page(&#39;5&#39;);" title="Página 5">5</a></li><li><a href="javascript:void(0);" onclick="window.ValExpacoes.Page(&#39;2&#39;);" title="Página seguinte">&gt;</a></li><li><a href="javascript:void(0);" onclick="window.ValExpacoes.Page(&#39;10&#39;);" title="Última Página">&gt;&gt;</a></li></ul></div></td></tr></tfoot></table><div id="ValExpacoes_inputs"><input id="pValExpacoes" name="pValExpacoes" type="hidden" value="1" /><input id="sValExpacoes" name="sValExpacoes" type="hidden" value="" /><input id="dValExpacoes" name="dValExpacoes" type="hidden" value="ASC" /><input id="ValExpacoes_tableFilters" name="ValExpacoes_tableFilters" type="hidden" value="false" /></div><script>
+            $(document).ready(function(){
+                window.ValExpacoes = $('#ValExpacoes').tableFor({
+                    requestsUrl: '/pt-PT/0/Public/Accoe/Homeacc_ValExpacoes?partialView=Homeacc_ValExpacoes_Show',
+                    container: 'Homeacc_ValExpacoes_Show',
+                    tableType: 'List',
+                    pageField: 'pValExpacoes',
+                    sortField: 'sValExpacoes',
+                    sortDirField: 'dValExpacoes',
+                    tableFilters: 'ValExpacoes_tableFilters',
+                    queryField: 'qValExpacoes',
+                    query: ''
+                });
+            });</script>
+
+<script>
+$(document).ready(function() {
+	
+    try {
+        if (jQuery) {
+            try {
+                $("#qValExpacoes, #ValExpacoes_complex_filter th input, #ValExpacoes_filters input").change(function() {
+                    $("#pValExpacoes").val("1");
+                });
+
+
+                                    $('#ValExpacoes_complex_filter input').keypress(function (event) {
+                      var keycode = (event.keyCode ? event.keyCode : event.which);
+                      if(keycode == '13' || keycode == '10'){
+                          $('#ValExpacoes_complex_filter button#applyComplexFilter').click();
+                          event.preventDefault();
+                      }
+                    });
+                $('#ValExpacoes_extra').prop("disabled", false);
+
+				// TODO: FIX THIS!!!
+				
+                $(document).ready(function () { loaded($("[id='ValExpacoes']")); });
+
+                
+            } catch (err) {
+                //function still not defined, proceed
+            }
+        }
+    } catch (err) {
+        //ajax request loaded from cache, so jquery is not loaded yet
+        window.location.pathname = location.pathname;
+    }
+    loaded();
+})
+</script>
+
+</div>
+
+
+
+
+
+			</div>
+
+
+
+			<div id="push"></div>
+			<!-- END Main content -->
+		</div>
+
+		<!-- BEGIN Modal Form -->
+        <div id="form-modal" class="modal container hide fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+        <!-- END Modal Form -->
+
+		<!-- BEGIN Footer -->
+
+<div id="footer">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="muted credit">
+                    <div class="selos_footer">
+                        <img src='/pt-PT/0/Public/Home/GetLayoutFile?filePath=%2Fimg%2Fselos_footer.png' alt="selos footer" />
+                    </div>
+					
+				
+					<div class="logo_quidgest_footer">
+                        <img src='/pt-PT/0/Public/Home/GetLayoutFile?filePath=%2Fimg%2Flogotipo_quidgest_footer.png' alt="logo quidgest" />
+                    </div>	
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+		<!-- END Footer -->
+
+		<!-- Rest of the javascripts placed at the end of the document so the pages load faster -->
+        <script src="/Scripts/javascriptControls?v=Hhq-c4aVg105oplVrvSsIoshAI51DCfrv1ObRUEhFFg1"></script>
+
+
+		
+    
+
+		
+		<script type="application/javascript">
+			
+
+/**********************
+*  Load FileUploader  *
+**********************/
+
+//TODO: It is not necessary for now...
+function tryGetFiluploadScript(callback) {
+    if(typeof $.blueimp === 'undefined' || typeof $.blueimp.fileupload === 'undefined') {
+        getBlueimpFileUploadIFrameTransport(callback);
+    }
+    else
+        callback();
+}
+
+function getBlueimpFileUploadIFrameTransport(callback) {
+	getAsyncJavaScript("/Scripts/jQueryFileUpload/jquery.iframe-transport.js",
+        function() {
+            getBlueimpFileUpload(callback)
+        }
+    )
+}
+function getBlueimpFileUpload(callback) {
+	getAsyncJavaScript("/Scripts/jQueryFileUpload/jquery.fileupload.js",
+        function() {
+            getBlueimpFileUploader(callback)
+        }
+    )
+}
+
+function getBlueimpFileUploader(callback) {
+	getAsyncJavaScript("/Scripts/fileuploader.js",
+        function() {
+            getBlueimpFileUploadProgress(callback)
+        }
+    )
+}
+
+function getBlueimpFileUploadProgress(callback) {
+	getAsyncJavaScript("/Scripts/jQueryFileUpload/jquery.fileupload-process.js",
+        function() {
+            getBlueimpFileUploadValidate(callback)
+        }
+    )
+}
+function getBlueimpFileUploadValidate(callback) {
+	getAsyncJavaScript("/Scripts/jQueryFileUpload/jquery.fileupload-validate.js",
+        function() {
+            tryGetBowserScript(callback)
+        }
+    )
+}
+
+function tryGetBowserScript(callback) {
+    if(typeof bowser === 'undefined') {
+        $.getScript("/Scripts/bowser/bowser.min.js",
+            callback
+        )
+    }
+    else
+        callback();
+}
+
+function getAsyncJavaScript(fileScript, callback) {
+    $.getScript(fileScript,
+		function() {
+			callback();
+		}
+	)
+}
+
+/*******************
+*  Clicks history  *
+********************/
+
+function showTable(link, divId) {
+    $(divId).load(link);
+    return true;
+}
+
+function addClicker(link) {
+    link.addEventListener("click", function (e) {
+        if (showTable(link.href, link.getAttribute('data-divid'))) {
+            History.pushState(null, null, link.href);
+            e.preventDefault();
+        }
+    }, true);
+}
+
+function setupHistoryClicks() {
+    var areas = $('a[data-divid]');
+    for (var x = 0; x < areas.length; x++) {
+        addClicker(areas[x]);
+    }
+}
+
+window.onload = function () {
+    setupHistoryClicks();
+    window.setTimeout(function () {
+        var eventName = "popstate";
+        eventHandler = function (e) {
+            if(window.location.pathname != location.pathname)
+                window.location.pathname = location.pathname;
+        };
+
+        if (window.addEventListener) {
+            window.addEventListener(eventName, eventHandler, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('on' + eventName, eventHandler);
+        }
+    }, 1);
+}
+
+/*****************************
+*  Init and important stuff  *
+******************************/
+
+function requestReport(link) {
+    $.ajax({
+        url: link,
+        type: 'POST',
+        success: function (data) {
+            if (data.Success == "true") {
+                $("#result-report").append("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>Ã?</button>" + data.Message + "</div>");
+            } else {
+                $("#result-report").append("<div class='alert alert-error'><button type='button' class='close' data-dismiss='alert'>Ã?</button>" + data.Message + "</div>");
+            }
+        }
+    });
+    return false;
+}
+
+function makeAjaxRequest(link, target, targetFilters) {
+    var targetDiv = $("#" + target).parent();
+    var inputs = $("input:not(:button), select", targetDiv);
+    postRequest(inputs, target, link);
+    return false;
+}
+
+function updateTabs(link, target) {
+    var inputs = $(":input:not(:button)");
+    postRequest(inputs, target, link);
+    return false;
+}
+
+function postRequest(inputs, target, link, formMethod) {
+    var params = GetPostRquestParameters(inputs, target);
+    var mode = formMethod ? formMethod : 'POST';
+
+    $.ajax({
+        url: link,
+        type: mode,
+        data: params,
+        success: function (data) {
+            $('#' + target).html(data);
+        }
+    });
+}
+
+function GetPostRquestParameters(inputs, target) {
+    var params = { partialView: target };
+    $.each(inputs, function (index, value) {
+        if (value.type == "text" || value.type == "hidden") {
+            if (!params[value.id])
+                params[value.id] = value.value;
+        }
+        else if (value.type == "select-one" && value.selectedIndex != -1)
+            params[value.id] = value[value.selectedIndex].value;
+        else if ((value.type == "checkbox" || value.type == "radio") && value.checked && !$(this).data('wasChecked'))
+            if (params[value.id])
+                params[value.id] += value.value;
+            else
+                params[value.id] = value.value;
+    });
+    return params;
+}
+
+function changeFiltersAnchors(id) {
+    var filterQS = document.getElementById(id);
+    var oldValue = filterQS.value;
+    filterQS.value = oldValue == "true" ? "false" : "true";
+    $('a[href*="' + id + '"]').each(function () {
+        $(this).attr('href', $(this).attr('href').replace(id + '=' + oldValue, id + '=' + filterQS.value));
+    });
+}
+
+function hideShowDiv(target, otherDisplay) {
+    var ele = document.getElementById(target);
+    if (ele.style.display == "none") {
+        if (otherDisplay)
+            ele.style.display = otherDisplay;
+        else
+            ele.style.display = "block";
+    }
+    else
+        ele.style.display = "none";
+}
+
+function changeFilters(filters, complexFilters, hiddenValue) {
+    changeFiltersAnchors(hiddenValue);
+    hideShowDiv(filters);
+    hideShowDiv(complexFilters, "table-row");
+}
+
+(function ($) {
+    $.fn.uncheckableRadio = function () {
+        return this.each(function () {
+            $(this).mousedown(function () {
+                $(this).data('wasChecked', this.checked);
+            });
+            $(this).click(function () {
+                if ($(this).data('wasChecked')) {
+                    this.checked = false;
+                    $(this).trigger('change');
+                }
+            });
+        });
+    };
+})(jQuery);
+
+$(document).ready(function () { loaded(); });
+
+function initDatePickers(element) {
+    $('.date-picker > input:not([readonly])', element).parent().each(function () {
+        $(this).datetimepicker({
+            language: 'pt',
+            pickTime: false
+        });
+    });
+    $('.datetime-picker > input:not([readonly])', element).parent().each(function () {
+        $(this).datetimepicker({
+            language: 'pt',
+            pickSeconds: false,
+            pickTime: true
+        });
+    });
+    $('.datetimesec-picker > input:not([readonly])', element).parent().each(function () {
+        $(this).datetimepicker({
+            language: 'pt',
+            pickSeconds: true,
+            pickTime: true
+        });
+    });
+    $('.time-picker > input:not([readonly])', element).parent().each(function () {
+        $(this).datetimepicker({
+            language: 'pt',
+            pickDate: false,
+            pickSeconds: false
+        });
+    });
+}
+
+function initMasks() {
+    //Masks
+
+    $('.zipCodePT').mask('9999-999');
+    $('.Nif').mask('999999999');
+    $('.Niss').mask('99999999999');
+	
+    $('.Nib').mask('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', { 'translation': { A: { pattern: /[A-Za-z0-9]/ } } });
+    $('.Currency').each(function() {
+        var format = $(this).data("currency");
+        $(this).mask("N" + format);
+    });
+    $('[data-mask-number]').each(function() {
+        var format = $(this).attr("data-mask");
+        $(this).mask("N" + format);
+    });
+    $('[data-mask]:not([data-mask-number])').each(function() {
+        var format = $(this).attr("data-mask");
+        $(this).mask("N" + format);
+    })
+}
+
+function loaded(target) {
+    if(!target)
+        target = $("body");
+
+    $.SpecialMenus();
+    $.ModalForms(target);
+
+    $('.chosen-dropdown:not([treated])', target).chosen({ allow_single_deselect: true });
+
+    Globalize.culture("pt-PT");
+
+    $('input[type=radio]', target).uncheckableRadio();
+    initDatePickers(target);
+    initMasks();
+
+    $("*[dependant]", target).subscribe();
+
+    $.ClientSidePersistence(target);
+
+    // Handle tabs, page reloads & browser forward/back history.
+    var History = window.History;
+
+    if (!History.enabled) {
+        return false;
+    }
+
+    $(window).bind('load statechange', function () {
+        var State = History.getState();
+        var hash = History.getHash();
+
+        // Our default tab.
+        if (!State.data || !State.data.tab) {
+            if (hash) {
+                State.data.tab = hash;
+                window.location.hash = '';
+            } else {
+                State.data.tab = 'DEFAULT ACTIVE TAB';
+            }
+        }
+
+        $('ul.nav-tabs > li:visible > a[href="#' + State.data.tab + '"]').click();
+    });
+
+    $('a[data-toggle="tab"]').on('shown', function (event) {
+
+        // Set the selected tab to be the current state. But don't update the URL.
+        var url = event.target.href.split("#")[0];
+        var tab = event.target.href.split("#")[1];
+
+        var State = History.getState();
+
+        // Don't set the state if we haven't changed tabs.
+        if (State.data.tab != tab) {
+            History.pushState({ 'tab': tab }, '', url);
+        }
+
+        var actTab = $("#activeTab");
+        if (actTab)
+            actTab.val(tab.toUpperCase());
+
+    });
+}
+
+/***********
+*  Tables  *
+************/
+
+function ReloadDBEditContent(selectList, searchInput, searchResults, loading) {
+    //add search text to filterfields
+    var model = selectList.attr("pers-cs-area");
+    var searchText = searchInput.val();
+
+    var fields = new Array();
+    var dataFields = selectList.data("fields");
+    if(dataFields) {
+        $(dataFields.split(",")).each(function(index, value) {
+            var splitted = value.split(".");
+            var area = splitted[0];
+            var field = splitted[1];
+            var areaArray;
+            $(fields).each(function(index, value) {
+                if(area == fields[index].Key)
+                    areaArray = value.Value;
+            });
+            if(!areaArray) {
+                areaArray = new Array();
+                fields.push({ Key: area, Value: areaArray });
+            }
+            areaArray.push(field);
+        });
+    }
+
+    var filterFields = new Array();
+    areaFields = new Array();
+    //Get the main field
+    var parsedFields = selectList.data("fields").split(",");
+    var mainField = parsedFields[0];
+    if(parsedFields.length > 1)
+        mainField = parsedFields[1];
+    var splitted = mainField.split(".");
+    areaFields.push({ Key: splitted[1] , Value: searchText });
+	if(selectList.attr("foreign-key")) {
+		var foreignKeys = selectList.attr("foreign-key").split(";");
+		var depedantFields = selectList.attr("dependant").split(";");
+		for(var i in foreignKeys) {
+			areaFields.push({ Key: foreignKeys[i].substr(3).toLowerCase(), Value: $("#" + depedantFields[i]).val() });
+		}
+	}
+    filterFields.push({ Key: splitted[0], Value: areaFields });
+
+    var sorts = new Array();
+    var sortFields = selectList.data("sorts");
+    if(sortFields) {
+        $(sortFields.split(",")).each(function(index, value) {
+            var splitted = value.split(".");
+            var area = splitted[0];
+            var field = splitted[1];
+            var order = splitted[2];
+            var areaArray;
+            $(sorts).each(function(index, value) {
+                if(area == sorts[index].Key)
+                    areaArray = value.Value;
+            });
+            if(!areaArray) {
+                areaArray = new Array();
+                sorts.push({ Key: area, Value: areaArray });
+            }
+            areaArray.push({ Key: field, Value: order });
+        });
+    }
+
+    var elements = selectList.data("elements")
+	var identifier = selectList.data("identifier");
+
+    var params = { Model: model , FilterFields: filterFields, Fields: fields, Sorts: sorts, Elements: elements, Identifier: identifier}
+	var link =  '/pt-PT/0/Public/Home/ReloadDBEdit';
+	$.ajax({
+		type: 'POST',
+        contentType: 'application/json',
+		dataType: "json",
+		data: JSON.stringify({ model: params }),
+		url: link,
+		success: function (data) {
+            var selected = selectList.val();
+            var selValue = $("option[value='" + selected + "']", selectList).text();
+            $("option:not(:first)", selectList).remove();
+            jQuery.each(data, function(i, row){
+                jQuery.each(row, function(guid, fields) {
+                    var mainField = selectList.data("main-field");
+                    var value = fields[mainField];
+                    selectList.append("<option value='" + guid + "'>" + value + "</option>");
+                 });
+            });
+            var selectedOption = $("option[value='" + selected + "']", selectList);
+            if(selectedOption.length == 0) {
+                selectList.append("<option class='hide' value='" + selected + "'>" + selValue + "</option>");
+                selectedOption = $("option[value='" + selected + "']", selectList);
+            }
+            selectList.val(selected);
+            selectList.trigger("liszt:updated");
+            searchInput.val(searchText);
+            selectList.change();
+            searchResults.show();
+            loading.hide();
+		},
+		traditional: true
+	});
+}
+
+function RequestModalDBEdit(selectList) {
+	var params = { id: selectList.data("form-key"), partialView: selectList.data("see-more") }
+	if(selectList.attr("dependant")) {
+		var depedantFields = selectList.attr("dependant").split(";");
+		for(var i in depedantFields) {
+            var element = $("#" + depedantFields[i]);
+            var fkname = GetDbName(element, depedantFields[i]);
+			params[fkname] = element.val();
+		}
+	}
+	var modalDiv = $("body #modal-dbedit", document);
+	if(modalDiv.length > 0)
+		modalDiv.remove();
+	modalDiv = $('<div id="modal-dbedit" class="modal hide fade container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-body" id="' + selectList.data('see-more') + '"></div></div>');
+	$("body", document).append(modalDiv);
+    modalDiv.modal('show');
+	var link = selectList.data("see-more-url");
+	$.ajax({
+		type: 'POST',
+		data: params,
+		url: link,
+		success: function (data) {
+			$(".modal-body", modalDiv).html(data);
+            modalDiv.modal("layout");
+		},
+		traditional: true
+	});
+}
+
+function changeTableSort(containerDiv, column) {
+	var container = $("#" + containerDiv);
+	var tableId = $("table", container).attr("id");
+	var sortInput = $("input[id='s" + tableId + "']", container);
+	var directionInput = $("input[id='d" + tableId + "']", container);
+	if(sortInput.val() == column && directionInput.val() == "ASC")
+		directionInput.val("DESC");
+	else
+		directionInput.val("ASC");
+	sortInput.val(column);
+	$("button:first", container).click();
+}
+
+function changeTablePagination(containerDiv, page) {
+	var container = $("#" + containerDiv);
+	var tableId = $("table", container).attr("id");
+	var pageInput = $("input[id='p" + tableId + "']", container);
+	pageInput.val(page);
+	$("button:first", container).click();
+}
+
+/*****************
+*  Delete Image  *
+*****************/
+
+function DeleteImage(divId, link, buttonDelete) {
+	$.ajax({
+		type: 'POST',
+		url: link,
+		contentType: 'application/json',
+		dataType: "json",
+		success: function (data) {
+			var element = $("#thumbnail_" + divId).parent().parent();
+			var parent = element.parent();
+			element.remove();
+			parent.prepend("<text class='empty-value' color='whiteSmoke' font-style='italic'>&lt;vazio&gt;</text>");
+			$("#" + buttonDelete).remove();
+		},
+		traditional: true
+	});
+}
+
+/************
+*  DBEdits  *
+*************/
+
+function GetDbName(element, currName) {
+	var dbName = element.attr("db-field");
+	if(dbName)
+		return dbName;
+	else
+		return currName;
+}
+
+function PropagateChanges(select, originModel, destinModel, ref_fields) {
+	var link = '/pt-PT/0/Public/Home/UpdateValues';
+	var params = {};
+	var identifier = select.data("identifier");
+	var numberElements = -1;
+
+	// The default binding mechanism for the conversion of json arrays to dictionary specifies json array should be passed this way...
+	// More info in this link http://www.hanselman.com/blog/ASPNETWireFormatForModelBindingToArraysListsCollectionsDictionaries.aspx
+
+	var fields = new Array();
+	var filterFields = new Array();
+
+	$(ref_fields).each(function() {
+		var element = $(this);
+		var dependantName = element.attr("key-field");
+		var key = GetDbName($("#" + dependantName), dependantName);
+
+		var dataFields = element.data("fields");
+        if(dataFields) {
+            $(dataFields.split(",")).each(function(index, value) {
+                var splitted = value.split(".");
+                var area = splitted[0];
+                var field = splitted[1];
+                var areaArray;
+                $(fields).each(function(index, value) {
+                    if(area == fields[index].Key)
+                        areaArray = value.Value;
+                });
+                if(!areaArray) {
+                    areaArray = new Array();
+                    fields.push({ Key: area, Value: areaArray });
+                }
+                areaArray.push(field);
+            });
+        } else {
+            var areaArray = { Key: element.attr("pers-cs-area"), Value: new Array()};
+			var noMatch = true;
+			$.each(fields, function(i, keyValue) {
+				if(keyValue.Key == element.attr("pers-cs-area")) {
+					areaArray = keyValue;
+					noMatch = false;
+				}
+			});
+
+            areaArray.Value.push(element.attr("pers-cs-field").substr(3))
+
+			if(noMatch)
+				fields.push(areaArray);
+        }
+
+        var areas = element.attr("dependant-area");
+        if(areas) {
+            // Case of DB and DL
+            areas = areas.split(";");
+            $.each(areas, function(i, area) {
+                var filterSelect = $("select[pers-cs-area='" + area + "']");
+                var fullFieldName = area + "." + filterSelect.attr("db-field");
+                filterFields.push({ Key: fullFieldName, Value: filterSelect.val()})
+            })
+			numberElements = element.data("elements");
+			// Need to change the identifer
+			identifier = element.data("identifier");
+        }
+	});
+
+	if(filterFields.length == 0)
+	{
+		// Case of depedant fields like FM and F2
+		var filterSelect = select;
+		var fullFieldName = filterSelect.attr("pers-cs-area") + "." + filterSelect.attr("db-field");
+		filterFields.push({ Key: fullFieldName, Value: filterSelect.val()});
+		numberElements = 1;
+	}
+
+	params = { OModel: originModel, DModel: destinModel, FilterFields: filterFields, Fields: fields, Elements: numberElements, Identifier: identifier };
+
+    if(select.val() != "") {
+        $.ajax({
+		    type: 'POST',
+		    url: link,
+		    contentType: 'application/json',
+		    dataType: "json",
+		    data: JSON.stringify({ model: params }),
+		    success: function (data) {
+			    if(data.Success == "OK") {
+                    if(data.HasMore) {
+                        $(ref_fields).each(function(i, element) {
+							element = $(element);
+							AlterInputs(element, select, data.Data, data.HasMore);
+						});
+					}
+			    }
+                else{
+                    console.error("Error on PropagateChanges element: " + select.attr('id'));
+                }
+		    },
+		    traditional: true
+	    });
+    } else {
+        $(ref_fields).each(function(i, element) {
+			element = $(element);
+			if(element.is("input")) {
+				element.val("").change();
+				var key = element.attr("key-field");
+                $("#" + key).val("");
+			} else {
+				element.children().not(":first").remove();
+	            element.data("has-more", false);
+				element.val("");
+				element.trigger("liszt:updated");
+	            element.change();
+			}
+		});
+    }
+};
+
+function AlterInputs(element, select, guids, hasMore) {
+    if(element.data("selected-from-history")) {
+        element.removeData("selected-from-history");
+        return
+    }
+	if(element.is('select') && element.attr("id") != select.attr("id")) {
+		// updates dbedits
+		var selectedValue = element.children("[selected]").val();
+		element.children().not("[data-selected-from-history]").not(":first").remove();
+        var mainFieldSplits = element.data("main-field").split(".");
+        var area = mainFieldSplits[0];
+        var field = mainFieldSplits[1];
+		for(var guid in guids) {
+			var listAreas = guids[guid];
+            $(guids[guid]).each(function(i, areas) {
+                if(areas[area]) {
+                    element.append("<option value='" + guid + "'>" + areas[area][field] + "</option>");
+                }
+            })
+
+		}
+        $(element[0]).data("has-more", hasMore);
+		$(element[0]).val(selectedValue);
+		$(element[0]).trigger("liszt:updated");
+		$(element[0]).change();
+	} else {
+		// update input fields
+		for(var guid in guids) {
+			var areas = guids[guid];
+            var area = element.attr("pers-cs-area");
+            var field = element.attr("pers-cs-field");
+			for(var index in areas) {
+                for(var currArea in areas[index]) {
+                    if(currArea != area)
+                        continue;
+                    for(var currField in areas[index][area]) {
+                        if(currField != field)
+                            continue;
+
+				        if(element.data("selected-from-history")) {
+                            element.removeData("selected-from-history");
+                            return
+                        }
+
+				        var dataFormat = element.attr("data-format");
+				        if(dataFormat) {
+					        // Cuts the datetime string according to the dataFormat
+					        var date =  areas[index][area][field].substring(0, dataFormat.length);
+					        if(date != "")
+						        element.parent().datetimepicker('setValue', date);
+				        }
+				        else if(element.is(':checkbox'))
+						    element.prop("checked", JSON.parse(areas[index][area][field].toLowerCase())).change();
+                        else
+						    element.val(areas[index][area][field]).change();
+
+                        return;
+                    }
+                }
+			}
+		}
+	}
+}
+
+/******************
+*  Extended Form  *
+******************/
+
+// Makes extended form clickable
+function extendedAjaxForm(target) {
+	$(target + ' tbody tr').css( 'cursor', 'pointer' );
+
+	$(target).click(function(e){
+		var Elem = e.target;
+		if (Elem.nodeName=='TR'){
+			var att = $(Elem).find('td:last a');
+			att.click();
+		}
+		else if (Elem.nodeName=='TD'){
+			var att = $(Elem).parent().find('td:last a');
+			att.click();
+		}
+	});
+}
+
+// Makes extended form clickable
+function extendedHorizontalAjaxForm(target) {
+	$(target + ' tbody tr td:not(:nth-child(1))').css( 'cursor', 'pointer' );
+
+	$(target).click(function(e){
+		var Elem = e.target;
+		if (Elem.nodeName=='TD'){
+			var index = $(Elem).index();
+			var att = $($(Elem).parent().siblings().last().children().get(index)).children();
+			att.click();
+		}
+	});
+}
+
+// Submits a nested form
+function submitNestedForm(link, target) {
+	// Gets the params for the inner form
+	var divForm = $("#" + target).parent();
+	var listTable = $("#" + divForm.attr("data-target")).attr("id");
+	var params = getInputsForNestedForm(divForm);
+	// submits change
+	$.ajax({
+		url: link,
+		type: 'POST',
+		data: params,
+        traditional: true,
+		success: function (data) {
+			if(data.Success) {
+				// reloads list table
+                window[divForm.attr("data-target")].Reload();
+
+				$('#' + divForm.attr("id")).html('<div class="alert alert-block alert-success">' + data.Message + ' Escolha um elemento da lista.</div>');
+			} else
+				$('#' + divForm.attr("id")).html('<div class="alert alert-block alert-error">' + data.Message + ' Escolha um elemento da lista.</div>');
+		},
+		error: function (data) {
+			$('#' + divForm.attr("id")).html('<div class="alert alert-block alert-error">' + JSON.parse(data.responseText) + ' Escolha um elemento da lista.</div>');
+		}
+	});
+}
+
+function submitModalForm(link, target) {
+	// Gets the params for the inner form
+	var divForm = $("#" + target).parent();
+	var params = getInputsForNestedForm(divForm);
+	// submits change
+	$.ajax({
+		url: link,
+		type: 'POST',
+		data: params,
+		success: function (data) {
+			if(data.Success) {
+				divForm.modal('hide');
+				alert(data.Message);
+			} else
+				divForm.prepend('<div class="alert alert-block alert-error">' + data.Message + ' Escolha um elemento da lista.</div>');
+		},
+		error: function (data) {
+			divForm.prepend('<div class="alert alert-block alert-error">' + JSON.parse(data.responseText) + ' Escolha um elemento da lista.</div>');
+		}
+	});
+}
+
+/***********
+*  Shared  *
+***********/
+
+// Adds the input values to them to the params array
+function getInputValues(inputs) {
+	var params = {};
+
+	$.each(inputs, function (index, value) {
+		if (value.type == "select-one")
+			params[value.id] = value[value.selectedIndex].value;
+		else if ((value.type == "checkbox" && !$(value).data("checklist")) || value.type == "radio") {
+			if(!params[value.id])
+				params[value.id] = "";
+			if (value.checked)
+				params[value.id] = value.value;
+			else if (!value.checked && value.type == "checkbox")
+				params[value.id] = false;
+		}
+		else
+			params[value.id] = value.value;
+	});
+
+	// checkLists Values
+	var checkLists_Items = $.grep(inputs, function(cb) {
+        return $(cb).data("checklist") && $(cb).is(":checked");
+    });
+    while(checkLists_Items.length > 0) {
+        var firstItemName = checkLists_Items[0].name;
+        params[firstItemName] = new Array();
+
+        var tmp_Items = $.grep(checkLists_Items, function(cb) {
+            return $(cb).attr("name") == firstItemName;
+        });
+
+        $.each(tmp_Items, function (index, value) {
+            params[firstItemName].push(value.value);
+        });
+
+        checkLists_Items = $.grep(checkLists_Items, function(cb) {
+            return $(cb).attr("name") != firstItemName;
+        });
+    }
+
+	return params;
+}
+
+// Selects all inputs of a nested form with the given id
+function getInputsForNestedForm(form) {
+	var inputs = $("input:not(:button), select, textarea", form);
+	return getInputValues(inputs);
+}
+
+function appendColumn(table,index) {
+    var tbl = document.getElementById(table); // table reference
+    for (var i = 0; i < tbl.rows.length-1; i++) {
+        var t = tbl.rows[i].insertCell(index);
+        if (i > 0)
+            t.innerHTML = "<i class='icon-resize-vertical'></i>";
+    }
+}
+
+function OrderTable(table,area,fixHelperModified){
+    var order = localStorage.getItem("order");
+    if (order == "R") {
+        appendColumn(table,0);
+        $("a#order").text("Bloquear");
+        $("#"+table).css('cursor', 'all-scroll');
+        $("#"+table+" tbody").sortable({
+            helper: fixHelperModified,
+            change: function (event, ui) {
+                $("#"+table+" tbody tr[data-key=" + $(ui.item).attr("data-key") + "]").addClass('highlighted');
+            },
+            stop: function (event, ui) {
+                $("#"+table+" tbody tr[data-key=" + $(ui.item).attr("data-key") + "]").addClass('highlighted');
+                var link = '/pt-PT/0/Public/area/form';
+                link = link.replace("form", "Update"+table);
+                link = link.replace("area", area);
+                $.ajax({
+                    url: link,
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        id: $(ui.item).attr("data-key"),
+                        position: ui.item.index(),
+                        partialView: table+"_Partial"
+                    }
+                });
+                window[table].Reload();
+            },
+            update: function (event, ui) {
+                $("#"+table+" tbody tr[data-key=" + $(ui.item).attr("data-key") + "]").removeClass('highlighted');
+                $("a#order").text("Bloquear");
+            }
+        }).disableSelection();
+    }
+    else if (order == null || $("a#order").text() == "Bloquear") {
+        $("a#order").text("Reordenar");
+        $("#"+table).css('cursor', 'default');
+    }
+}
+
+function ClickTableOrder(table,area,fixHelperModified){
+    $("#order").click(function () {
+        var order = localStorage.getItem("order");
+        if ($("a#order").text().trim() == "Reordenar") {
+            localStorage.setItem("order", "R");
+            $("#"+table).css('cursor', 'all-scroll');
+            $("#"+table+" tbody").sortable({
+                helper: fixHelperModified,
+                change: function (event, ui) {
+                    $("#"+table+" tbody tr[data-key=" + $(ui.item).attr("data-key") + "]").addClass('highlighted');
+                },
+                stop: function (event, ui) {
+                    $("#"+table+" tbody tr[data-key=" + $(ui.item).attr("data-key") + "]").addClass('highlighted');
+                    var link = '/pt-PT/0/Public/area/form';
+                    link = link.replace("form", "Update"+table);
+                    link = link.replace("area", area);
+                    $.ajax({
+                        url: link,
+                        type: "POST",
+                        dataType: "json",
+                        data: {
+                            id: $(ui.item).attr("data-key"),
+                            position: ui.item.index(),
+                            partialView: table+"_Partial"
+                        }
+                    });
+                    window[table].Reload();
+                },
+                update: function (event, ui) {
+                    $("#"+table+" tbody tr[data-key=" + $(ui.item).attr("data-key") + "]").removeClass('highlighted');
+                    $("a#order").text("Bloquear");
+                }
+            }).disableSelection();
+            window[table].Reload();
+
+        } else if ($("a#order").text().trim() ==  "Bloquear") {
+            localStorage.setItem("order", "S");
+            window[table].Reload();
+            $("#"+table).css('cursor', 'default');
+        }
+    });
+}
+
+/************
+*  Reports  *
+************/
+
+// Requests a report
+function requestReport(link) {
+	$.ajax({
+		url: link,
+		type: 'POST',
+		success: function (data) {
+			if (data.Success) {
+				$("#result-report").append("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>Ã?</button>" + data.Message + "</div>");
+			} else {
+				$("#result-report").append("<div class='alert alert-error'><button type='button' class='close' data-dismiss='alert'>Ã?</button>" + data.Message + "</div>");
+			}
+		}
+	});
+	return false;
+}
+
+/********************
+*  Manual Routines  *
+*********************/
+
+    
+
+    function GFC_MenuR_ORGINSCCANCEL (id) {
+        var customParameters;
+
+
+        customParameters = new Object();
+        customParameters.id = id;
+        bootbox.confirm('Deseja cancelar a inscrição?', function (result) {
+            if (result) {
+                GFC_MenuR_ORGINSCCANCEL_AjaxCall(customParameters);
+            }
+        });
+        return false;
+
+
+
+        GFC_MenuR_ORGINSCCANCEL_AjaxCall(customParameters);
+    }
+
+    function GFC_MenuR_ORGINSCCANCEL_AjaxCall (customParameters) {
+        var urlAction = '/pt-PT/0/Public/Home/GFC_MenuR_ORGINSCCANCEL';
+        var jqxhr = $.ajax({
+            url : urlAction,
+            cache: false,
+			type: "POST",
+			contentType: 'application/json',
+            beforeSend : function(xhr, opts) {
+//Plataforma: MVC |  Tipo: BEFORESEND_ROUTINE | Modulo: GFO | Parametro: ORGINSCCANCEL | Ficheiro:  | Ordem: 301
+//BEGIN_MANUALCODE_CODMANUA:a0eb0182-c1ba-495d-ad7c-159c44fb35db
+                opts.data = JSON.stringify($.extend(opts.data, customParameters));
+
+//END_MANUALCODE
+
+            }
+        })
+        .done(function(data, textStatus, jqXHR) {
+
+
+            switch (data.success) {
+                case 'E':
+                    bootbox.alert(data.message);
+                    break;
+                case 'OK':
+                    debugger;
+                    if(!jQuery.isEmptyObject(window["GFC_Menu_EMANALISE"]))
+                        window["GFC_Menu_EMANALISE"].Reload();
+                    else if (!jQuery.isEmptyObject(window["GFC_Menu_ORGNOVA"]))
+                        window["GFC_Menu_ORGNOVA"].Reload();
+                    else if (!jQuery.isEmptyObject(window["GFC_Menu_INSCORGVALIDADA"]))
+                        window["GFC_Menu_INSCORGVALIDADA"].Reload();
+                    break;
+            }
+
+
+
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            if (errorThrown != "canceled")
+                bootbox.alert('Erro na execução de função global');
+        });
+    }
+	
+    
+
+    
+
+
+
+    
+
+    function GFH_MenuR_INSCREVERBOLSAFORMADORES () {
+        var customParameters;
+
+
+        bootbox.confirm("Deseja inscrever-se na bolsa de formadores?", function (result) {
+            if (result) {
+                GFH_MenuR_INSCREVERBOLSAFORMADORES_AjaxCall(customParameters);
+            }
+        });
+        return false;
+
+
+
+        GFH_MenuR_INSCREVERBOLSAFORMADORES_AjaxCall(customParameters);
+    }
+
+    function GFH_MenuR_INSCREVERBOLSAFORMADORES_AjaxCall (customParameters) {
+        var urlAction = '/pt-PT/0/Public/Home/GFH_MenuR_INSCREVERBOLSAFORMADORES';
+        var jqxhr = $.ajax({
+            url : urlAction,
+            cache: false,
+			type: "POST",
+			contentType: 'application/json',
+            beforeSend : function(xhr, opts) {
+                
+            }
+        })
+        .done(function(data, textStatus, jqXHR) {
+            
+            try {
+                if(data.success == undefined || data.message == undefined)
+                    throw "Invalid data structure.";
+                switch(data.success) {
+                    case 'E':
+                        if (typeof console != "undefined") {
+                            console.log("Erro na Rotina Manual 'INSCREVERBOLSAFORMADORES' (" + data.message + ") ");
+                        }
+                        bootbox.alert(data.message, function() { GFH_MenuR_INSCREVERBOLSAFORMADORES_AfterDone(data); });
+                        break;
+                    case 'W':
+                        if (typeof console != "undefined") {
+                            console.log("Rotina Manual 'INSCREVERBOLSAFORMADORES' executada com sucesso!");
+                        }
+                        bootbox.alert(data.message, function() { GFH_MenuR_INSCREVERBOLSAFORMADORES_AfterDone(data); });
+                        break;
+                    case 'OK':
+                        if (typeof console != "undefined") {
+                            console.log("Rotina Manual 'INSCREVERBOLSAFORMADORES' executada com sucesso!");
+                        }
+                        GFH_MenuR_INSCREVERBOLSAFORMADORES_AfterDone(data);
+                        break;
+                }
+            }
+            catch (e) {
+                bootbox.alert('Erro na execução de função global');
+                if (typeof console != "undefined") {
+                    console.error(e.toString());
+                }
+            }
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            if (errorThrown != "canceled")
+                bootbox.alert('Erro na execução de função global');
+        });
+    }
+	
+    function GFH_MenuR_INSCREVERBOLSAFORMADORES_AfterDone (data) {
+
+
+            switch(data.success) {
+                case 'W':
+                    window.location.href = '/pt-PT/0/GFF/Forma/GFF_Menu_PERFILFORMADOR';
+                    break;
+            }
+
+
+
+    }
+
+    
+
+
+
+    
+
+    function GFH_MenuR_REGISTOORGANISMO () {
+
+
+            $.ajax({
+                url: '/pt-PT/0/Public/Home/Pesqnif_Show',
+                type: "GET",
+                cache: false,
+                success: function (data) {
+                    var formModal = $("#ModalNif");
+                    formModal.html("");
+                    formModal.html(data);
+                    formModal.modal();
+                }
+            });
+
+
+
+    }
+
+	
+
+    
+
+
+
+    
+
+    function GFH_MenuR_GOTODADOSPESSOAIS () {
+
+
+		window.location.href = '/pt-PT/0/GFH/Funcp/GFH_Menu_DADOSP';
+
+
+
+    }
+
+	
+
+    
+
+
+
+    
+
+    function GFP_MenuR_REINICIAVALORESGLOB () {
+        var customParameters;
+
+
+        bootbox.confirm("Ao clicar nesta opção, os números dos certificados serão reiniciados, sendo que esta operação não é reversível. Deseja continuar?", "Não","Sim", function (result) {
+            if (result) {
+                GFP_MenuR_REINICIAVALORESGLOB_AjaxCall(customParameters);
+            }
+        });
+        return false;
+
+
+
+        GFP_MenuR_REINICIAVALORESGLOB_AjaxCall(customParameters);
+    }
+
+    function GFP_MenuR_REINICIAVALORESGLOB_AjaxCall (customParameters) {
+        var urlAction = '/pt-PT/0/Public/Home/GFP_MenuR_REINICIAVALORESGLOB';
+        var jqxhr = $.ajax({
+            url : urlAction,
+            cache: false,
+			type: "POST",
+			contentType: 'application/json',
+            beforeSend : function(xhr, opts) {
+                
+            }
+        })
+        .done(function(data, textStatus, jqXHR) {
+            
+            try {
+                if(data.success == undefined || data.message == undefined)
+                    throw "Invalid data structure.";
+                switch(data.success) {
+                    case 'E':
+                        if (typeof console != "undefined") {
+                            console.log("Erro na Rotina Manual 'REINICIAVALORESGLOB' (" + data.message + ") ");
+                        }
+                        bootbox.alert(data.message);
+                        break;
+                    case 'W':
+                        if (typeof console != "undefined") {
+                            console.log("Rotina Manual 'REINICIAVALORESGLOB' executada com sucesso!");
+                        }
+                        bootbox.alert(data.message);
+                        break;
+                    case 'OK':
+                        if (typeof console != "undefined") {
+                            console.log("Rotina Manual 'REINICIAVALORESGLOB' executada com sucesso!");
+                        }
+                        break;
+                }
+            }
+            catch (e) {
+                bootbox.alert('Erro na execução de função global');
+                if (typeof console != "undefined") {
+                    console.error(e.toString());
+                }
+            }
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            if (errorThrown != "canceled")
+                bootbox.alert('Erro na execução de função global');
+        });
+    }
+	
+    
+
+    
+
+
+
+    
+
+    function GFA_MenuR_GOTODADOSPESSOAIS_GFA () {
+
+
+		window.location.href = '/pt-PT/0/GFA/Funcp/GFH_Menu_DADOSP';
+
+
+
+    }
+
+	
+
+    
+
+
+
+    
+
+    function GFA_MenuR_PREINSCRICAO () {
+        var customParameters;
+
+
+		
+		if (typeof jsonRouteValues === "undefined") {
+			if($.type(arguments[0]) === "string")
+				customParameters = {id: arguments[0], action: arguments[1], url: arguments[2]};
+			else
+				customParameters = arguments[0];
+        }
+		
+		
+        bootbox.confirm('Tem a certeza que pretende fazer esta pré-inscrição?', 'N&#227;o', 'Sim', function (result) {
+            if (result) {
+                if (typeof jsonRouteValues !== "undefined") {
+                    GFA_MenuR_PREINSCRICAO_AjaxCall(jsonRouteValues, customParameters);
+                }
+                else {
+                    GFA_MenuR_PREINSCRICAO_AjaxCall(customParameters);
+                }
+            }
+        });
+        return false;
+		
+
+
+
+        GFA_MenuR_PREINSCRICAO_AjaxCall(customParameters);
+    }
+
+    function GFA_MenuR_PREINSCRICAO_AjaxCall (customParameters) {
+        var urlAction = '/pt-PT/0/Public/Home/GFA_MenuR_PREINSCRICAO';
+        var jqxhr = $.ajax({
+            url : urlAction,
+            cache: false,
+			type: "POST",
+			contentType: 'application/json',
+            beforeSend : function(xhr, opts) {
+//Plataforma: MVC |  Tipo: BEFORESEND_ROUTINE | Modulo: GFO | Parametro: PREINSCRICAO | Ficheiro:  | Ordem: 81
+//BEGIN_MANUALCODE_CODMANUA:3424e28f-7a71-4967-a90a-9f7d70ff4e49
+                window.loading = new QLoading('preinscricao', 'A enviar...');
+                window.loading.show();
+				
+				if (typeof jsonRouteValues === "undefined") {
+                    opts.data = JSON.stringify($.extend(opts.data, customParameters));
+                }
+
+//END_MANUALCODE
+
+            }
+        })
+        .done(function(data, textStatus, jqXHR) {
+
+
+            window.loading.hide();
+            switch(data.success) {
+                case 'E':
+                    bootbox.alert(data.message, function() {
+                        if (typeof jsonRouteValues === "undefined" && typeof customParameters.action !== "undefined") {
+                            if(customParameters.action.startsWith("inscreverAcao_") && typeof customParameters.url !== "undefined") { 
+                                window.location.href = customParameters.url;
+                            }
+                        }
+                    }); 
+                    break;
+                case 'W':
+                    bootbox.alert(data.message, function() {
+                        if (typeof jsonRouteValues === "undefined" && typeof customParameters.action !== "undefined") {
+                            if(customParameters.action.startsWith("inscreverAcao_") && typeof customParameters.url !== "undefined") { 
+                                window.location.href = customParameters.url;
+                            }
+                        }
+                    }); 
+                    break;
+            }
+
+
+
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            if (errorThrown != "canceled")
+                bootbox.alert('Erro na execução de função global');
+        });
+    }
+	
+    
+
+    
+
+
+
+    
+
+    function GFF_MenuR_GOTODADOSPESSOAIS_GFF () {
+
+
+		window.location.href = '/pt-PT/0/GFF/Funcp/GFH_Menu_DADOSP';
+
+
+
+    }
+
+	
+
+    
+
+
+
+
+//Plataforma: MVC |  Tipo: CUSTOM_JS | Modulo: GFO | Parametro:  | Ficheiro:  | Ordem: 1
+//BEGIN_MANUALCODE_CODMANUA:c1811923-a46d-4256-b51e-900b654603a7
+//PR
+function FormaDocumLimit(codfunci)
+{
+    if(codfunci)
+    {
+        var url = '/pt-PT/0/Public/Forma/SetFunciDocum?codfunci=param';
+        url = url.replace("param", codfunci);
+        $.ajax({
+            url: url,
+            success: function (data) {
+                if (!data.success)
+                    bootbox.alert('Ocorreu um erro ao processar o pedido.');
+                else
+                    window.ValExpdocfo.Reload();
+            }
+        });
+    }
+}
+
+
+function QLoading(id, message) {
+    this.id = id;
+    this.message = message;
+    //create html
+    $( "body" ).append("<div id=" + id +" style='display: none; margin: 5px; text-align:center; font-weight:bold;'> <div class='progress progress-striped active' style='margin-top: 20px;'><div class='bar' style='width: 100%;'>"+message+"</div></div></div>");
+    //init
+    $('#'+id).dialog({
+        show: "fade",
+        modal: true,
+        autoOpen: false,
+        closeOnEscape: false,
+        resizable: false,
+        //maxHeight: 40,
+        minHeight: 40,
+        open: function (event, ui) {
+            $(".ui-dialog-titlebar-close").hide();
+            $(".ui-dialog-titlebar").hide();
+            $(".ui-widget-overlay").css({ "z-index": "1030", "position": "fixed" });
+        }
+    });
+}
+
+QLoading.prototype.show = function() {
+    $('#'+this.id).dialog("open");
+}
+
+QLoading.prototype.hide = function() {
+    $('#'+this.id).dialog("close");
+}
+
+if (typeof String.prototype.startsWith != 'function') {
+  String.prototype.startsWith = function (str){
+    return this.slice(0, str.length) == str;
+  };
+}
+
+if (typeof String.prototype.endsWith != 'function') {
+  String.prototype.endsWith = function (str){
+    return this.slice(-str.length) == str;
+  };
+}
+
+function redirectToAction(action, url) {
+    if(action.startsWith("#"))
+        action = action.substring(1);
+
+    if(action.startsWith("inscreverAcao_")) {
+        var codAccoe = action.substring(action.indexOf('_') + 1);
+        GFA_MenuR_PREINSCRICAO(codAccoe, action, url);
+    }
+    else {
+        window.location.href = url + '?redirectTo=' + action;
+    }
+}
+
+
+$('#CCPCAPI').on('shown', function () {
+    $(this).css("overflow","visible");
+})
+
+$('#CCPCAPI').on('hide', function () {
+    $(this).css("overflow","");
+})
+
+//END_MANUALCODE
+//Plataforma: MVC |  Tipo: CUSTOM_JS | Modulo: GFO | Parametro:  | Ficheiro:  | Ordem: 357
+//BEGIN_MANUALCODE_CODMANUA:9e40f76b-0517-4b62-ba37-6770739da83f
+function ShowAlert(){
+    bootbox.alert('<b>Para ter acesso, como utilizador registado, vai ser direcionado para uma nova página, para efetuar o login, após o que voltará, de forma automática, ao portal.</b>', function () {
+    window.location.href = '/pt-PT/Account/RedirectToLogon';
+ 
+    });
+}
+
+    
+    function showLogonDialog3() {
+        $('#myModal').modal('hide');
+
+        bootbox.confirm('Indique abaixo como pretende efetuar o seu registo', 'Organismo', 'Individual', function (result) {
+            if (result) {
+                OpenModalForm('/pt-PT/0/Public/Funcp/Reg_func_New', null, null, function ()
+                {
+
+                    window.location.href = '/pt-PT/Account/LogOnINA?ReturnUrl=%2Fpt-PT%2F0%2FGFH%2FFUNCP%2FWdadospe_Edit';
+                }
+                , null, null);
+            }
+            else {
+                $.ajax({
+                    url: '/pt-PT/0/Public/Home/Pesqnif_Show',
+                    type: "GET",
+                    cache: false,
+                    success: function (data) {
+                        var formModal = $("#ModalNif");
+                        formModal.html("");
+                        formModal.html(data);
+                        formModal.modal();
+                    }
+                });
+            }
+        });
+    }
+    
+
+
+//END_MANUALCODE
+//Plataforma: MVC |  Tipo: CUSTOM_JS | Modulo: GFO | Parametro:  | Ficheiro:  | Ordem: 490
+//BEGIN_MANUALCODE_CODMANUA:8acb37f9-8ba0-4e89-b94d-ac56e4f061a4
+	function addCheckboxState(id)
+	{
+	    var arrayCHB = new Array();
+
+	    if (localStorage["checkBoxState"] == undefined || localStorage["checkBoxState"] == null) {
+	        arrayCHB[0] = id;
+
+	        localStorage.setItem("checkBoxState", JSON.stringify(arrayCHB))
+	    }
+	    else
+	    {
+	        var jaExiste = false;
+	        var indice = 0;
+
+	        var boxesChecked = JSON.parse(localStorage["checkBoxState"]);
+
+	        $.each(boxesChecked, function (index, value) {
+	            if (value == id)
+	                jaExiste = true;
+	        });
+
+	        if (!jaExiste) {
+	            $.each(boxesChecked, function (key, value) {
+	                arrayCHB[indice] = value;
+	                indice++;
+	            })
+	        }
+
+	        arrayCHB[indice] = id;
+
+	        localStorage.setItem("checkBoxState", JSON.stringify(arrayCHB))
+	        return;
+	    }
+	}
+
+	function removeCheckBoxState(id)
+	{
+	    var arrayCHB = new Array();
+	    if (localStorage["checkBoxState"] != undefined || localStorage["checkBoxState"] != null) {
+	        var boxesChecked = JSON.parse(localStorage["checkBoxState"]);
+	        $.each(boxesChecked, function (index, value)
+	        {
+	            if (value != id)
+	                arrayCHB.push(value);
+	        })
+
+	        localStorage.setItem("checkBoxState", JSON.stringify(arrayCHB))
+	    }
+	}
+	
+	function beginCheckBoxState(vista) {
+        var strVista = vista;
+
+        if (strVista.toUpperCase() == "NEW") {
+            if (localStorage["checkBoxState"] != undefined || localStorage["checkBoxState"] != null) {
+                var boxesChecked = JSON.parse(localStorage["checkBoxState"]);
+                $.each(boxesChecked, function (index, value) {
+                    $("#List_Dest_Ids tbody tr input[value='" + value + "']").prop("checked", true);
+                });
+            }
+            else
+                $("#List_Dest_Ids tbody tr input").prop("checked", false);
+        }
+        else if (strVista.toUpperCase() == "EDIT") {
+
+            if (localStorage["checkBoxState"] == undefined || localStorage["checkBoxState"] == null) {
+                var arrayCHB = new Array();
+                $("#List_Dest_Ids tbody tr input:checked").each(function () {
+                    arrayCHB.push($(this).val());
+                });
+
+                localStorage.setItem("checkBoxState", JSON.stringify(arrayCHB));
+            }
+            else {
+                var boxesChecked = JSON.parse(localStorage["checkBoxState"]);
+                $("#List_Dest_Ids tbody tr input").prop("checked", false);
+                $.each(boxesChecked, function (index, value) {
+                    $("#List_Dest_Ids tbody tr input[value='" + value + "']").prop("checked", true);
+                });
+            }
+        }
+    }
+
+//END_MANUALCODE
+
+
+		</script>
+		
+    <script>
+        $(document).ready(function () {
+        });
+</script>
+
+
+	</body>
+</html>

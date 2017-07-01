@@ -1,0 +1,68 @@
+html,
+body,
+img,
+a,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.container,
+.bg-exit,
+.border,
+.part1,
+.womanAnim {
+    width: 300px;
+    height: 600px;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    display: none;
+    background-color: #899fd0;
+    perspective: 600px;
+}
+
+.container div,
+.container img,
+.container a {
+    position: absolute;
+}
+
+.border {
+    border: solid 1px #000;
+}
+
+.bg-exit {
+    cursor: pointer;
+    background: white;
+    opacity: 0;
+}
+
+.part1 {
+    perspective: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.woman {
+    left: 0px;
+}
+
+.watch {
+    top: 0px;
+    left: 0px;
+}
+
+.watchFace {
+    left: -140px;
+}
+
+.watch2,
+.watch3,
+.watch4,
+.watchEnd {
+    opacity: 0;
+}

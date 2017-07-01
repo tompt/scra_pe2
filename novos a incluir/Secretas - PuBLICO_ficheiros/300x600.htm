@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- ADRIME SCREENAD META DATA (don't edit/remove) -->
+    <!-- SCRVERSION: screenad_interface_1.0.3 -->
+    <!-- SCRFORMAT: banner -->
+    <!-- SCRWIDTH: 300 -->
+    <!-- SCRHEIGHT: 600 -->
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="300x600_data/screenad_interface_1.js"></script>
+    <script>
+    function init() {
+
+        screenad.setAlignment('banner', 'banner');
+        screenad.setSize("300px", "600px");
+        screenad.setSticky(true);
+        screenad.setZIndex(1);
+        screenad.setOffset(0, 0)
+        screenad.position();
+
+    }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+    @-webkit-keyframes sheen {
+        0% {
+            -webkit-transform: skewX(-45deg) translateX(0);
+            transform: skewX(-45deg) translateX(0);
+        }
+        90% {
+            -webkit-transform: skewX(-45deg) translateX(0);
+            transform: skewX(-45deg) translateX(0);
+        }
+        100% {
+            -webkit-transform: skewX(-45deg) translateX(13.5em);
+            transform: skewX(-45deg) translateX(13.5em);
+        }
+    }
+    
+    @keyframes sheen {
+        0% {
+            -webkit-transform: skewX(-45deg) translateX(0);
+            transform: skewX(-45deg) translateX(0);
+        }
+        90% {
+            -webkit-transform: skewX(-45deg) translateX(0);
+            transform: skewX(-45deg) translateX(0);
+        }
+        100% {
+            -webkit-transform: skewX(-45deg) translateX(13.5em);
+            transform: skewX(-45deg) translateX(13.5em);
+        }
+    }
+    
+    .wrapper {
+        display: block;
+        position: absolute;
+        top: 314px;
+        width: 200px;
+        padding: 0px;
+        margin-left: 7px;
+        height: 50px;
+        border-radius: 4em;
+        left: 48px;
+        z-index: 777;
+        overflow: hidden;
+    }
+    
+    .button {
+        padding: 10px 18px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        border-bottom: 4px solid #008d21;
+        border-top: #07c12f 2px solid;
+        border-right: #07c12f 2px solid;
+        border-left: #07c12f 2px solid;
+        font-weight: bold;
+        font-size: 15px;
+        background: #02c12f;
+        display: inline-block;
+        border-radius: 3em;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+    
+    .button:before {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 100%;
+        width: 3em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -1.5em;
+        -webkit-animation-name: sheen;
+        animation-name: sheen;
+        -webkit-animation-duration: 6s;
+        animation-duration: 6s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .button:hover {
+        background-color: #00a326;
+        color: #fff;
+        border-bottom: 4px solid #008d21;
+    }
+    
+    .wrap_sd {
+        width: 300px;
+        height: 600px;
+        background: #2f2f2f;
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid #ffffff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+    
+    .wrap_sd:hover {
+        cursor: pointer;
+    }
+    
+    .bg_ad {
+        z-index: 0;
+        position: absolute;
+    }
+    
+    #desconto_ad {
+        width: 210px;
+        z-index: 33;
+        top: 60px;
+    }
+    
+    #parte_superior {
+        height: 342px;
+        position: absolute;
+        left: -300px;
+        width: 100%;
+        top: 29px;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    #parte_inferior {
+        width: 100%;
+        display: block;
+        height: 277px;
+        background: #2f2f2f;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        top: 334px;
+        z-index: 77;
+    }
+    
+    .vantagens_ad,
+    .desvantagens_ad {
+        margin: 37px auto 0px -20px;
+        display: block;
+        position: absolute;
+        list-style: none;
+    }
+    
+    .vantagens_ad li,
+    .desvantagens_ad li {
+        margin-top: 15px;
+    }
+    
+    .vantagens_ad li img,
+    .desvantagens_ad li img {
+        margin-bottom: -4px;
+    }
+    
+    .vantagens_ad li .check_ad,
+    .desvantagens_ad li .check_ad {
+        margin-right: 5px;
+        margin-top: 0px;
+        max-width: 27px;
+        margin-bottom: -5px;
+    }
+    
+    #cta_ad {
+        margin: 0 auto;
+        width: 185px;
+        display: block;
+        top: 341px;
+        float: left;
+        position: absolute;
+        z-index: 1;
+        left: 61px;
+    }
+    
+    #cta_ad:hover {
+        width: 190px;
+        cursor: pointer;
+    }
+    
+    #marca_sd {
+        bottom: 29px;
+        position: absolute;
+        left: 18px;
+        width: 243px;
+        display: block;
+    }
+    
+    .claim_sd {
+        position: absolute;
+        left: 23px;
+        top: 150px;
+    }
+    
+    .claim_sd .primeira {
+        opacity: 0;
+        margin-top: 10px;
+    }
+    
+    .claim_sd .segunda {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    
+    .claim_sd .terceira {
+        opacity: 0;
+        margin-top: 70px;
+    }
+    
+    .claim_sd .quarta {
+        opacity: 0;
+        margin-top: 105px;
+    }
+    
+    .desv_a,
+    .desv_b,
+    .desv_c,
+    .vant_a,
+    .vant_b,
+    .vant_c {
+        width: 400px;
+        left: -390px;
+        position: absolute;
+        opacity: 0;
+    }
+    
+    .desv_a,
+    .vant_a {
+        top: 45px;
+    }
+    
+    .desv_b,
+    .vant_b {
+        top: 90px;
+    }
+    
+    .desv_c,
+    .vant_c {
+        top: 135px;
+    }
+    </style>
+<meta name="referrer" content="origin"></head>
+
+<body style="margin:0; overflow:hidden;" onload="init()" onclick="screenad.click()">
+    <div class="wrap_sd">
+        <img class="bg_ad" src="300x600_data/bg_maio.jpg" style="transform: matrix(1.2, 0, 0, 1.2, 0, 0);">
+        <div id="parte_superior" style="opacity: 1; left: 47px;">
+            <img id="desconto_ad" src="300x600_data/desconto.png">
+        </div>
+        <!-- CLAIM -->
+        <div class="claim_sd" style="opacity: 1; left: 340px;"><img class="primeira" src="300x600_data/frase1.png" style="opacity: 1;"></div>
+        <div class="claim_sd" style="opacity: 1; left: 340px;"><img class="segunda" src="300x600_data/frase2.png" style="opacity: 1;"></div>
+        <div class="claim_sd" style="opacity: 1; left: 340px;"><img class="terceira" src="300x600_data/frase3.png" style="opacity: 1;"></div>
+        <div class="claim_sd" style="opacity: 1; left: 340px;"><img class="quarta" src="300x600_data/frase4.png" style="opacity: 1;"></div>
+        <div id="parte_inferior">
+            <!-- DESVANTAGENS -->
+            <div class="desv_a" style="opacity: 0; left: 300px;"><img class="check_ad" src="300x600_data/check_verm.png"> <img src="300x600_data/intrusao.png"></div>
+            <div class="desv_b" style="opacity: 0; left: 300px;"><img class="check_ad" src="300x600_data/check_verm.png"> <img src="300x600_data/corte.png"></div>
+            <div class="desv_c" style="opacity: 0; left: 300px;"><img class="check_ad" src="300x600_data/check_verm.png"> <img src="300x600_data/isolamento.png"></div>
+            <!-- VANTAGENS -->
+            <div class="vant_a" style="opacity: 1; left: 30px;"><img class="check_ad" src="300x600_data/check.png"> <img src="300x600_data/detecao_antecipada.png"></div>
+            <div class="vant_b" style="opacity: 1; left: 30px;"><img class="check_ad" src="300x600_data/check.png"> <img src="300x600_data/anti_inib.png"></div>
+            <div class="vant_c" style="opacity: 1; left: 30px;"><img class="check_ad" src="300x600_data/check.png"> <img src="300x600_data/sem_fios.png"></div>
+            <img src="300x600_data/marca_sd.png" id="marca_sd">
+        </div>
+        <div class="wrapper">
+            <a href="#" class="button" id="button_final"><img src="300x600_data/calcular_preco.png" style="max-width: 100%;margin-top: 3px;"></a>
+        </div>
+        <img id="cta_ad" src="300x600_data/cta.png">
+    </div>
+
+<script src="300x600_data/TweenLite.js"></script>
+<script src="300x600_data/TimelineMax.js"></script>
+<script src="300x600_data/EasePack.js"></script>
+<script src="300x600_data/CSSPlugin.js"></script>
+<script src="300x600_data/main.js"></script>
+
+
+</body></html>

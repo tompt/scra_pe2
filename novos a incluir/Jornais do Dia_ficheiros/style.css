@@ -1,0 +1,835 @@
+/* Top Elements */
+html, body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-family: 'Open Sans' , sans-serif;
+}
+
+body
+{
+    background-color: #F5F5F5;
+    color: #000;
+    text-align: center;
+}
+
+.erro
+{
+    font-size: 15px;
+}
+
+.divJornais
+{
+    width: 920px;
+    background-color: #F5F5F5;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    border-style: solid;
+    padding: 39px 0px 39px 35px;
+}
+
+.divJornais .conteudo
+{
+    /*padding-left: 13px;     padding-right: 13px;*/
+    padding-bottom: 36px;
+    float: left;
+}
+
+.divJornais .noticias
+{
+    /*     padding-left: 13px;     padding-right: 13px;     */
+    padding-bottom: 36px;
+    float: left;
+    text-align: left;
+    width: 260px;
+    height: 300px;
+}
+
+.divJornais .noticias a
+{
+    color: #006699 !important;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+
+.divJornais .conteudo .data
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.divJornais .conteudo .ver
+{
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    width: 193px;
+    height: 24px;
+    background-color: #006699;
+    color: #FFF;
+    font-size: 13px;
+    padding-top: 3px;
+    background-image: url("/imagens/lupa.png");
+    background-position: 28px 5px;
+    background-repeat: no-repeat;
+}
+
+.divJornais .conteudo .ver:hover
+{
+    color: #FFCC00;
+}
+
+.divAviso
+{
+    background-color: #F5F5F5;
+    border-style: solid;
+    -webkit-border-image: url("imagens/borders_dashed.png") 4 round;
+    -o-border-image: url("imagens/borders_dashed.png") 4 round;
+    border-image: url("imagens/borders_dashed.png") 4 round;
+    padding: 8px;
+}
+
+.tblJornais
+{
+    width: 880px;
+    background-color: #F5F5F5;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    border-style: solid;
+    padding: 39px 35px 39px 35px;
+}
+
+.tdjornal
+{
+    width: 100px;
+    vertical-align: top;
+}
+
+.imagemjornal
+{
+    width: 190px;
+    height: 232px;
+}
+
+li
+{
+    margin-left: 10px;
+}
+
+.logomini
+{
+    display: none;
+    border: none;
+}
+
+.tdRSS
+{
+    display: none;
+    width: 185px;
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+.trEspaco
+{
+    height: 15px;
+}
+
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox
+{
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+/* links */
+
+.linkRodape
+{
+    color: #000000;
+    text-decoration: underline;
+}
+
+a
+{
+    color: #A39A4E;
+    text-decoration: underline;
+}
+a:hover, a:active
+{
+    color: #A84B45;
+    text-decoration: underline;
+}
+
+.linkRSS
+{
+    color: #0000FE;
+    font-size: 12px;
+}
+
+.linkRSS:hover
+{
+    background-color: #F0EEDD;
+    color: #0000FE;
+}
+
+.linkRSScapa
+{
+    color: #042DFF;
+    font-size: 15px;
+}
+
+.linkRSScapa:hover
+{
+    background-color: #F0EEDD;
+    color: #0000FE;
+}
+
+.newsRSS
+{
+    display: none;
+}
+
+
+/* headers */
+
+.h1NomeJornal
+{
+    font-weight: Bold;
+    padding: 10px 10px 10px 0;
+    font-size: 40px;
+    text-align: center;
+}
+
+h2
+{
+    font-weight: Bold;
+    padding: 10px 10px 10px 0;
+    font-size: 30px;
+}
+
+
+
+h1
+{
+    font-size: 30px;
+}
+h3
+{
+    font-size: 18px;
+    font-weight: normal;
+    padding: 15px 0;
+}
+h4
+{
+    color: #A39A4E;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Paragraph */
+p
+{
+    padding: 0 0 15px 0;
+    margin: 0;
+}
+
+img.float-right, img.alignright
+{
+    margin: 5px 0 10px 10px;
+}
+img.float-left, img.alignleft
+{
+    margin: 5px 10px 10px 0;
+}
+
+
+/* form elements */
+zform
+{
+    color: #A39A4E;
+    margin: 0 0 15px 0;
+    padding: 15px;
+    background: #E0DCBB;
+}
+zform p
+{
+    padding: 0 0 5px 0;
+}
+#main zform a
+{
+    color: #A39A4E;
+}
+#main zform a:hover, #main zform a:active
+{
+    color: #A39A4E;
+}
+
+.label
+{
+    font-size: 17px;
+}
+
+.textbox
+{
+    padding: 3px;
+    color: #006699;
+    background: #fff;
+    border: 0px solid #000000;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.inputSub
+{
+    border-color: #9A9A9A;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #F7F7F7;
+    height: 23px;
+}
+
+.inputContact
+{
+    border-color: #9A9A9A;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #FFF;
+    height: 23px;
+    width: 300px;
+}
+
+#tblContact td
+{
+    padding-bottom: 10px;
+}
+
+textarea
+{
+    width: 500px;
+    height: 100px;
+    display: block;
+    border: 1px solid #A39A4E;
+    margin-bottom: 10px;
+}
+
+input.button
+{
+    margin: 0;
+    color: #FFCC00;
+    font-size: 16px;
+    padding: 6px;
+    background: #006699;
+    border: none;
+    font-weight: bold;
+}
+
+.btnEnviar
+{
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+
+
+/********************************************
+   LAYOUT
+********************************************/
+
+#topMenu, #bottomMenu
+{
+    height: 34px;
+    background-color: #003366;
+    text-align: left;
+}
+
+#topMenu table, #bottomMenu table
+{
+    color: #fff;
+    font-weight: bold;
+    margin: 0px auto;
+    width: 1005px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+#bottomMenu table
+{
+    width: 100vw;
+}
+
+#topMenu table a:hover, #bottomMenu table a:hover
+{
+    color: #FFCC00;
+}
+
+#topMenu table a, #bottomMenu table a
+{
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+}
+
+#topMenu table a.actual, #bottomMenu table a.actual
+{
+    text-decoration: none;
+    color: #FFCC00;
+}
+
+.imgFacebook
+{
+    width: 23px;
+    height: 19px;
+    background-image: url(/imagens/social.png);
+    background-position: 0px 0px;
+    vertical-align: middle;
+}
+.imgGooglePlus
+{
+    width: 23px;
+    height: 19px;
+    background-image: url(/imagens/social.png);
+    background-position: 46px 0px;
+    vertical-align: middle;
+}
+
+.imgTwitter
+{
+    width: 23px;
+    height: 19px;
+    background-image: url(/imagens/social.png);
+    background-position: 23px 0px;
+    vertical-align: middle;
+}
+
+.imgFacebook:hover
+{
+    cursor: pointer;
+    background-position: 0px 19px;
+}
+
+.imgTwitter:hover
+{
+    cursor: pointer;
+    background-position: 23px 19px;
+}
+
+.imgGooglePlus:hover
+{
+    cursor: pointer;
+    background-position: 46px 19px;
+}
+
+.imgFacebookMobile
+{
+    width: 44px;
+    height: 44px;
+    background-image: url(/imagens/socialFacebook.png);
+}
+.imgGooglePlusMobile
+{
+    width: 44px;
+    height: 44px;
+    background-image: url(/imagens/socialGooglePlus.png);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.imgTwitterMobile
+{
+    width: 44px;
+    height: 44px;
+    background-image: url(/imagens/socialTwitter.png);
+}
+
+#wrap
+{
+    width: 1046px;
+    background-color: #fff;
+    margin: 0px auto;
+    text-align: left;
+    height: auto;
+    border-left-style: solid;
+    border-right-style: solid;
+    -webkit-border-image: url("imagens/borders.png") 4 round;
+    -o-border-image: url("imagens/borders.png") 4 round;
+    border-image: url("imagens/borders.png") 4 round;
+}
+#content-wrap
+{
+    position: relative;
+    clear: both;
+    float: left;
+}
+#content-wrap .rec
+{
+    text-align: center;
+}
+#header
+{
+    position: relative;
+    width: 100%;
+    height: 110px;
+    color: #fff;
+    background-color: #006699;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+#header table
+{
+    margin: 0px auto;
+    width: 950px;
+    padding: 10px;
+    text-align: left;
+}
+
+#header h1#logo-text a
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -3px;
+    text-decoration: none;
+    color: #fff;
+    top: 67px;
+    left: 85px;
+}
+#header h1#logo-text a:hover, #header h1#logo-text a:active
+{
+    color: #A39A4E;
+}
+
+#header #dataEdicao
+{
+    position: relative;
+    color: #000000;
+    top: 40px;
+}
+
+#header #separador
+{
+    position: relative;
+    color: #000000;
+    top: 50px;
+    border: solid 2px #000000;
+    width: 860px;
+}
+
+/* Main Column */
+#main
+{
+    margin: 0 0 0 45px;
+    height: auto;
+    text-align: center;
+}
+
+/* footer */
+#footer-wrap
+{
+    width: 1046px;
+    margin: 0px auto;
+    height: 36px;
+    background-color: #003366;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 7px;
+}
+#footer-content
+{
+    width: 920px;
+    padding: 30px 0 35px 0;
+}
+
+#footer-wrap p
+{
+    padding: 10px 0;
+}
+#footer-wrap h3
+{
+    color: #fff;
+    margin: 0;
+    padding: 5px 0;
+}
+#footer-wrap a:hover
+{
+    color: #000;
+    text-decoration: none;
+}
+
+/* bottom */
+#footer-bottom
+{
+    clear: both;
+    color: #000;
+    margin: 0 auto;
+    width: 920px;
+    padding: 15px 0 10px 0;
+    text-align: center;
+    font-size: 11px;
+}
+
+/* alignment classes */
+.float-left, .alignleft
+{
+    float: left;
+}
+.float-right, .alignright
+{
+    float: right;
+}
+.align-left
+{
+    text-align: left;
+}
+.align-right
+{
+    text-align: right;
+}
+
+/* clearing */
+.clearer
+{
+    clear: both;
+}
+.clear
+{
+    display: inline-block;
+}
+.clear:after
+{
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: ".";
+}
+
+input[type=radio]
+{
+    display: none;
+}
+
+
+label
+{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 20px;
+    margin-right: 15px;
+}
+
+label:before
+{
+    content: "";
+    border-radius: 8px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    border-style: solid;
+    border-color: #999999;
+    border-width: 1px;
+}
+
+input[type=radio]:checked + label:before
+{
+    background-color: #00669C;
+    color: #f3f3f3;
+    font-size: 30px;
+    text-align: center;
+    line-height: 18px;
+}
+
+/* Default.aspx */
+#imgTitulo
+{
+    display: none;
+    padding-top: 10px;
+}
+
+#tbldivTitulo
+{
+    padding-right: 160px;
+}
+
+#main
+{
+    margin-left: 42px;
+    margin-right: 42px;
+    padding-right: 42px;
+}
+
+@media screen and (max-width: 1068px)
+{
+    #wrap, #footer-wrap, #topMenu, #header
+    {
+        width: 100vw;
+    }
+
+    #tblTopMenu, .tblHeader
+    {
+        width: 100% !important;
+    }
+
+    #tbldivTitulo
+    {
+        padding-right: 0px;
+    }
+}
+
+@media screen and (max-width: 850px)
+{
+    #imgTitulo
+    {
+        display: inline;
+        max-width: 100%;
+    }
+
+    #tblimgTitulo
+    {
+        display: none;
+    }
+
+    #header
+    {
+        height: 140px;
+    }
+
+    .tblFormulario
+    {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        padding-right: 0px !important;
+        padding-left: 5px !important;
+    }
+}
+
+@media screen and (max-width: 450px)
+{
+    #topMenu
+    {
+        display: none;
+    }
+
+    #centerMedia
+    {
+        display: block !important;
+    }
+
+    #bottomMenu
+    {
+        display: block !important;
+    }
+
+    #footer-wrap
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px)
+{
+    #divTitulo
+    {
+        padding: 10px;
+    }
+
+    #imgTitulo
+    {
+        padding: 0px;
+    }
+
+    .txtEmail
+    {
+        width: 71vw !important;
+    }
+    
+    .tblHeader
+    {
+        padding: 0px !important;
+    }
+    
+    .divNotificacoes
+    {
+        float: left;
+        text-align: left;
+        width: 90vw;
+        white-space: pre-wrap;      /* CSS3 */   
+        white-space: -moz-pre-wrap; /* Firefox */    
+        white-space: -pre-wrap;     /* Opera <7 */   
+        white-space: -o-pre-wrap;   /* Opera 7 */    
+        word-wrap: break-word;      /* IE */
+    }
+
+    .tblFormulario
+    {
+        width: 90vw !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media screen and (max-width: 408px)
+{
+    #main
+    {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 370px)
+{
+    #header
+    {
+        height: 130px !important;
+    }
+}
+
+@media screen and (max-width: 339px)
+{
+    #header
+    {
+        height: 150px !important;
+    }
+
+    .divNotificacoes
+    {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 316px)
+{
+    .divNotificacoes
+    {
+        font-size: 13px;
+    }
+}

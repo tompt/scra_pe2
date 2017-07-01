@@ -1,0 +1,8 @@
+nltk
+
+python-termcolor
+
+urllib
+urllib2
+urllib3
+

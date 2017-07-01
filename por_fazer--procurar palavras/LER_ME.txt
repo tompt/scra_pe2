@@ -1,0 +1,15 @@
+
+
+INSTRUÇÕES
+---------------
+1 - usar o ficheiro teste.py pois é este que vai buscar o encontrar_palavras
+2 - o ficheiro "encontrar_palavras_com_dicionario.py" é o que contém as palavras que estão blacklisted (para não serem contabilizadas. são as mais comuns)
+
+Bibliografia:
+http://programminghistorian.org/lessons/counting-frequencies
+
+USO:
+
+...
+LISTA_FREQUENCIAS(TEXTO_QUE_SE_DESEJA_LISTAR)
+...

@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Data Big Bang Blog | Creativity and Problem Solving for Data 
+Science (whatever it may mean…) | An experimental spin-off from Nektra 
+Advanced Computing</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://blog.databigbang.com/xmlrpc.php">
+
+<link rel="dns-prefetch" href="http://platform.twitter.com/">
+<link rel="dns-prefetch" href="http://apis.google.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Data Big Bang Blog » Feed" href="http://blog.databigbang.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Data Big Bang Blog » Comments Feed" href="http://blog.databigbang.com/comments/feed/">
+		<script src="web%20scraping-101-teoria_ficheiros/cbgapi.loaded_1" async=""></script><script src="web%20scraping-101-teoria_ficheiros/cbgapi.loaded_0" async=""></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script type="text/javascript" async="" src="web%20scraping-101-teoria_ficheiros/widgets.js"></script><script async="" src="web%20scraping-101-teoria_ficheiros/analytics.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/blog.databigbang.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.4"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="web%20scraping-101-teoria_ficheiros/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="tfg_style-css" href="web%20scraping-101-teoria_ficheiros/tfg_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="mt-shcore-style-css" href="web%20scraping-101-teoria_ficheiros/shCore_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="mt-theme-style-css" href="web%20scraping-101-teoria_ficheiros/shThemeDefault_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="ye_dynamic-css" href="web%20scraping-101-teoria_ficheiros/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="syntax-style-css" href="web%20scraping-101-teoria_ficheiros/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="syntax-merriweather-css" href="web%20scraping-101-teoria_ficheiros/css.css" type="text/css" media="all">
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shCore.js"></script>
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shAutoloader.js"></script>
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/jquery.js"></script>
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/jquery-migrate.js"></script>
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/external-tracking.js"></script>
+<link rel="https://api.w.org/" href="http://blog.databigbang.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.databigbang.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.databigbang.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.4">
+	<link type="text/css" rel="stylesheet" href="web%20scraping-101-teoria_ficheiros/shCore.css">
+	<link type="text/css" rel="stylesheet" href="web%20scraping-101-teoria_ficheiros/shThemeDefault.css">
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shCore_002.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushBash.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushCpp.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushCss.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushDelphi.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushDiff.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushGroovy.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushJava.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushJScript.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushPerl.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushPhp.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushPlain.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushPython.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushRuby.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushScala.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushSql.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushVb.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushYaml.js"></script>
+	<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/shBrushXml.js"></script>
+	<script type="text/javascript">		
+		SyntaxHighlighter.config.clipboardSwf = 'http://blog.databigbang.com/wp-content/plugins/syntax-highlighter-and-code-prettifier/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+	<!-- Google Analytics Tracking by Google Analyticator 6.5.2: http://www.videousermanuals.com/google-analyticator/ -->
+<script type="text/javascript">
+    var analyticsFileTypes = [''];
+    var analyticsSnippet = 'disabled';
+    var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-562204-24', 'auto');
+ 
+	ga('send', 'pageview');
+</script>
+<script async="" type="text/javascript" src="web%20scraping-101-teoria_ficheiros/count.js"></script><script type="text/javascript" charset="utf-8" async="" src="web%20scraping-101-teoria_ficheiros/button.js"></script><script src="web%20scraping-101-teoria_ficheiros/count-data.js"></script></head>
+
+<body class="home blog">
+<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header" role="banner">
+				<div class="site-header-wrapper clear">
+			<div class="site-branding">
+				<h1 class="site-title"><a href="http://blog.databigbang.com/" title="Data Big Bang Blog" rel="home">Data Big Bang Blog</a></h1>
+				<h2 class="site-description">Creativity and Problem Solving for Data
+ Science (whatever it may mean…) | An experimental spin-off from Nektra 
+Advanced Computing</h2>
+			</div>
+					</div>
+	</header><!-- #masthead -->
+	<div id="main" class="site-main">
+		<h1 id="toggle-nav" class="menu-toggle"><span class="screen-reader-text">Menu</span></h1>
+		<nav id="site-navigation" class="navigation-main" role="navigation">
+			<div class="screen-reader-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+			<div class="menu"><ul style="margin-top: 99px;">
+<li class="current_page_item"><a href="http://blog.databigbang.com/">Home</a></li><li class="page_item page-item-876"><a href="http://blog.databigbang.com/big-data-and-data-science-blogs-ordered-by-google-pagerank/">Big Data and Data Science Blogs Ordered by Google PageRank</a></li>
+</ul></div>
+		</nav><!-- #site-navigation -->
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+		
+						
+				<article id="post-1016" class="no-thumbnail post-1016 post type-post status-publish format-standard hentry category-web-scraping tag-birders tag-birding tag-calls tag-ibc tag-nepal tag-xeno-canto">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/the-call-of-the-web-scraper/" rel="bookmark">The Call of the Web Scraper</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fthe-call-of-the-web-scraper%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I0_1493853747808" name="I0_1493853747808" src="web%20scraping-101-teoria_ficheiros/fastbutton.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button.htm" data-url="http://blog.databigbang.com/the-call-of-the-web-scraper/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge_002.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a.htm" id="iframe-stmblpn-widget-1" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">   (function() {     var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true;     li.src = window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><p>Astrid, our Data Big Bang and <a href="http://blog.nektra.com/">Nektra</a> content editor, is heading to Nepal on a birding and trekking quest. She needs birds sounds from <a title="xeno-canto" href="http://www.xeno-canto.org/">xeno-canto</a>&nbsp;and <a title="IBC" href="http://ibc.lynxeds.com/">The Internet Bird Collection</a>
+ to identify the hundreds of species found in Nepal, but the site does 
+not offer batch downloads. We could not pass up the opportunity to offer
+ a useful scraper for birders. We found a blog post with code to 
+download batches of recordings for specific species (not specific 
+countries): <a title="Web Scraping with BeautifulSoup and Python" href="http://www.kscottz.com/web-scraping-with-beautifulsoup-and-python/">Web Scraping with BeautifulSoup and Python</a>. Like most script developers. we want to do things our own way. <a title="The Call of the Web Scraper Code" href="https://github.com/databigbang/The-Call-of-the-Web-Scraper">Our code</a> allows simultaneous download of calls to speed up the process for specially diverse countries.</p>
+<p>Web scraping is often associated with indecorous Internet behavior, 
+but in fact, it is also a way to automate tedious manual work. Imagine 
+that you want to have the complete schedule from EasyJet to choose a 
+flight. It can take less than one hour to scrape all the desired routes.
+ Right now there are no entry-level tools for scraping sites like there 
+are for photo editing. Fortunately, script developers share their 
+scraping code on sites like ScraperWiki.</p>
+<h2>If you liked this article, you might also like:</h2>
+<ul>
+<li><a href="http://blog.databigbang.com/scraping-web-sites-which-dynamically-load-data/">Scraping Web Sites which Dynamically Load Data</a></li>
+<li><a href="http://blog.databigbang.com/precise-scraping-with-google-chrome/">Precise Scraping with Google Chrome</a></li>
+<li><a href="http://blog.databigbang.com/web-scraping-101-pulling-stories-from-hacker-news/">Web Scraping 101: Pulling Stories from Hacker News</a></li>
+</ul>
+<p>&nbsp;</p>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/the-call-of-the-web-scraper/" title="7:06 pm" rel="bookmark"><time class="entry-date" datetime="2013-11-18T19:06:19+00:00">November 18, 2013</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/birders/" rel="tag">birders</a>, <a href="http://blog.databigbang.com/tag/birding/" rel="tag">birding</a>, <a href="http://blog.databigbang.com/tag/calls/" rel="tag">calls</a>, <a href="http://blog.databigbang.com/tag/ibc/" rel="tag">ibc</a>, <a href="http://blog.databigbang.com/tag/nepal/" rel="tag">nepal</a>, <a href="http://blog.databigbang.com/tag/xeno-canto/" rel="tag">xeno-canto</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/the-call-of-the-web-scraper/#disqus_thread" data-disqus-identifier="1016 http://blog.databigbang.com/?p=1016">1 Comment</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<article id="post-999" class="no-thumbnail post-999 post type-post status-publish format-standard hentry category-scraping-2 category-web-scraping tag-beautifulsoup tag-hacker-news tag-hartley-brody tag-hn tag-python tag-python-requests tag-scraping tag-the-ultimate-guide-to-web-scraping">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/web-scraping-101-pulling-stories-from-hacker-news/" rel="bookmark">Web Scraping 101: Pulling Stories from Hacker News</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fweb-scraping-101-pulling-stories-from-hacker-news%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_1"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I1_1493853747814" name="I1_1493853747814" src="web%20scraping-101-teoria_ficheiros/fastbutton_002.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-1" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button_002.htm" data-url="http://blog.databigbang.com/web-scraping-101-pulling-stories-from-hacker-news/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a_002.htm" id="iframe-stmblpn-widget-2" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">   (function() {     var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true;     li.src = window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><p><em>This is a guest post by Hartley Brody, whose book “<a title="The Ultimate Guide to Web Scraping" href="http://blog.hartleybrody.com/guide-to-web-scraping/">The Ultimate Guide to Web Scraping</a>” goes into much more detail on web scraping best practices. You can <a href="https://twitter.com/hartleybrody">follow him</a> on Twitter, it’ll make his day! Thanks for contributing Hartley!</em></p>
+<p>Hacker News is a treasure trove of information on the hacker 
+zeitgeist. There are all sorts of cool things you could do with the 
+information once you pull it, but first you need to scrape a copy for 
+yourself.</p>
+<p>Hacker News is actually a bit tricky to scrape since the site’s 
+markup isn’t all that semantic — meaning the HTML elements and 
+attributes don’t do a great job of explaining the content they 
+contain.&nbsp;Everything on the HN homepage is in two tables, and there 
+aren’t that many <code>class</code>es or <code>id</code>s to help us 
+hone in on the particular HTML elements that hold stories. Instead, 
+we’ll have to rely more on patterns and counting on elements as we go.</p>
+<p>Pull up the web inspector in Chrome and try zooming up and down the 
+DOM tree. You’ll see that the markup is pretty basic. There’s an outer 
+table that’s basically just used to keep things centered (85% of the 
+screen width) and then an inner table that holds the stories.</p>
+<p><a href="http://blog.databigbang.com/wp-content/uploads/2013/09/scraping-hacker-news.png"><img class="alignnone size-full wp-image-1013" alt="Debugging Hacker News Page" src="web%20scraping-101-teoria_ficheiros/scraping-hacker-news.png" srcset="http://blog.databigbang.com/wp-content/uploads/2013/09/scraping-hacker-news.png 594w, http://blog.databigbang.com/wp-content/uploads/2013/09/scraping-hacker-news-300x197.png 300w" sizes="(max-width: 594px) 100vw, 594px" width="594" height="392"></a></p>
+<p>If you look inside the inner table, you’ll see that the rows come in 
+groups of three: the first row in each group contains the headlines and 
+story links, the second row contains the metadata about each story — 
+like who posted it and how many points it has — and the third row is 
+empty and adds a bit of padding between stories.&nbsp;This should be 
+enough information for us to get started, so let’s dive into the code.</p>
+<p>I’m going to try and avoid the religious tech wars and just say that I’m using Python and my trusty standby libraries — <a title="Requests: HTTP for Humans" href="http://docs.python-requests.org/en/latest/">requests</a> and <a title="Beautiful Soup" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>
+ — although there are many other great options out there. Feel free to 
+use your HTTP requests library and HTML parsing library of choice.</p>
+<p>In its purest form, web scraping is two simple steps: 1. Make a 
+request to a website that generates HTML, and 2. Pull the content you 
+want out of the HTML that’s returned.</p>
+<p>As the programmer, all you need to do is a bit of pattern recognition
+ to find the URLs to request and the DOM elements to parse, and then you
+ can let your libraries do the heavy lifting. Our code will just glue 
+the two functions together to pull out just what we need.</p>
+<div><div id="highlighter_496393" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python keyword">import</code> <code class="python plain">requests</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="python keyword">from</code> <code class="python plain">BeautifulSoup </code><code class="python keyword">import</code> <code class="python plain">BeautifulSoup</code></div><div class="line number4 index3 alt1"><code class="python comments"># make a single request to the homepage</code></div><div class="line number5 index4 alt2"><code class="python plain">r </code><code class="python keyword">=</code> <code class="python plain">requests.get(</code><code class="python string">"<a href="https://news.ycombinator.com/">https://news.ycombinator.com/</a>"</code><code class="python plain">)</code></div><div class="line number6 index5 alt1"><code class="python comments"># convert the plaintext HTML markup into a DOM-like structure that we can search</code></div><div class="line number7 index6 alt2"><code class="python plain">soup </code><code class="python keyword">=</code> <code class="python plain">BeautifulSoup(r.text)</code></div><div class="line number8 index7 alt1"><code class="python comments"># parse through the outer and inner tables, then find the rows</code></div><div class="line number9 index8 alt2"><code class="python plain">outer_table </code><code class="python keyword">=</code> <code class="python plain">soup.find(</code><code class="python string">"table"</code><code class="python plain">)</code></div><div class="line number10 index9 alt1"><code class="python plain">inner_table </code><code class="python keyword">=</code> <code class="python plain">outer_table.findAll(</code><code class="python string">"table"</code><code class="python plain">)[</code><code class="python value">1</code><code class="python plain">]</code></div><div class="line number11 index10 alt2"><code class="python plain">rows </code><code class="python keyword">=</code> <code class="python plain">inner_table.findAll(</code><code class="python string">"tr"</code><code class="python plain">)</code></div><div class="line number12 index11 alt1"><code class="python plain">stories </code><code class="python keyword">=</code> <code class="python plain">[]</code></div><div class="line number13 index12 alt2"><code class="python comments"># create an empty list for holding stories</code></div><div class="line number14 index13 alt1"><code class="python plain">rows_per_story </code><code class="python keyword">=</code> <code class="python value">3</code></div><div class="line number15 index14 alt2"><code class="python comments"># helps us iterate over the table</code></div><div class="line number16 index15 alt1"><code class="python keyword">for</code> <code class="python plain">row_num </code><code class="python keyword">in</code> <code class="python functions">range</code><code class="python plain">(</code><code class="python value">0</code><code class="python plain">, </code><code class="python functions">len</code><code class="python plain">(rows)</code><code class="python keyword">-</code><code class="python plain">rows_per_story, rows_per_story):</code></div><div class="line number17 index16 alt2"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python comments"># grab the 1st &amp; 2nd rows and create an array of their cells</code></div><div class="line number18 index17 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python plain">story_pieces </code><code class="python keyword">=</code> <code class="python plain">rows[row_num].findAll(</code><code class="python string">"td"</code><code class="python plain">)</code></div><div class="line number19 index18 alt2"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python plain">meta_pieces </code><code class="python keyword">=</code> <code class="python plain">rows[row_num </code><code class="python keyword">+</code> <code class="python value">1</code><code class="python plain">].findAll(</code><code class="python string">"td"</code><code class="python plain">)</code></div><div class="line number20 index19 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python comments"># create our story dictionary</code></div><div class="line number21 index20 alt2"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python plain">story </code><code class="python keyword">=</code> <code class="python plain">{ </code><code class="python string">"current_position"</code><code class="python plain">: story_pieces[</code><code class="python value">0</code><code class="python plain">].string, </code><code class="python string">"link"</code><code class="python plain">: story_pieces[</code><code class="python value">2</code><code class="python plain">].find(</code><code class="python string">"a"</code><code class="python plain">)[</code><code class="python string">"href"</code><code class="python plain">], </code><code class="python string">"title"</code><code class="python plain">: story_pieces[</code><code class="python value">2</code><code class="python plain">].find(</code><code class="python string">"a"</code><code class="python plain">).string, }</code></div><div class="line number22 index21 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python keyword">try</code><code class="python plain">:</code></div><div class="line number23 index22 alt2"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python plain">story[</code><code class="python string">"posted_by"</code><code class="python plain">] </code><code class="python keyword">=</code> <code class="python plain">meta_pieces[</code><code class="python value">1</code><code class="python plain">].findAll(</code><code class="python string">"a"</code><code class="python plain">)[</code><code class="python value">0</code><code class="python plain">].string</code></div><div class="line number24 index23 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python keyword">except</code> <code class="python plain">IndexError:</code></div><div class="line number25 index24 alt2"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python keyword">continue</code> <code class="python comments"># this is a job posting, not a story stories.append(story)</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="python keyword">import</code> <code class="python plain">json</code></div><div class="line number28 index27 alt1"><code class="python functions">print</code> <code class="python plain">json.dumps(stories, indent</code><code class="python keyword">=</code><code class="python value">1</code><code class="python plain">)</code></div></div></td></tr></tbody></table></div></div>
+<p>You’ll notice that inside the for loop, when we’re iterating over the
+ rows in the table two at a time, we’re parsing out the individual 
+pieces of content (link, title, etc) by skipping to a particular number 
+in the list of <code>&lt;td&gt;</code> elements returned. Generally, you want to avoid using <a href="http://en.wikipedia.org/wiki/Magic_number_%28programming%29#Unnamed_numerical_constants">magic numbers</a> in your code, but without more semantic markup, this is what we’re left to work with.</p>
+<p>This obviously makes the scraping code brittle, if the site is ever 
+redesigned or the elements on the page move around at all, this code 
+will no longer work as designed. But I’m guessing from the consistently 
+minimalistic, retro look that HN isn’t getting a facelift any time soon.
+ ;)</p>
+<h2>Extension Ideas</h2>
+<p>Running this script top-to-bottom will print out a list of all the 
+current stories on HN. But if you really want to do something 
+interesting, you’ll probably want to grab snapshots of the homepage and 
+the newest page fairly regularly. Maybe even every minute.</p>
+<p>There are a number of cool projects that have already built cool 
+extensions and visualizations from (I presume) scraping data from Hacker
+ News, such as:</p>
+<ul>
+<li>http://hnrankings.info/</li>
+<li>http://api.ihackernews.com/</li>
+<li>https://www.hnsearch.com/</li>
+</ul>
+<p>It’d be a good idea to set this up using <code>crontab</code> on your web server. Run <code>crontab -e</code> to pull up a vim editor and edit your machine’s cron jobs, and add a line that looks like this:</p>
+<p><code>* * * * * python /path/to/hn_scraper.py</code></p>
+<p>Then save it and exit (&lt;esc&gt; + “:wq”) and you should be good to
+ go. Obviously, printing things to the command line doesn’t do you much 
+good from a cron job, so you’ll probably want to change the script to 
+write each snapshot of stories into your database of choice for later 
+retrieval.</p>
+<h2>Basic Web Scraping Etiquette</h2>
+<p>If you’re going to be scraping any site regularly, it’s important to 
+be a good web scraping citizen so that your script doesn’t ruin the 
+experience for the rest of us… aw who are we kidding, you’ll definitely 
+get blocked before your script causes any noticeable site degradation 
+for other users on Hacker News. But still, it’s good to keep these 
+things in mind whenever you’re making frequent scrapes on the same site.</p>
+<p>Your HTTP Requests library probably lets you set headers like <code>User Agent</code> and <code>Accept-Encoding</code>.
+ You should set your user agent to something that identifies you and 
+provides some contact information in case any site admins want to get in
+ touch.</p>
+<p>You also want to ensure you’re asking for the gzipped version of the 
+site, so that you’re not hogging bandwidth with uncompressed page 
+requests. Use the Accept-Encoding request header to tell the server your
+ client can accept gzipped responses. The Python requests library <a href="http://www.python-requests.org/en/latest/community/faq/#encoded-data">automagically unzips</a> those gzipped responses for you.</p>
+<p>You might want to modify line 4 above to look more like this:<br>
+<code><br>
+headers = { "User-Agent": "HN Scraper / Contact me: ", "Accept-Encoding": "gzip", }<br>
+r = requests.get("https://news.ycombinator.com/", headers=headers)<br>
+</code><br>
+Note that if you were doing the scraping with some sort of headless browser or something like <a title="Selenium is a suite of tools to automate web browsers across many platforms" href="http://docs.seleniumhq.org/">Selenium</a>
+ which actually downloads all the resources on the page and renders 
+them, you’d also want to make sure you’re caching the stylesheet and 
+images to avoid unnecessary extra requests.</p>
+<h2>If you liked this article, you might also like:</h2>
+<ol>
+<li><a href="http://blog.databigbang.com/scraping-web-sites-which-dynamically-load-data/">Scraping Web Sites which Dynamically Load Data</a></li>
+<li><a href="http://blog.databigbang.com/ideas-and-execution-magic-chart/">Ideas and Execution Magic Chart</a> (includes a Hacker News Search Hack)</li>
+<li><a href="http://blog.databigbang.com/scraping-web-sites-which-dynamically-load-data/">Running Your Own Anonymous Rotating Proxies</a></li>
+</ol>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/web-scraping-101-pulling-stories-from-hacker-news/" title="12:20 am" rel="bookmark"><time class="entry-date" datetime="2013-09-12T00:20:58+00:00">September 12, 2013</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/beautifulsoup/" rel="tag">beautifulsoup</a>, <a href="http://blog.databigbang.com/tag/hacker-news/" rel="tag">hacker-news</a>, <a href="http://blog.databigbang.com/tag/hartley-brody/" rel="tag">hartley-brody</a>, <a href="http://blog.databigbang.com/tag/hn/" rel="tag">hn</a>, <a href="http://blog.databigbang.com/tag/python/" rel="tag">python</a>, <a href="http://blog.databigbang.com/tag/python-requests/" rel="tag">python-requests</a>, <a href="http://blog.databigbang.com/tag/scraping/" rel="tag">scraping</a>, <a href="http://blog.databigbang.com/tag/the-ultimate-guide-to-web-scraping/" rel="tag">the-ultimate-guide-to-web-scraping</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/web-scraping-101-pulling-stories-from-hacker-news/#disqus_thread" data-disqus-identifier="999 http://blog.databigbang.com/?p=999">3 Comments</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<article id="post-982" class="no-thumbnail post-982 post type-post status-publish format-standard hentry category-crawling category-infrastructure-2 category-scraping-2 category-web-scraping tag-ajax tag-google-chrome-extension tag-javascript tag-news tag-scraping tag-twitter tag-xmlhttprequest">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/scraping-web-sites-which-dynamically-load-data/" rel="bookmark">Scraping Web Sites which Dynamically Load Data</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fscraping-web-sites-which-dynamically-load-data%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_2"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I2_1493853747819" name="I2_1493853747819" src="web%20scraping-101-teoria_ficheiros/fastbutton_003.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-2" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button_003.htm" data-url="http://blog.databigbang.com/scraping-web-sites-which-dynamically-load-data/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge_010.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a_003.htm" id="iframe-stmblpn-widget-3" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">
+   (function() {     var li = document.createElement('script'); li.type =
+ 'text/javascript'; li.async = true;     li.src = 
+window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';   
+  var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><h3>Preface</h3>
+<p>More and more sites are implementing dynamic updates of their 
+contents. New items are added as the user scrolls down. Twitter is one 
+of these sites. Twitter only displays a certain number of news items 
+initially, loading additional ones on demand. How can sites with this 
+behavior be scraped?</p>
+<p>In the <a href="http://blog.databigbang.com/precise-scraping-with-google-chrome/">previous article</a>
+ we played with Google Chrome extensions to scrape a forum that depends 
+on Javascript and XMLHttpRequest. Here we use the same technique for 
+retrieving a specific number of news items based on a specific search. A
+ list of additional alternatives is available in the <a href="http://blog.databigbang.com/web-scraping-ajax-and-javascript-sites/">Web Scraping Ajax and Javascript Sites</a> article.</p>
+<h3>Code</h3>
+<h4>Instructions</h4>
+<ol>
+<li>Download the code from <a href="https://github.com/databigbang/twitter-search-scraping-using-google-chrome">github</a></li>
+<li>Load the extension in Google Chrome: settings =&gt; extensions =&gt; check “developer mode” =&gt; load unpacked extension</li>
+<li>An “eye” icon now appears on the Google Chrome bar</li>
+<li>Go to the Twitter’s search page https://twitter.com/search-home and enter your search keywords</li>
+<li>Now press the “eye” and then the start button</li>
+<li>The scraping output is displayed on the console as JSON</li>
+</ol>
+<h4>Customization</h4>
+<ol>
+<li><span style="line-height: 13px;">To modify the number of news items 
+to be scraped open the file inject.js and change the scrollBottom(100); 
+line by the number of items you would like (e.g: scrollBottom(200);)</span></li>
+</ol>
+<h3>Acknowledgments</h3>
+<p>This source code was written by Matias Palomera from <a href="http://www.nektra.com/">Nektra Advanced Computing</a>.</p>
+<h3>If you like this article, you might also be interested in</h3>
+<ul>
+<li><a href="http://blog.databigbang.com/running-your-own-anonymous-rotating-proxies/">Running Your Own Anonymous Rotating Proxies</a></li>
+<li><a href="http://blog.databigbang.com/scraping-for-semi-automatic-market-research/">Scraping for Semi-automatic Market Research</a></li>
+<li><a href="http://blog.databigbang.com/automated-discovery-of-blog-feeds-and-twitter-facebook-linkedin-accounts-connected-to-business-website/">Automated Discovery of Blog Feeds and Twitter, Facebook, LinkedIn Accounts</a></li>
+<li><a href="http://blog.databigbang.com/distributed-scraping-with-multiple-tor-circuits/">Distributed Scraping With Multiple Tor Circuits</a></li>
+<li><a href="http://blog.nektra.com/main/2013/06/26/sql-server-interception-and-sql-injection-attacks-prevention/">SQL Server Interception and SQL Injection Attack Prevention</a></li>
+</ul>
+<h3>Further Reading</h3>
+<ul>
+<li><a href="http://diegobasch.com/some-fresh-twitter-stats-as-of-july-2012">Some Fresh Twitter Stats (as of July 2012, Dataset Included)</a></li>
+<li><a href="http://blog.nektra.com/main/2012/06/01/reverse-engineering-and-the-cloud/">Reverse Engineering and The Cloud</a></li>
+<li><a href="http://blog.nektra.com/main/2013/07/23/instrumenting-direct3d-applications-to-capture-video-and-calculate-frames-per-second/">Hooking DirectX Applications to Capture Video and Calculate Frames Per Second</a></li>
+</ul>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/scraping-web-sites-which-dynamically-load-data/" title="6:49 pm" rel="bookmark"><time class="entry-date" datetime="2013-07-29T18:49:30+00:00">July 29, 2013</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/ajax/" rel="tag">ajax</a>, <a href="http://blog.databigbang.com/tag/google-chrome-extension/" rel="tag">google-chrome-extension</a>, <a href="http://blog.databigbang.com/tag/javascript/" rel="tag">javascript</a>, <a href="http://blog.databigbang.com/tag/news/" rel="tag">news</a>, <a href="http://blog.databigbang.com/tag/scraping/" rel="tag">scraping</a>, <a href="http://blog.databigbang.com/tag/twitter/" rel="tag">twitter</a>, <a href="http://blog.databigbang.com/tag/xmlhttprequest/" rel="tag">xmlhttprequest</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/scraping-web-sites-which-dynamically-load-data/#disqus_thread" data-disqus-identifier="982 http://blog.databigbang.com/?p=982">17 Comments</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<article id="post-967" class="no-thumbnail post-967 post type-post status-publish format-standard hentry category-entrepreneurship category-web-scraping tag-extension tag-forum tag-google-chrome tag-marketing tag-scraping tag-vmware-thinapp">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/precise-scraping-with-google-chrome/" rel="bookmark">Precise Scraping with Google Chrome</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fprecise-scraping-with-google-chrome%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_3"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I3_1493853747823" name="I3_1493853747823" src="web%20scraping-101-teoria_ficheiros/fastbutton_004.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-3" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button_004.htm" data-url="http://blog.databigbang.com/precise-scraping-with-google-chrome/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge_005.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a_004.htm" id="iframe-stmblpn-widget-4" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">
+   (function() {     var li = document.createElement('script'); li.type =
+ 'text/javascript'; li.async = true;     li.src = 
+window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';   
+  var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><p>Developers
+ often search the vast corpus of scraping tools for one that is capable 
+of simulating a full browser. Their search is pointless. Full browsers 
+with extension capabilities are great scraping tools. Among extensions, 
+Google Chrome’s are by far the easiest to develop, while Mozilla has 
+less restrictive APIs. Google offers a second way to control Chrome: the
+ Debugger protocol. Unfortunately, Debugger protocol is pretty slow.</p>
+<p>The Google Chrome extension API is an excellent choice for writing an
+ up to date scraper which uses a full browser with the latest HTML5 
+features and performance improvements. In a <a href="http://blog.databigbang.com/scraping-for-semi-automatic-market-research/">previous article</a>,
+ we described how to scrape Microsoft TechNet App-V forum. Now, we will 
+focus on VMWare’s ThinApp. In this case, we develop a Google extension 
+instead of a Python script.</p>
+<h2>Procedure</h2>
+<ol>
+<li>You will need Google Chrome, Python 2.7, and lxml.html</li>
+<li>Download the code from <a href="https://github.com/databigbang/scraping-with-google-chrome/">github</a></li>
+<li>Install the Google Chrome extension</li>
+<li>Enter the&nbsp;<a href="http://communities.vmware.com/community/vmtn/thinapp/forum/content?filterID=contentstatus[published]%7Eobjecttype%7Eobjecttype[thread]">VMware ThinApp: Discussion Forum</a></li>
+<li>The scraper starts automatically</li>
+<li>Once it stops, go to the Google Chrome console and copy&amp;paste the results in JSON format to the thinapp.json file</li>
+<li>Run the thinapp_parser.py to generate the thinapp.csv file with the results</li>
+<li>Open the thinapp.csv file with a spreadsheet</li>
+<li>To rank the results, add a column which divides the number of views by the number of days.</li>
+</ol>
+<h2>Our Results: Top Twenty Threads</h2>
+<ol>
+<li>Registry Isolation…</li>
+<li>Thinapp Internet Explorer 10</li>
+<li>Process (ifrun60.exe) remains active (Taskmanager) after closing thinapp under windows7 (xp works)</li>
+<li>Google Chrome browser</li>
+<li>File association not passing file to thinapp package</li>
+<li>Adobe CS3 Design Premium and FlexNET woes…</li>
+<li>How to thinapp Office 2010?</li>
+<li>Size limit of .dat file?</li>
+<li>ThinApp Citrix Receiver 3.2</li>
+<li>Visio 2010 Thinapp – Licensing issue</li>
+<li>Thinapp Google Chrome</li>
+<li>Thinapp IE7 running on Windows 7</li>
+<li>Adobe CS 6</li>
+<li>Failed to open, find, or create Sandbox directory</li>
+<li>Microsoft Project and Office issues</li>
+<li>No thinapp in thinapp factory + unable to create workpool</li>
+<li>IE8 Thinapp crashing with IE 10 installed natively</li>
+<li>ThinApp MS project and MS Visio 2010</li>
+<li>Difference between ESXi and vSphere and VMware view ??</li>
+<li>ThinAPP with AppSense</li>
+</ol>
+<h2>Acknowledgments</h2>
+<p>Matias Palomera from&nbsp;<a href="http://www.nektra.com/">Nektra Advanced Computing</a>&nbsp;wrote the code.</p>
+<h2>Notes</h2>
+<ul>
+<li>This approach can be successfully used to scrape heavy Javascript and AJAX sites</li>
+<li>Instead of copying the JSON data from the Chrome console, you can use the <a href="http://developer.chrome.com/apps/fileSystem.html">FileSystem API</a>&nbsp;to write the results to a file</li>
+<li>You can also write the CSV directly from Chrome instead of using an extra script</li>
+</ul>
+<h2>If you like this article, you might also be interested in</h2>
+<ol>
+<li><span style="line-height: 13px;"><a href="http://blog.databigbang.com/scraping-for-semi-automatic-market-research/">Scraping for Semi-automatic Market Research</a><br>
+</span></li>
+<li><a href="http://blog.nektra.com/main/2013/03/21/benchmarking-microsoft-offices-powerpoint-virtualization-microsoft-app-v-vs-symantec-workspace-virtualization/">Application Virtualization Benchmarking: Microsoft App-V Vs. Symantec</a></li>
+<li><a href="http://blog.databigbang.com/web-scraping-ajax-and-javascript-sites/">Web Scraping Ajax and Javascript Sites</a>&nbsp;[using HTMLUnit]</li>
+<li><a href="http://blog.databigbang.com/distributed-scraping-with-multiple-tor-circuits/">Distributed Scraping With Multiple Tor Circuits</a></li>
+<li><a href="http://blog.nektra.com/main/2013/03/15/benchmarking-ie6-virtualization-vmware-thinapp-vs-symantec-workspace-virtualization/">VMWare ThinApp vs. Symantec Workspace</a></li>
+</ol>
+<h2>Resources</h2>
+<ol>
+<li><a href="http://www.pqr.com/application-virtualization-smackdown">Application Virtualization Smackdown</a></li>
+<li><a href="https://451research.com/report-long?icid=2376">Application Virtualization Market Report</a></li>
+</ol>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/precise-scraping-with-google-chrome/" title="5:48 pm" rel="bookmark"><time class="entry-date" datetime="2013-07-05T17:48:07+00:00">July 5, 2013</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/extension/" rel="tag">extension</a>, <a href="http://blog.databigbang.com/tag/forum/" rel="tag">forum</a>, <a href="http://blog.databigbang.com/tag/google-chrome/" rel="tag">google-chrome</a>, <a href="http://blog.databigbang.com/tag/marketing/" rel="tag">marketing</a>, <a href="http://blog.databigbang.com/tag/scraping/" rel="tag">scraping</a>, <a href="http://blog.databigbang.com/tag/vmware-thinapp/" rel="tag">vmware-thinapp</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/precise-scraping-with-google-chrome/#disqus_thread" data-disqus-identifier="967 http://blog.databigbang.com/?p=967">1 Comment</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<article id="post-959" class="no-thumbnail post-959 post type-post status-publish format-standard hentry category-entrepreneurship category-scraping-2 tag-app-v tag-application-virtualization tag-lxml-html tag-marketing tag-microsoft-technet tag-scraping">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/scraping-for-semi-automatic-market-research/" rel="bookmark">Web Scraping for Semi-automatic Market Research</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fscraping-for-semi-automatic-market-research%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_4"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I4_1493853747827" name="I4_1493853747827" src="web%20scraping-101-teoria_ficheiros/fastbutton_005.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-4" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button_005.htm" data-url="http://blog.databigbang.com/scraping-for-semi-automatic-market-research/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge_006.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a_005.htm" id="iframe-stmblpn-widget-5" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">
+   (function() {     var li = document.createElement('script'); li.type =
+ 'text/javascript'; li.async = true;     li.src = 
+window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';   
+  var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><p>It is easy to web scrape <a href="http://social.technet.microsoft.com/Forums/en-US/categories">Microsoft TechNet Forums</a>&nbsp;(look at the xml output here: <a href="http://social.technet.microsoft.com/Forums/en-US/mdopappv/threads?outputAs=xml">http://social.technet.microsoft.com/Forums/en-US/mdopappv/threads?outputAs=xml</a>)and
+ normalize the resulting information to have a better idea of each 
+thread’s rank based on views and initial publication date. Knowing how 
+issues are ranked can help a company choose what to focus on.</p>
+<p>This code was used to scrape Microsoft TechNet’s forums. In the example below we scraped the <a href="http://social.technet.microsoft.com/Forums/en-US/mdopappv/threads">App-V forum</a>,
+ since it is one of the application virtualization market’s leaders 
+along with VMware ThinApp, and Symantec Workspace Virtualization.</p>
+<p>These are the top ten threads for the App-V forum:</p>
+<ol>
+<li>“Exception has been thrown by the target of an invocation”</li>
+<li>Office 2010 KMS activation Error: 0xC004F074</li>
+<li>App-V 5 Hotfix 1</li>
+<li>Outlook 2010 Search Not Working</li>
+<li>Java 1.6 update 17 for Kronos (webapp)</li>
+<li>Word 2010 There was a problem sending the command to the program</li>
+<li>Utility to quickly install/remove App-V packages</li>
+<li>SAP GUI 7.1</li>
+<li>The dreaded: “The Application Virtualization Client could not launch the application”</li>
+<li>Sequencing Chrome with 4.6 SP1 on Windows 7 x64</li>
+</ol>
+<p>The results show how frequently customers have issues with 
+virtualizing Microsoft Office, Key Management Services (KMS), SAP, and 
+Java. App-V competitors like Symantec Workspace Virtualization and 
+VMWare ThinApp have similar problems. Researching markets this way gives
+ you a good idea of areas where you can contribute solutions.</p>
+<p>The scraper stores all the information in a SQLite database. The database can be exported using the <em>csv_App-V.py</em>
+ script to an UTF-8 CSV file. We imported the file with Microsoft Excel 
+and then normalized the ranking of the threads. To normalize it we 
+divided the number of views by the age of the thread so threads with 
+more views per day rank higher. Again, the scraper can be used on any 
+Microsoft forum on Social TechNet. Try it out on your favorite forum.</p>
+<h2>Code</h2>
+<p><strong>Prerequisites:&nbsp;</strong><a href="http://lxml.de/lxmlhtml.html">lxml.html</a></p>
+<p>The code is available at <a href="https://github.com/databigbang/microsoft-technet-forums-scraping">microsoft-technet-forums-scraping</a>
+ [github]&nbsp;. It was written by Matias Palomera from Nektra Advanced 
+Computing, who received valuable support from Victor Gonzalez.</p>
+<h2>Usage</h2>
+<ol>
+<li><span style="line-height: 13px;">Run <em>scrapper-App-V.py</em></span></li>
+<li>Then run <em>csv_App-V.p</em>y</li>
+<li>The results are available in the App-V.csv file</li>
+</ol>
+<h2>Acknowledgments</h2>
+<p>Matias Palomera from <a href="http://www.nektra.com/">Nektra Advanced Computing</a>&nbsp;wrote the code.</p>
+<h2>Notes</h2>
+<ol>
+<li>This is a single thread code. You can take a look at our&nbsp;<a href="https://github.com/srw/discovering-web-resources">discovering web resources</a> code to optimize it with multithreading.</li>
+<li>Microsoft has given scrapers a special gift: it is possible to use 
+the outputAs variable in the URL to get the structured information as 
+XML instead of parsing HTML web pages.</li>
+<li>Our articles <a href="http://blog.databigbang.com/distributed-scraping-with-multiple-tor-circuits/">Distributed Scraping With Multiple Tor Circuits</a>&nbsp;and <a href="http://blog.databigbang.com/running-your-own-anonymous-rotating-proxies/">Running Your Own Anonymous Rotating Proxies</a>&nbsp;show how to Implement your own rotating proxies infrastructure with Tor.</li>
+</ol>
+<h2>If you liked this article, you might also like:</h2>
+<ol>
+<li><a href="http://blog.nektra.com/main/2013/11/05/nektra-and-vmware-are-collaborating-to-simplify-application-virtualization-packaging/">Nektra and VMware are Collaborating to Simplify Application Virtualization Packaging</a></li>
+<li><a href="http://blog.databigbang.com/automated-discovery-of-blog-feeds-and-twitter-facebook-linkedin-accounts-connected-to-business-website/">Automated Discovery of Social Media Identities</a></li>
+</ol>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/scraping-for-semi-automatic-market-research/" title="7:30 pm" rel="bookmark"><time class="entry-date" datetime="2013-06-27T19:30:33+00:00">June 27, 2013</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/app-v/" rel="tag">app-v</a>, <a href="http://blog.databigbang.com/tag/application-virtualization/" rel="tag">application-virtualization</a>, <a href="http://blog.databigbang.com/tag/lxml-html/" rel="tag">lxml.html</a>, <a href="http://blog.databigbang.com/tag/marketing/" rel="tag">marketing</a>, <a href="http://blog.databigbang.com/tag/microsoft-technet/" rel="tag">microsoft-technet</a>, <a href="http://blog.databigbang.com/tag/scraping/" rel="tag">scraping</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/scraping-for-semi-automatic-market-research/#disqus_thread" data-disqus-identifier="959 http://blog.databigbang.com/?p=959">1 Comment</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<article id="post-950" class="no-thumbnail post-950 post type-post status-publish format-standard hentry category-api-2 category-benchmarking category-search-engines-2 tag-blekko tag-ddg tag-duck-duck-go tag-google tag-search-engine">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/letters-from-the-future-challenging-googles-search-engine/" rel="bookmark">Challenging Google’s Search Engine</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fletters-from-the-future-challenging-googles-search-engine%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_5"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I5_1493853747831" name="I5_1493853747831" src="web%20scraping-101-teoria_ficheiros/fastbutton_006.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-5" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button_006.htm" data-url="http://blog.databigbang.com/letters-from-the-future-challenging-googles-search-engine/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge_008.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a_006.htm" id="iframe-stmblpn-widget-6" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">
+   (function() {     var li = document.createElement('script'); li.type =
+ 'text/javascript'; li.async = true;     li.src = 
+window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';   
+  var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><p>Google is the undisputed search leader (88% market share in the US<sup>1</sup>).
+ Google is not only ahead of competitors in terms of quality of search 
+results, infrastructure worthy of science fiction, and computer science 
+research. Another of their strengths is how quickly they apply their own
+ research.</p>
+<p>How can Google be dethroned? Sure, there are <a href="http://en.wikipedia.org/wiki/List_of_search_engines">other search engines</a>,
+ and newcomers like Blekko and Duck Duck Go make headlines from time to 
+time. However, when you look more closely at those other search engines,
+ you find that they cannot seriously compete with Google.</p>
+<h2>Benchmarking Search Engines</h2>
+<p>A search for “reverse engineering” on Blekko returns a hundred 
+thousand results, while the same search on Google returns approximately 
+two million. If it is so difficult for Blekko to compete at the crawling
+ level, imagine what happens in the rest of the search engine pipeline. 
+Just looking at Google’s<a href="http://insidesearch.blogspot.com.ar/search/label/search%20quality"> search quality reports</a> &nbsp;tells you that Page Rank was only the catalyst for much more sophisticated algorithms.</p>
+<p>Duck Duck Go manages to attract a geeky audience with <a href="http://en.wikipedia.org/wiki/DuckDuckGo#Features">highlighted features</a>
+ like putting privacy first. If we search for “reverse engineering” on 
+Duck Duck Go the results seem wacky: the second result is <i>http://reverseengineeringinc.com/</i> a content poor site which just has the right domain name.</p>
+<p>Google appears to be in a league by itself. It currently seems 
+unlikely that they could lose significant market share due to an 
+engineering weakness. In order to outdo Google, we must think 
+holistically and try to guess how the web as a whole will evolve over 
+the next ten years.</p>
+<h2>A Holistic Approach</h2>
+<p>Duck Duck Go created a two level search engine for sites like Wikipedia or YouTube. DDG offers <a href="https://duckduckgo.com/api">DuckDuckGo Instant Answer API</a>&nbsp;to
+ incorporate the search engines of third parties. In order to take 
+advantage of DDG and other two-tiered search engines, sites will have to
+ improve their local search. Currently if you search using the local 
+site search inside Stack Overflow, for example, the results are much 
+lower quality than the same query in Google restricted to 
+stackoverflow.com. When each site understands its own data better than 
+Google, its internal search results will surpass Google’s. Google will 
+no doubt continue to provide better global results, but the two-tiered 
+search would decentralize efforts to improve algorithms. It is important
+ to note that this solution does not need to be distributed: sites can 
+share their local indexes and ranking algorithms with the routing search
+ engine.</p>
+<p>The fact that a small number of sites receive the majority of 
+Internet traffic means that optimizing the top sites for a two layer 
+search would make a big difference.</p>
+<h2>Notes</h2>
+<ol>
+<li><a href="http://www.karmasnack.com/about/search-engine-market-share/">Search Engine Market Share</a></li>
+</ol>
+<h2>Additional Resources</h2>
+<ol start="1">
+<li><a href="https://news.ycombinator.com/item?id=5544411">Can a small search engine take on Google?</a></li>
+<li><a href="http://features.slashdot.org/story/02/03/12/1735224/googles-weakness-altavistas-strength">Google’s Weakness, AltaVista’s Strength</a>&nbsp;[2002]</li>
+<li><a href="http://www.dice.hhu.de/fileadmin/redaktion/Fakultaeten/Wirtschaftswissenschaftliche_Fakultaet/DICE/Discussion_Paper/083_Haucap_Heimeshoff.pdf">Is the Internet driving competition or market monopolization?</a></li>
+<li><a href="http://dwmw.wordpress.com/2012/11/26/media-and-internet-concentration-in-canada/">Media and Internet concentration in Canada</a></li>
+</ol>
+<h2>See Also</h2>
+<ol start="1">
+<li><a href="http://blog.nektra.com/main/2012/06/01/reverse-engineering-and-the-cloud/">Reverse Engineering and The Cloud</a></li>
+<li><a href="http://blog.databigbang.com/ideas-egont-a-web-orchestration-language/">Egont, A Web Orchestration Language</a></li>
+<li><a href="http://blog.databigbang.com/helping-search-engines-to-find-content-in-the-invisible-web/">Helping Search Engines to Find Content in the Invisible Web</a></li>
+<li><a href="http://blog.databigbang.com/the-data-portability-fact-sheet/">The Data Portability Fact Sheet</a></li>
+</ol>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/letters-from-the-future-challenging-googles-search-engine/" title="1:52 pm" rel="bookmark"><time class="entry-date" datetime="2013-04-27T13:52:29+00:00">April 27, 2013</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/blekko/" rel="tag">blekko</a>, <a href="http://blog.databigbang.com/tag/ddg/" rel="tag">ddg</a>, <a href="http://blog.databigbang.com/tag/duck-duck-go/" rel="tag">duck-duck-go</a>, <a href="http://blog.databigbang.com/tag/google/" rel="tag">google</a>, <a href="http://blog.databigbang.com/tag/search-engine/" rel="tag">search-engine</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/letters-from-the-future-challenging-googles-search-engine/#disqus_thread" data-disqus-identifier="950 http://blog.databigbang.com/?p=950">0 Comments</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<article id="post-913" class="no-thumbnail post-913 post type-post status-publish format-standard hentry category-algorithms category-egont category-tools tag-net tag-antlr tag-bison tag-c tag-domain-specific-language tag-dsl tag-egont-2 tag-flex tag-lex tag-lisp tag-ometa tag-parser tag-s-expression tag-yacc">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/parsing-s-expressions-in-c-using-ometa/" rel="bookmark">Parsing S-Expressions in C# using OMeta</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fparsing-s-expressions-in-c-using-ometa%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_6"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I6_1493853747834" name="I6_1493853747834" src="web%20scraping-101-teoria_ficheiros/fastbutton_007.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-6" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button_007.htm" data-url="http://blog.databigbang.com/parsing-s-expressions-in-c-using-ometa/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge_003.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a_007.htm" id="iframe-stmblpn-widget-7" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">
+   (function() {     var li = document.createElement('script'); li.type =
+ 'text/javascript'; li.async = true;     li.src = 
+window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';   
+  var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><p>It is easy to parse <a href="http://en.wikipedia.org/wiki/S-expression">S-Expressions</a> in C# with <a href="http://tinlizzie.org/ometa/">OMeta</a>.
+ Our code limits the grammar to lists, and atoms of string, symbol, and 
+number types. So, it is not complete, but it can easily be expanded with
+ OMeta. What motivated me to write this article was the<a href="http://stackoverflow.com/questions/tagged/s-expression+c%23"> lack of publicly available</a> S-Expression parsers in C#/.NET.</p>
+<p>Our parser converts the expression <em>(+ (* 3 4 5 6) (- 7 1) )</em> to the following tree:</p>
+<p><a href="http://blog.databigbang.com/wp-content/uploads/2013/02/parsed-s-expression.png"><img class="alignnone  wp-image-916" style="border: 1px solid black;" alt="parsed-s-expression" src="web%20scraping-101-teoria_ficheiros/parsed-s-expression.png" srcset="http://blog.databigbang.com/wp-content/uploads/2013/02/parsed-s-expression.png 755w, http://blog.databigbang.com/wp-content/uploads/2013/02/parsed-s-expression-300x102.png 300w" sizes="(max-width: 453px) 100vw, 453px" width="453" height="155"></a><br>
+where each vertex is represented by a C# class containing an ArrayList, Symbol, String, or Integer. Note that the expression <em>(1)</em> is different from the expression without parenthesis. The first is a list with one atom and the other is just the atom.</p>
+<p>S-Expressions are a compact way to express programs and data structures. They were<a title="Recursive Functions of Symbolic Expressions and their Computation by Machine (Part I)" href="http://www-formal.stanford.edu/jmc/recursive.html"> first defined for Lisp</a>, but are used in a variety of areas including <a title="Adapted S-expressions for use in SDSI and SPKI" href="http://people.csail.mit.edu/rivest/sexp.html">public key infrastructure</a>. We use S-Expressions to define data flows in Egont, our web orchestration language. In <a title="Egont, A Web Orchestration Language" href="http://blog.databigbang.com/ideas-egont-a-web-orchestration-language/">Egont</a>, each S-Expression produces a tree which is converted into a <a href="http://en.wikipedia.org/wiki/Directed_acyclic_graph">directed acyclic graph</a>, the subject of a future post.</p>
+<p>OMeta can be used under C# via the <a title="OMeta# by Jeff Moser" href="http://ometasharp.codeplex.com/">OMeta#</a> project. That makes it more interesting since the classical lexical analyzer and parser generators such as <a href="http://en.wikipedia.org/wiki/Lex_programming_tool">Lex</a>/<a href="http://en.wikipedia.org/wiki/Flex_lexical_analyser">flex</a> and <a href="http://en.wikipedia.org/wiki/Yacc">Yacc</a>/<a href="http://en.wikipedia.org/wiki/GNU_bison">GNU bison</a> do not produce C# code. <a href="http://www.antlr.org/">ANTLR</a>
+ is an interesting alternative but at the time of this post the latest 
+version, ANTLR 4, does not support C#. OMeta’s ability to deal with 
+ambiguities makes it more suited to playing with grammars. However, 
+there are performance penalties in OMeta which must be taken into 
+account.</p>
+<h2>Code</h2>
+<p>The code is available as <a href="https://github.com/databigbang/SExpression.NET">SExpression.NET</a>&nbsp;[github.com].</p>
+<ol>
+<li><span style="line-height: 13px;">Compile the RebuildParser project first</span></li>
+<li><span style="line-height: 13px;">Run the Test project</span></li>
+<li><span style="line-height: 13px;">The SExpression project contains the SExpression.ometacs parser and its related C# classes</span></li>
+</ol>
+<h2>See Also</h2>
+<ol>
+<li><a href="http://blog.databigbang.com/ideas-egont-a-web-orchestration-language/">Egont, a [Social] Web Orchestration Language</a></li>
+<li><a href="http://blog.databigbang.com/egont-part-ii/">Egont Part II</a></li>
+</ol>
+<h2>Additional Resources</h2>
+<ol>
+<li><a href="http://ironmeta.sourceforge.net/">IronMeta</a>: another OMeta implementation in C#</li>
+<li><a href="https://github.com/jagregory/yayaml">YaYAML</a>: a YAML&nbsp;parser written in OMeta#</li>
+<li><a href="http://vpri.org/pipermail/ometa/2009-May/000131.html">OMeta Performance</a></li>
+<li>
+<p style="display: inline !important;"><a href="https://www.cis.uab.edu/courses/cs693/spring2010/DSLAnnotatedBib.pdf">Domain-Speciﬁc Languages:&nbsp;An Annotated Bibliography</a></p>
+</li>
+</ol>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/parsing-s-expressions-in-c-using-ometa/" title="6:33 pm" rel="bookmark"><time class="entry-date" datetime="2013-02-28T18:33:58+00:00">February 28, 2013</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/net/" rel="tag">.net</a>, <a href="http://blog.databigbang.com/tag/antlr/" rel="tag">antlr</a>, <a href="http://blog.databigbang.com/tag/bison/" rel="tag">bison</a>, <a href="http://blog.databigbang.com/tag/c/" rel="tag">c++</a>, <a href="http://blog.databigbang.com/tag/domain-specific-language/" rel="tag">domain-specific-language</a>, <a href="http://blog.databigbang.com/tag/dsl/" rel="tag">dsl</a>, <a href="http://blog.databigbang.com/tag/egont-2/" rel="tag">egont</a>, <a href="http://blog.databigbang.com/tag/flex/" rel="tag">flex</a>, <a href="http://blog.databigbang.com/tag/lex/" rel="tag">lex</a>, <a href="http://blog.databigbang.com/tag/lisp/" rel="tag">lisp</a>, <a href="http://blog.databigbang.com/tag/ometa/" rel="tag">ometa</a>, <a href="http://blog.databigbang.com/tag/parser/" rel="tag">parser</a>, <a href="http://blog.databigbang.com/tag/s-expression/" rel="tag">s-expression</a>, <a href="http://blog.databigbang.com/tag/yacc/" rel="tag">yacc</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/parsing-s-expressions-in-c-using-ometa/#disqus_thread" data-disqus-identifier="913 http://blog.databigbang.com/?p=913">6 Comments</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<article id="post-890" class="no-thumbnail post-890 post type-post status-publish format-standard hentry category-algorithms category-data-science tag-action-script tag-as3 tag-c tag-flash tag-haxe tag-java tag-javascript tag-kmp tag-knuth-morris-pratt tag-neko tag-php tag-swf">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/searching-for-substrings-in-streams-a-slight-modification-of-the-knuth-morris-pratt-algorithm-in-haxe/" rel="bookmark">Searching for Substrings in Streams: a Slight Modification of the Knuth-Morris-Pratt Algorithm in Haxe</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fsearching-for-substrings-in-streams-a-slight-modification-of-the-knuth-morris-pratt-algorithm-in-haxe%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_7"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I7_1493853747836" name="I7_1493853747836" src="web%20scraping-101-teoria_ficheiros/fastbutton_008.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-7" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button_008.htm" data-url="http://blog.databigbang.com/searching-for-substrings-in-streams-a-slight-modification-of-the-knuth-morris-pratt-algorithm-in-haxe/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge_009.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a_008.htm" id="iframe-stmblpn-widget-8" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">
+   (function() {     var li = document.createElement('script'); li.type =
+ 'text/javascript'; li.async = true;     li.src = 
+window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';   
+  var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><p>It
+ is odd that the base libraries for most programming languages do not 
+allow you to search for regular expressions and substrings in streams or
+ partial reads. We have modified the KMP algorithm so that it accepts 
+virtually infinite partial strings. The code is implemented in <a href="http://haxe.org/">Haxe</a>, so it can generate code in multiple programming languages.</p>
+<p><a href="http://en.wikipedia.org/wiki/Stream_%28computing%29">Streams</a>
+ are important when working with data that does not fit in main memory, 
+such as large files, or with data which is being transferred. There are a
+ few implementations of regular expressions and substrings matching. One
+ is the <a href="http://jakarta.apache.org/regexp/">Jakarta Regexp</a>, now retired and resting in the Apache Attic. The Jakarta Regexp library “<a href="http://jakarta.apache.org/regexp/apidocs/org/apache/regexp/RE.html#match%28org.apache.regexp.CharacterIterator,%20int%29">match</a>” method in the RE class uses a CharacterIterator as a parameter. In C++, Boost.Regex implements <a href="http://www.boost.org/doc/libs/1_31_0/libs/regex/doc/partial_matches.html">partial matches</a>.</p>
+<p>Our code is implemented in Haxe so the same code can target 
+Javascript, ActionScript, Flash SWF, NekoVM, PHP, C++, C#, and Java. We 
+really like the concept of writing one code and expanding it to a 
+variety of platforms with minimum effort. There are excellent libraries 
+in specific environments that can work perfectly in other environments. 
+Porting libraries from one programming language to another is tedious. 
+For example, the amazing <a href="https://networkx.lanl.gov/">NetworkX</a> graph library implemented in Python can be easily ported to C# to benefit a broader audience.</p>
+<h2>Code</h2>
+<h3>Prerequisites</h3>
+<ol>
+<li>Haxe (tested on version 2.10)</li>
+<li>For C++: hxcpp (<strong>run</strong> <em>haxelib install hxcpp</em>)</li>
+<li>For Java: hxjava (<strong>run</strong> <em>haxelib install hxjava</em>)</li>
+<li>For Mono/C#: jxcs (<strong>run</strong> <em>haxelib install hxcs</em>)</li>
+</ol>
+<p>Source code available on&nbsp;<a href="https://github.com/databigbang/stream-oriented-knuth-morris-pratt">github</a>.</p>
+<h2>See Also</h2>
+<ol>
+<li><a href="http://blog.databigbang.com/parsing-s-expressions-in-c-using-ometa/">Parsing S-Expressions in C# using OMeta</a></li>
+<li><a href="http://blog.databigbang.com/esoteric-queue-scheduling-disciplines/">Esoteric Queue Scheduling Disciplines</a></li>
+</ol>
+<h2>Resources</h2>
+<ol>
+<li><a href="http://www.ics.uci.edu/%7Eeppstein/161/960227.html">Knuth-Morris-Pratt string matching</a></li>
+<li><a href="http://www.dcc.uchile.cl/%7Egnavarro/ps/fla03.pdf">Text Searching: Theory and Practice</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Boyer%E2%80%93Moore%E2%80%93Horspool_algorithm">Boyer–Moore–Horspool algorithm</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm">Rabin–Karp algorithm</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_string_matching_algorithm">Aho–Corasick string matching algorithm</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation">Lexicographically minimal string rotation</a></li>
+<li><a href="http://stackoverflow.com/questions/846175/efficient-way-to-search-a-stream-for-a-string">Efficient way to search a stream for a string</a></li>
+</ol>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/searching-for-substrings-in-streams-a-slight-modification-of-the-knuth-morris-pratt-algorithm-in-haxe/" title="5:11 pm" rel="bookmark"><time class="entry-date" datetime="2013-01-21T17:11:03+00:00">January 21, 2013</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/action-script/" rel="tag">action-script</a>, <a href="http://blog.databigbang.com/tag/as3/" rel="tag">as3</a>, <a href="http://blog.databigbang.com/tag/c/" rel="tag">c++</a>, <a href="http://blog.databigbang.com/tag/flash/" rel="tag">flash</a>, <a href="http://blog.databigbang.com/tag/haxe/" rel="tag">haxe</a>, <a href="http://blog.databigbang.com/tag/java/" rel="tag">java</a>, <a href="http://blog.databigbang.com/tag/javascript/" rel="tag">javascript</a>, <a href="http://blog.databigbang.com/tag/kmp/" rel="tag">kmp</a>, <a href="http://blog.databigbang.com/tag/knuth-morris-pratt/" rel="tag">knuth-morris-pratt</a>, <a href="http://blog.databigbang.com/tag/neko/" rel="tag">neko</a>, <a href="http://blog.databigbang.com/tag/php/" rel="tag">php</a>, <a href="http://blog.databigbang.com/tag/swf/" rel="tag">swf</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/searching-for-substrings-in-streams-a-slight-modification-of-the-knuth-morris-pratt-algorithm-in-haxe/#disqus_thread" data-disqus-identifier="890 http://blog.databigbang.com/?p=890">0 Comments</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<article id="post-863" class="no-thumbnail post-863 post type-post status-publish format-standard hentry category-api-2 tag-aggregator tag-blogs tag-google-page-rank tag-long-tail tag-no-api tag-opml tag-page-rank-noapi tag-ranking">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/enriching-a-list-of-urls-with-google-page-rank/" rel="bookmark">Enriching a List of URLs with Google Page Rank</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fenriching-a-list-of-urls-with-google-page-rank%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_8"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I8_1493853747844" name="I8_1493853747844" src="web%20scraping-101-teoria_ficheiros/fastbutton_009.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-8" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button_009.htm" data-url="http://blog.databigbang.com/enriching-a-list-of-urls-with-google-page-rank/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge_007.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a_009.htm" id="iframe-stmblpn-widget-9" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">
+   (function() {     var li = document.createElement('script'); li.type =
+ 'text/javascript'; li.async = true;     li.src = 
+window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';   
+  var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><p>Dealing
+ with a large body of web resources can be daunting. You make a list of 
+hundreds of blogs, but how do you share or recall those resources later?
+ You must somehow organize your list. Many people do this with tags, but
+ this is not necessarily the best option. Manual organization is also 
+tedious, so tools for enriching data automatically came in handy. The 
+relevance of different resources changes over time. What we originally 
+tagged as “breakthrough” may come insignificant.</p>
+<p>Last week I saw a friend who had recently started a new job and 
+wanted my opinion about current and future technological trends. I 
+wanted to give him links to thousands of resources that I have been 
+accumulating over the years, but organized in such a way that he would 
+not have to view them one at a time. This triggered an avalanche of 
+ideas about how to enrich lists of links. My first thought was to rank 
+my list of sites about venture capital and data science using Google 
+Page Rank. I also considered adding the number of tweets, likes, and 
+“+1” for each site but these are generally awarded for individual 
+articles, not whole sites. I ended up adding the Google Page Rank with 
+project <a title="Pagerank project" href="http://pagerank.phurix.net/">pagerank</a>.</p>
+<p>The most interesting ideas to explore, though, are in another 
+direction: how to boost items that are in the long tail. The best music 
+may not make the Top 40, and so remains invisible. Algorithms better at 
+recognizing value in the long tail would revolutionise the economy.</p>
+<p>The code is available on <a title="Enriching a list of URLs with Google Page Rank" href="https://github.com/databigbang/enriching-a-list-of-urls-with-google-page-rank">github</a>. Two examples of the output are available on <a title="Big Data and Data Science Blogs Ordered by Google PageRank" href="http://blog.databigbang.com/big-data-and-data-science-blogs-ordered-by-google-pagerank/">data-science-bundle</a> and <a title="Venture Capital Blogs Ordered by Google Page Rank" href="http://blog.databigbang.com/venture-capital-blogs-ordered-by-google-page-rank/">venture-capital-bundle</a>.</p>
+<h2>See Also</h2>
+<ol>
+<li><a href="http://blog.databigbang.com/automated-discovery-of-blog-feeds-and-twitter-facebook-linkedin-accounts-connected-to-business-website/">Automated Discovery of Blog Feeds and Twitter, Facebook, LinkedIn Accounts Connected to Business Website</a></li>
+<li><a href="http://blog.databigbang.com/converting-excel-cells-to-hyperlinks-google-page-rank-didnt-catch-this-1st/">Exporting StackOverflow users blogs to Excel</a></li>
+<li><a href="http://blog.databigbang.com/data-science-resources/">Data Science Resources</a></li>
+</ol>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/enriching-a-list-of-urls-with-google-page-rank/" title="4:52 pm" rel="bookmark"><time class="entry-date" datetime="2012-08-16T16:52:34+00:00">August 16, 2012</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/aggregator/" rel="tag">aggregator</a>, <a href="http://blog.databigbang.com/tag/blogs/" rel="tag">blogs</a>, <a href="http://blog.databigbang.com/tag/google-page-rank/" rel="tag">google-page-rank</a>, <a href="http://blog.databigbang.com/tag/long-tail/" rel="tag">long-tail</a>, <a href="http://blog.databigbang.com/tag/no-api/" rel="tag">no-api</a>, <a href="http://blog.databigbang.com/tag/opml/" rel="tag">opml</a>, <a href="http://blog.databigbang.com/tag/page-rank-noapi/" rel="tag">page-rank-noapi</a>, <a href="http://blog.databigbang.com/tag/ranking/" rel="tag">ranking</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/enriching-a-list-of-urls-with-google-page-rank/#disqus_thread" data-disqus-identifier="863 http://blog.databigbang.com/?p=863">0 Comments</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<article id="post-844" class="no-thumbnail post-844 post type-post status-publish format-standard hentry category-data-science category-infrastructure-2 category-queues-2 category-web-crawling tag-directed-acyclic-graph tag-esoteric tag-genetic-algorithms tag-queue tag-queue-scheduling-disciplines tag-roulette-wheel-selection tag-topological-sort">
+	<header class="entry-header">
+				<h1 class="entry-title"><a href="http://blog.databigbang.com/esoteric-queue-scheduling-disciplines/" rel="bookmark">Esoteric Queue Scheduling Disciplines</a></h1>	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div class="bottomcontainerBox" style="border:1px solid #808080;background-color:#F0F4F9;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.databigbang.com%2Fesoteric-queue-scheduling-disciplines%2F&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_9"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I9_1493853747847" name="I9_1493853747847" src="web%20scraping-101-teoria_ficheiros/fastbutton_010.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+			</div>
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe id="twitter-widget-9" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="web%20scraping-101-teoria_ficheiros/tweet_button_010.htm" data-url="http://blog.databigbang.com/esoteric-queue-scheduling-disciplines/" frameborder="0"></iframe>
+			</div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="web%20scraping-101-teoria_ficheiros/hostedbadge_004.htm"></script><iframe scrolling="no" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" src="web%20scraping-101-teoria_ficheiros/a_010.htm" id="iframe-stmblpn-widget-10" width="74" height="18" frameborder="0"></iframe> <script type="text/javascript">
+   (function() {     var li = document.createElement('script'); li.type =
+ 'text/javascript'; li.async = true;     li.src = 
+window.location.protocol + '//platform.stumbleupon.com/1/widgets.js';   
+  var s = document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(li, s);   })(); </script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div><h2></h2>
+<p><a href="http://www.flickr.com/photos/kristoferbjorkman/"><img class="alignnone size-full wp-image-848" title="Roulette Wheel" src="web%20scraping-101-teoria_ficheiros/las-vegas-roulette-wheel-500x298.png" alt="" srcset="http://blog.databigbang.com/wp-content/uploads/2012/03/las-vegas-roulette-wheel-500x298.png 500w, http://blog.databigbang.com/wp-content/uploads/2012/03/las-vegas-roulette-wheel-500x298-300x178.png 300w" sizes="(max-width: 500px) 100vw, 500px" width="500" height="298"></a></p>
+<h2>New Challenges Requires New Tools</h2>
+<p>Big Data challenges current message oriented middleware (MOM) 
+applications. MOM usually works with FIFO and priority scheduling 
+disciplines. What happens if there is a large list of URLs ready to be 
+crawled but you want to give URLs at the end of the list a chance of 
+being crawled earlier? This concept comes from genetics, and is used in <a href="http://en.wikipedia.org/wiki/Selection_%28genetic_algorithm%29">genetic algorithms selection</a>
+ schemes. The last URLs may contain interesting new resources in spite 
+of their order or priority. Consuming from a FIFO queue takes a long 
+time to crawl these URLs. Priority scheduling is more helpful, but it is
+ not possible to know apriori how useful a URL will end up being in the 
+quest for new Internet resources. Why not add a chance factor to URL 
+selection by using roulette wheel scheduling and an efficient algorithm?</p>
+<p>Data flows follow an order of execution based on task dependencies. 
+One task cannot start until the preceding tasks have finished. This is 
+the way a spreadsheet works. A change in a cell triggers a series of 
+processes to be completed in topological order. Why not add task 
+dependency to MOM applications? An item can be consumed from the queue 
+only if its precedent tasks have been completed. We provide some data 
+flow resources at the end of the <a href="http://blog.databigbang.com/egont-part-ii/">Egont Part II</a>
+ article. However, a new queue scheduling discipline could be used in 
+place of a separate framework. Ideally, the new queue discipline would 
+include features such as persistence and transactions.</p>
+<h2>Roulette Wheel Scheduling Algorithm Design</h2>
+<p>To the best of our knowledge, there are currently no Internet 
+resources about using a roulette wheel scheduling discipline for a 
+queue.</p>
+<p>The external interface for a roulette wheel queue is the same as for a
+ typical queue with “get” and ”put” methods except that the “put” method
+ incorporates a new probabilistic parameter. Probabilities can be 
+expressed as integers. When a consumer requests an item, a random number
+ is generated to decide which item is selected. Items with higher 
+probabilities have a greater chance of being retrieved, but even items 
+with low probabilities can be consumed.</p>
+<p>The implementation of an efficient roulette wheel queue is not easy. 
+Genetic algorithms use roulette wheel selection to choose between a 
+small set of alternatives. A queue used for crawling can contain a lot 
+of URLs, and the question is how to take these processes into account in
+ order to find, add, and remove URLS efficiently.</p>
+<p>Finding an item in a roulette wheel data structure is O(n) for 
+trivial traversing and O(log(n)) using a binary search. Adding an item 
+is trivial, it can be added at the end and the new total is the sum of 
+the previous probability parameters total plus the new item’s 
+probability parameter. Removing an item is more difficult. The trivial, 
+but not the best, solution is to recalculate all the partial sums after 
+the element which is being removed. A better solution is to use a heap 
+tree data structure or one of its variants.</p>
+<p>An alternative that merits further study is the use of <a href="http://en.wikipedia.org/wiki/Fenwick_tree">Fenwick trees</a>. In 1994, <a href="http://www.cs.auckland.ac.nz/%7Epeter-f/">Peter M. Fenwick</a>&nbsp;discovered
+ how to improve the finding, adding, and modifying of items and the 
+calculation of their subtotals. Since the Fenwick tree works over a 
+fixed range of items, item keys must be preallocated.</p>
+<h2>See Also</h2>
+<ol>
+<li><a href="http://blog.databigbang.com/using-queues-in-web-crawling-and-analysis-infrastructure/">Using Queues in Web Crawling and Analysis Infrastructure</a></li>
+<li><a href="http://blog.databigbang.com/persisting-native-python-queues/">Persisting Native Python Queues</a></li>
+<li><a href="http://blog.databigbang.com/adding-acknowledgement-semantics-to-a-persistent-queue/">Adding Acknowledgement Semantics to a Persistent Queue</a></li>
+<li><a href="http://blog.databigbang.com/ideas-egont-a-web-orchestration-language/">Ideas: Egont, A Web Orchestration Language</a></li>
+</ol>
+<h2>Resources</h2>
+<ol>
+<li><a href="http://olds.blogcn.com/wp-content/uploads/67/6754/2009/01/bit.pdf">A New Data Structure for Cumulative Frequency Tables</a></li>
+<li><a href="http://stackoverflow.com/questions/2140787/select-random-k-elements-from-a-list-whose-elements-have-weights">Select random k elements from a list whose elements have weights</a>&nbsp;and the <a href="http://stackoverflow.com/questions/2140787/select-random-k-elements-from-a-list-whose-elements-have-weights/2151885#2151885">roulette wheel answer</a></li>
+<li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.9494&amp;rep=rep1&amp;type=pdf">A comparative analysis of selection schemes used in genetic algorithms</a></li>
+<li><a href="http://www.sonycsl.co.jp/%7Ekjc/papers/usenix98/altq.html">A Framework for Alternate Queueing:&nbsp;Towards Traffic Management by PC-UNIX Based Routers</a></li>
+<li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.50.6260&amp;rep=rep1&amp;type=pdf">Stack and Queue Layouts of Directed Acyclic Graphs</a></li>
+<li><a href="http://www.maths.ed.ac.uk/%7Ejmarecek/opencl/opencl-data.pdf">Dynamic Data Structures for Taskgraph Scheduling&nbsp;Policies with Applications in OpenCL Accelerators</a></li>
+</ol>
+<p>Photo taken by&nbsp;<a href="http://www.flickr.com/photos/kristoferbjorkman/">Kristofer Björkman</a></p>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+					<span class="post-date"><a href="http://blog.databigbang.com/esoteric-queue-scheduling-disciplines/" title="3:29 pm" rel="bookmark"><time class="entry-date" datetime="2012-03-29T15:29:25+00:00">March 29, 2012</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="http://blog.databigbang.com/author/admin/" title="View all posts by Sebastian Wain" rel="author">Sebastian Wain</a></span></span>						<span class="tags-links">
+				<a href="http://blog.databigbang.com/tag/directed-acyclic-graph/" rel="tag">directed-acyclic-graph</a>, <a href="http://blog.databigbang.com/tag/esoteric/" rel="tag">esoteric</a>, <a href="http://blog.databigbang.com/tag/genetic-algorithms/" rel="tag">genetic-algorithms</a>, <a href="http://blog.databigbang.com/tag/queue/" rel="tag">queue</a>, <a href="http://blog.databigbang.com/tag/queue-scheduling-disciplines/" rel="tag">queue-scheduling-disciplines</a>, <a href="http://blog.databigbang.com/tag/roulette-wheel-selection/" rel="tag">roulette-wheel-selection</a>, <a href="http://blog.databigbang.com/tag/topological-sort/" rel="tag">topological-sort</a>			</span>
+					
+				<span class="comments-link"><a href="http://blog.databigbang.com/esoteric-queue-scheduling-disciplines/#disqus_thread" data-disqus-identifier="844 http://blog.databigbang.com/?p=844">0 Comments</a></span>
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+				<nav role="navigation" id="nav-below" class="navigation-paging">
+		<h1 class="screen-reader-text">Post navigation</h1>
+
+	
+				<div class="nav-previous"><a href="http://blog.databigbang.com/page/2/"><span class="meta-nav">←</span> Older posts</a></div>
+		
+		
+	
+	</nav><!-- #nav-below -->
+	
+		
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+									</div><!-- #secondary -->
+
+	</div><!-- #main -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="site-info">
+					Read our <a href="http://www.nektra.com/custom-software-development-company/api-hook-filter-drivers/windows-driver-development/">Windows Driver Development</a> and <a href="http://www.nektra.com/custom-windows-software-development/">Custom Windows Software Development</a> services.<br>
+		In addition to this, there are some services <a href="http://www.coinfabrik.com/index-ch.html"> 区块链技术</a> and this one <a href="http://coinfabrik.com/">blockchain software development</a> or <a href="http://www.coinfabrik.com/">smart contracts development</a><br>
+		Also, get your data protected by <a href="http://www.nektra.com/custom-software-development-company/api-hook-filter-drivers/custom-data-loss-prevention-dlp-software-development/">Data Loss Prevention Solution Development</a> and 
+<a href="http://www.nektra.com/custom-software-development-company/api-hook-filter-drivers/data-loss-prevention-solution-development-dlp/">Data Loss Prevention Solution Development</a><br>
+		Extend Office with our service <a href="http://www.nektra.com/custom-software-development-company/outlook-plugin-development/">office plugin development</a><br>
+		Es importante agregar que <a href="http://www.coinfabrik.com/index-es.html">desarrollo blockchain</a> y no olvidar <a href="http://www.coinfabrik.com/index-ch.html">私人区块链</a> <br>
+
+			<span class="sep"> ~ </span>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'databigbang';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1 && nodes[i].parentNode.tagName == 'A') {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/widgets_002.js"></script>
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var MTBrushParams = {"baseUrl":"http:\/\/blog.databigbang.com\/wp-content\/plugins\/syntax-highlighter-mt"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/brushTypes.js"></script>
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/siteheader.js"></script>
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="web%20scraping-101-teoria_ficheiros/wp-embed.js"></script>
+
+
+<iframe name="oauth2relay915427180" id="oauth2relay915427180" src="web%20scraping-101-teoria_ficheiros/postmessageRelay.htm" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe><iframe id="rufous-sandbox" scrolling="no" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" title="Twitter analytics iframe" frameborder="0"></iframe></body></html>

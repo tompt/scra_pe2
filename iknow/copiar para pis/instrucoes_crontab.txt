@@ -1,0 +1,55 @@
+
+instalacao:
+copiar ficheiro para /home/pi
+
+sudo chmod +x pi_actualizar_servidor.py
+sudo chmod 777 pi_actualizar_servidor.py
+
+sudo apt-get install python-mysqldb python-requests -y
+
+editar crontab como root:
+sudo crontab -e -u root
+
+inserir no crontab:
+*/1 * * * * /home/pi/python-mysql/pi_actualizar_servidor.py
+
+verificar correndo
+./pi_actualizar_servidor2.py
+se pede sudo..
+
+#dar um nome ao pi
+sudo nano /etc/hostname
+#ou
+sudo raspi-config
+
+#ANTES DISTO NAO ESQUECER DE FAZER ALARGAMENTO DO CARTAO!!!!
+#adicionar stretch
+sudo nano /etc/apt/sources.list
+#adicionar deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi
+#echo "deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi" >> /etc/apt/sources.list
+sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y
+
+#novo user
+sudo useradd -m -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,netdev,input cripto
+sudo passwd cripto
+
+#impedir que se desligue o monitor. Copiar para "" e colocar o codigo antes da linha "exit 0". fazer depois reboot
+#If you are using your Pi through SSH without an actual keyboard connected, the screen might go to sleep after some
+# time as your Pi does not detect any activity. To prevent that, edit the rc.local file by opening it in the nano editor: 
+#sudo nano /etc/rc.local
+#Add the following line just before the exit 0 line:
+#sh -c 'setterm -blank 0 -powersave off -powerdown 0 < /dev/console > /dev/console 2>&1'
+
+#saber modelo de rpi 
+#cat /proc/cpuinfo
+#/sys/firmware/devicetree/base/model
+
+#mudar hostname
+# sudo nano /etc/hostname
+# sudo nano /etc/hosts 
+
+
+sudo nano /var/www/html/index.htm
+<h1>nginx101</h1>
+#estatisticas: http://192.168.1.101/haproxy?stats
+#http://192.168.1.101:1936/haproxy?stats

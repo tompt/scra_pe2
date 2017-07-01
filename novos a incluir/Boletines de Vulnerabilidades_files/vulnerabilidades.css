@@ -1,0 +1,286 @@
+/* **** >>>> estilos vulnerabilidades <<<< **** */
+.textbuscador label {
+   font-weight:normal;
+}
+
+.textoRemarcar label {
+   font-weight:normal;
+   padding-left:5px;
+}
+
+
+	#vulneForm {
+		background: #ECECEC;
+		border-bottom: 1px solid #4cc6f4;
+		margin-bottom: 20px;
+		
+	}
+	table.buscador{
+		width:100%;
+	}
+	#vulneForm td.textbuscador {
+		//color:#0072bc;
+                  color:#0074c5;
+		//font: normal normal 600 90%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		text-align: left;
+		white-space: nowrap;
+		
+	}
+	#vulneForm input.formbuscador, #vulneForm select.selectbuscador {
+		border:1px solid #cdced1;
+		color: #999;
+		//font: normal normal normal 100%/normal arial, helvetica, verdana, "news gothic mt", sans-serif;
+		//height:17px;
+                //height:19px;
+                padding-left:5px;
+		margin:0px 0px 0px 5px ;
+	}
+	#vulneForm input.formbuscador{
+		
+		width:180px;
+	}
+	#vulneForm input.formbuscador[name=dateFrom]{
+		width:110px;
+		margin-top:15px;
+		
+		
+	}
+	#vulneForm input.formbuscador[name=dateTo]{
+			width:110px;
+			margin:0px 0px 0px 8px;
+	}
+	#vulneForm select.selectbuscador{
+	//	width:110px;
+	}
+	#vulneForm input.button {
+		background: #eee url(../img/fondobotonbuscar.gif) no-repeat;
+		border: none;
+		color: #FFF;
+		cursor: pointer;
+		float: right;
+		//font: normal normal normal 100%/normal arial, helvetica, verdana, "news gothic mt", sans-serif;
+		height:21px;
+		margin:0px 70px 5px 0;
+		text-align:center;
+		width:76px;
+	}
+	#vulneForm input.button_date{
+		
+		border: none;
+		color: #FFF;
+		cursor: pointer;
+		//font: normal normal normal 100%/normal arial, helvetica, verdana, "news gothic mt", sans-serif;
+		height:21px;
+		margin-right:15px;
+		text-align:center;
+		width:76px;
+		background: #eee url(../img/fondobotonfecha.gif) no-repeat;
+		
+	}
+	#vulneForm input.button[type=reset] {
+		background: #eee url(../img/fondobotonfecha.gif) no-repeat;
+		width:20px;
+	}
+	#vulneForm input.button_date[type=reset] {
+		background: #eee url(../img/fondobotonfecha.gif) no-repeat;
+		width:20px;
+	}
+	#vulneForm input[type=radio] {
+		clear: left;
+		display: block;
+		float: left;
+		height:10px;
+		margin-left:10px;
+		//margin-top:7px;
+		//margin-right:5px;
+	}
+	#vulneForm input[type=checkbox] {
+		margin-right: 5px;
+		display: block;
+		clear: left;
+		float: left;
+		height:20px;
+	}
+	#vulneForm span.textbuscador{
+		color:#0074c5;
+		display:block;
+		//font: normal normal 600 90%/20px "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		text-align:left;
+		
+	}
+	#vulneForm span.textbuscador1{
+		color:#0074c5;
+		//display:block;
+                displaY:inline-block;
+		//font: normal normal 600 90%/20px "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		text-align:left;
+		//margin-left: 90px;	
+		//margin-top:2px;
+                vertical-align:super;
+	}
+	#vulneForm span.texto{
+		color:#0074c5;
+		display:block;
+		//font: normal normal 600 90%/20px "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		text-align:center;	
+		margin-top:10px;
+	}
+		#vulneForm span.textoTitulo{
+		color:#0074c5;
+		display:block;
+		//font: normal normal 600 105%/20px "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		text-align:center;	
+                margin-bottom:10px;
+	}
+		#vulneForm span.textoRemarcar{
+		color:#0074c5;
+		border-bottom: 1px solid #4cc6f4;
+		width:80%;
+		display:block;
+		//font: normal normal 600 90%/20px "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		text-align:left;
+		margin-left: 20px;
+		background-color:#E2E2E2;
+	}
+
+	.vulnerah2 {
+    		border-bottom:1px solid #0072BC;
+    		color:#0074c5;
+		//font: normal normal normal 90%/normal Verdana,Geneva,Arial,Helvetica,sans-serif;
+    		margin-bottom:1px;
+    		text-transform:uppercase;
+    		width:100%;
+	}
+
+	.par a, .impar a {
+   		color: #0074c5;
+    		//font: normal normal normal 70%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+    		text-decoration:none;
+    	overflow: hidden;
+	}
+
+	/* estilos tabla listado vulnerabilidades */
+	.tblistado{
+		//margin-top:10px;
+	}
+	.tblistado th{
+		border-bottom: 1px solid #4cc6f4;
+		color: #0074c5;
+		//font: normal normal normal 100%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		text-align: center;
+	}
+	.tblistado td{
+		border-bottom: 1px solid #fff;
+		padding:3px 1px 3px 1px;
+	}
+	.tblistado a {
+		color: #0074c5;
+		//font: normal normal normal 100%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		//white-space: nowrap;
+	}
+	.tblistado a:hover {
+		text-decoration: underline;
+	}
+	.textotablavulnera {
+		color: #000;
+		//font: normal normal normal 90%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+	}
+
+	/* estilos tabla ficha vulnerabilidades */	
+	.content-vuln{
+		margin-bottom:10px;
+		width:100%;
+	}
+	.content-vuln td{
+		padding:2px;
+	}
+	.contenidoCabecera-vuln h2{
+		color:#0074c5;
+		//font: normal normal bold 100%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		//height:30px;
+                font-size:20px;
+                margin-bottom:0;
+	}
+	.cabeceraTabla-vuln{
+		border-bottom: 1px solid #4cc6f4;
+		color:#4cc6f4;
+		//font: normal normal normal 90%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		text-align:center;
+	}
+	.content-vuln h3 {
+		color:#003;
+		//font: normal normal bold 100%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		padding:10px 0 6px 0;
+                font-size:15px;
+                margin:0;
+	}
+	.tablaFila1-vuln{
+		background: #E2E2E2;	
+		border-bottom: 1px solid #fff;
+	}
+	.tablaFila0-vuln{
+		background: #ECECEC;
+		border-bottom: 1px solid #fff;
+	}	
+
+	.rssVulnera{
+		vertical-align: middle;
+		padding-left:15px;
+	}
+	
+	.tblistado1{
+		margin-left:30px;
+		/*margin-bottom: 5px;*/
+		color: #0074c5;
+	}
+	.tblistado1 th{
+		border-bottom: 1px solid #4cc6f4;
+		color: #0074c5;
+		//font: normal normal normal 100%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		text-align: center;
+	}
+	.tblistado1 td{
+		padding:0px 1px 3px 1px;
+	}
+	
+	.tblistado1 a {
+		color: #0074c5;
+		//font: normal normal normal 100%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+		//white-space: nowrap;
+	}
+	.tblistado1 a:hover {
+		text-decoration: underline;
+	}
+	.textotablavulnera {
+		color: #000;
+		//font: normal normal normal 90%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+	}
+
+	p#form-ayuda-vuln1{
+		margin-top:25px;
+		text-align:center;
+		clear:left;
+		display:block;
+		float:left;
+		margin-left:40px;
+		color: #0074c5;
+		//font: normal normal normal 100%/normal "Microsoft Sans Serif", "MS Sans Serif", Geneva, sans-serif;
+	}
+	
+	#form-ayuda-vuln label a, #form-ayuda-vuln label a:hover {
+		color:#0074c5;
+		//font-family:normal normal normal 100%/normal "Microsoft Sans Serif","MS Sans Serif",Geneva,sans-serif;
+		font-style:normal;
+		
+		text-align:center;
+		clear:left;
+		text-decoration:none;
+		
+		font-size:90%;
+		font-size-adjust:none;
+		font-style:normal;
+		font-variant:normal;
+		font-weight:600;
+		line-height:normal;
+}
+	

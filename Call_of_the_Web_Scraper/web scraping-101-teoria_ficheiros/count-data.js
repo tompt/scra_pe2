@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"and","comments":{"zero":"0 Comments","multiple":"{num} Comments","one":"1 Comment"}},"counts":[{"id":"890 http:\/\/blog.databigbang.com\/?p=890","comments":0},{"id":"999 http:\/\/blog.databigbang.com\/?p=999","comments":3},{"id":"959 http:\/\/blog.databigbang.com\/?p=959","comments":1},{"id":"982 http:\/\/blog.databigbang.com\/?p=982","comments":17},{"id":"913 http:\/\/blog.databigbang.com\/?p=913","comments":6},{"id":"1016 http:\/\/blog.databigbang.com\/?p=1016","comments":1},{"id":"967 http:\/\/blog.databigbang.com\/?p=967","comments":1},{"id":"863 http:\/\/blog.databigbang.com\/?p=863","comments":0},{"id":"844 http:\/\/blog.databigbang.com\/?p=844","comments":0},{"id":"950 http:\/\/blog.databigbang.com\/?p=950","comments":0}]});
+}

@@ -1,0 +1,2667 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Boone County Sheriff - Current Jail Detainees
+  </title>
+  <!-- -->
+  <!--MultipleRecordApp: CURRENT INMATES. Created: Wed Mar 05 09:40:05 CST 2014 by ITJAMES. INQHTM-MUL 20120709 -->
+  <link href="/mrcjava/mrcclasses/SH01_MP/favicon.ico" rel="shortcut icon"/>
+  <link href="/mrcjava/mrcclasses/mrc_servlet_ajax.css" rel="stylesheet"/>
+  <link href="/mrcjava/mrcclasses/SH01_MP/mrc_servlet_stylesheet.css" rel="stylesheet"/>
+  <style type="text/css">
+   .BCSDTable th {
+            padding: 0.3em;}
+            #excelButton{padding: 0.5em;
+            padding-right: 1.5em;
+    padding-left: 1em;
+            font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid #c1c1c1;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #d3d3d3 100%, #eaeaea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#d3d3d3), color-stop(100%,#eaeaea));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#d3d3d3 100%,#eaeaea 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#d3d3d3 100%,#eaeaea 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#d3d3d3 100%,#eaeaea 100%);
+    background: linear-gradient(to bottom, #ffffff 0%,#d3d3d3 100%,#eaeaea 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 ); text-decoration: none;}
+          #excelDownloadIcon{position: absolute; bottom: 3em; right: 0;width: 65%;}
+          #excelDownloadIconContainer{position: absolute; bottom: 10px; right: 10px; text-align: right;}
+  </style>
+  <link href="/mrcjava/mrcclasses/SH01_MP/jquery.custom.css" rel="stylesheet"/>
+  <!--[if IE 7]>         
+<link href="/mrcjava/mrcclasses/font/css/font-awesome-ie7.css" rel="stylesheet" />  
+<![endif]-->
+  <script src="/mrcjava/mrcclasses/mpowerapps.js">
+  </script>
+  <script>
+   var s1 = new Image(); s1.src = "/mrcjava/image/ascg.gif";
+var s0 = new Image(); s0.src = "/mrcjava/image/descg.gif";
+  function setHeight(){
+    jQuery('#modalIframeId').on('load', function() { 
+      var bodyHeight = jQuery('iframe').contents().find('body').height();
+      if (bodyHeight < 660){
+        jQuery('iframe').height(bodyHeight + 40);
+      }else{
+        jQuery('iframe').height(700);
+      }
+    });
+  }
+  </script>
+ </head>
+ <body>
+  <!--onload="checkIframeLoaded();"-->
+  <!-- Begin mrc Header -->
+  <!-- -->
+  <!-- Begin BCSD Default Header -->
+  <!-- Begin Image Bar -->
+  <div class="pageHeader">
+   <table class="DepartmentHeader" summary="Boone County Sheriff's department page header">
+    <tr>
+     <td class="DepartmentHeaderGraphic" rowspan="2">
+      <img alt="Boone County Sheriff's Badge" src="/mrcjava/mrcclasses/SH01_MP/BCSD-title2.jpg"/>
+     </td>
+     <td class="DepartmentHeaderTitle" colspan="2">
+      Boone County Sheriff's Department
+     </td>
+    </tr>
+    <tr>
+     <td class="DepartmentHeaderAddress">
+      Boone County Sheriff's Department
+      <br/>
+      2121 County Dr.
+      <br/>
+      Columbia, MO 65202
+     </td>
+     <td class="DepartmentHeaderNumbers">
+      Office (573) 875-1111
+      <br/>
+      Fax (573) 874-8953
+     </td>
+    </tr>
+   </table>
+  </div>
+  <!-- End Image Bar -->
+  <!-- Begin Link Bar -->
+  <table border="0" cellpadding="0" cellspacing="0" class="noPrint" width="100%">
+   <tr>
+    <th align="left">
+     <a class="shNav" href="http://www.boonecountymo.org/sheriff" title="Return to the Boone County Sheriff's Home Page">
+      Home
+     </a>
+     <a class="shNav" href="SH01_MP.I00040s" title="Menu of Applications">
+      Menu
+     </a>
+     <a class="shNav" href="SH01_MP.I00030s" tile="Help">
+      Help
+     </a>
+     <a class="shNav" href="#" onclick="viewOptions();" style="float:right" title="Options">
+      Options
+     </a>
+    </th>
+   </tr>
+  </table>
+  <!-- End Link Bar -->
+  <!-- End mrc Default Header -->
+  <!-- -->
+  <!-- End mrc Header -->
+  <!-- Begin Title Bar -->
+  <div class="BCSDTitle">
+   Current Detainees of Boone County Jail
+  </div>
+  <!-- End Title Bar -->
+  <div id="websiteNotification" style="display:none;text-align:center;">
+   <div style="display:inline-block;color:#f00;margin-bottom:5px;padding:10px;background:transparent repeating-linear-gradient(45deg,rgb(255,102,102),rgb(255,102,102) 10px, rgb(255,204,204) 10px, rgb(255,204,204) 20px) repeat scroll 0% 0%;">
+    <div id="notificationMessage" style="background:white;padding:5px;font-family:Arial,Helvetica,sans-serif;font-weight:bold;">
+    </div>
+   </div>
+  </div>
+  <script type="text/javascript">
+   (function() {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4) { // If page load is complete
+              var message = document.getElementById('notificationMessage');
+              if (xmlhttp.status == 200) { // If the page was found
+                var result = xmlhttp.responseText.match(/::(.*)::/);
+                if (result !== null) { // If a message was found
+                  message.innerHTML = result.pop(); // Populate the message with the retrieved HTML
+                }
+                if (message.innerHTML.trim()) { // If there is a notification to show
+                  document.getElementById('websiteNotification').style.display = 'block'; // Show the notification
+                }
+              }
+            }
+          }
+          xmlhttp.open('GET', '/mrcjava/servlet/BC03_MP.I00810s', true); // Open URL asynchronously
+          xmlhttp.send();
+        })(); // Call this function
+  </script>
+  <!-- -->
+  <div id="applicationOptions" style="padding: 10px; DISPLAY: none; FONT: 8pt verdana;">
+   <table cellpadding="0" cellspacing="0" class="collapse BCSDTable shadow">
+    <tbody>
+     <tr class="even">
+      <!-- -->
+      <td class="two" style="border-bottom:1px solid #000" valign="top">
+       <table border="0" cellpadding="1" cellspacing="1" class="BCSDTable" width="350">
+        <tbody>
+         <tr>
+          <th>
+           Saved Searches
+          </th>
+         </tr>
+         <tr>
+          <td align="left" style="PADDING-LEFT: 10px; PADDING-RIGHT: 10px">
+           <div id="search_input">
+            <br/>
+            <font size="2">
+             <strong>
+              Name Current Search:
+             </strong>
+             <br/>
+            </font>
+            <input id="dialogViewName" name="dialogViewName" size="35"/>
+            <img alt="" height="19" onclick="saveView();" src="/mrcjava/image/view_save.png" style="CURSOR: pointer" width="20"/>
+            <br/>
+           </div>
+           <br/>
+           <font size="2">
+            <strong>
+             Execute Saved Search:
+            </strong>
+           </font>
+           <br/>
+           <table border="0" cellpadding="1" cellspacing="1" mrc_app="SH01_MP.I00290s">
+            <tbody>
+            </tbody>
+           </table>
+           <br/>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </td>
+      <!-- -->
+      <td class="two" style="border-bottom:1px solid #000" valign="top">
+       <table border="0" cellpadding="1" cellspacing="1" class="BCSDTable" width="200">
+        <tbody>
+         <tr>
+          <th>
+           Browser Mode
+          </th>
+         </tr>
+         <tr>
+          <td align="left" style="PADDING-LEFT: 10px; PADDING-RIGHT: 10px">
+           <br/>
+           <font size="2">
+            <strong>
+             Select Browsing Mode:
+            </strong>
+           </font>
+           <br/>
+           <br/>
+           <table border="0" cellpadding="1" cellspacing="1" id="device_select_table">
+            <tbody>
+             <tr>
+              <td>
+               <img src="/mrcjava/image/check.png"/>
+              </td>
+              <td>
+               <font size="2">
+                <a class="standard" href="#" onclick="switchDevice('pc')">
+                 PC
+                </a>
+               </font>
+              </td>
+             </tr>
+             <tr>
+              <td>
+              </td>
+              <td>
+               <font size="2">
+                <a class="standard" href="#" onclick="switchDevice('mob')">
+                 Mobile
+                </a>
+               </font>
+              </td>
+             </tr>
+            </tbody>
+           </table>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <!-- -->
+  <div class="ajax_content" id="mrcMainContent">
+   <form action="SH01_MP.I00290s" autocomplete="off" data-app_type="I" id="FORM_I00290" method="post" name="FORM_I00290">
+    <!-- Begin Navigation Bar -->
+    <table align="center" class="paging noPrint">
+     <tbody>
+      <tr>
+       <td>
+        <fieldset class="shadow" style="margin: 0px auto; padding: 10px; width: 440px; position: relative;">
+         <legend>
+          Search by Name
+         </legend>
+         <div id="excelDownloadIconContainer">
+          <a href="SH01_MP.R00250s?run=2">
+           <img alt="Download Inmates and Charges to Excel" id="excelDownloadIcon" src="http://showmeboone.com/common/images/excel_download_icon.png"/>
+           Export Detainees &amp;
+           <br/>
+           Charges to Excel
+          </a>
+         </div>
+         <p>
+          Last Name:
+          <input class="mrcinput" id="val_LASTNP" name="val_LASTNP" size="30" title="Last Name Contains These Letters" type="text" value=""/>
+         </p>
+         <p>
+          First Name:
+          <input class="mrcinput" id="val_FIRSTP" name="val_FIRSTP" size="30" title="First Name Contains These Letters" type="text" value=""/>
+         </p>
+         <input class="button nav" name="btn_search" type="submit" value="Search"/>
+         <input class="button nav" name="btn_reset" type="reset" value="Reset"/>
+         <p style="width: 100%; text-align: left; font-weight: bold;">
+          Run Date: 03/01/17
+         </p>
+        </fieldset>
+       </td>
+      </tr>
+      <tr>
+       <th class="th_left paging_row">
+        <span>
+         229 Detainees
+        </span>
+        <input alt="top" disabled="" name="btn_top" src="/mrcjava/image/dtop.gif" src1="/mrcjava/image/atop.gif" title="top" type="image"/>
+        <input alt="previous" disabled="" name="btn_prev" src="/mrcjava/image/dprev.gif" src1="/mrcjava/image/aprev.gif" title="previous" type="image"/>
+        <span>
+         Page 1 of 5
+        </span>
+        <input alt="next" name="btn_next" src="/mrcjava/image/anext.gif" src1="/mrcjava/image/anext.gif" title="next" type="image"/>
+        <input alt="bottom" name="btn_btm" src="/mrcjava/image/aend.gif" src1="/mrcjava/image/aend.gif" title="bottom" type="image"/>
+        <span>
+         Page Size
+        </span>
+        <input class="mrcinput" name="max_rows" size="3" title="max_rowsp" type="text" value="50"/>
+        <!-- -->
+        <!--
+<a href="SH01_MP.R00250s?run=2"><img alt=""  src="/mrcjava/image/format_excel.png" title="Output to Excel format" /></a>
+ class="to-excel-img", remove 
+<a>
+-->
+        <!-- -->
+       </th>
+      </tr>
+     </tbody>
+    </table>
+    <!-- End Navigation Bar -->
+    <!-- Begin Run Time Message -->
+    <div class="errortext1">
+    </div>
+    <!-- End Run Time Message -->
+    <div style="text-align: center; margin-top: 0.75em;">
+     <!--
+<a href="SH01_MP.R00250s?run=2" id="excelButton"><img alt="" src="/mrcjava/image/format_excel.png" style="top: 4px; position: relative;" title="Output to Excel format" /> <span style="padding-bottom: 0.25em; display: inline-block;">Output Inmate List and Charge Details to Excel</span></a>
+-->
+    </div>
+    <!--<p style="text-align: center; line-height: inherit;">Note: Click the <i class="fa fa-large fa-list-alt fa-fw" style="color: black;">&nbsp;</i>symbol to view detailed information about each inmate.</p>-->
+    <!-- -->
+    <!-- 
+<!--  -->
+    <!-- Begin Data Table -->
+    <script>
+     jQuery(document).ready(function(){         var greynames=new Array("s1LASTNP","s1FIRSTP","s1MIDDLP","s1PERKEP"); setSortImage2(greynames,'FORM_I00290'); });
+    </script>
+    <table align="center" cellspacing="0" class="collapse shadow BCSDTable">
+     <thead>
+      <!--BEGIN_SORT_TABLE_HEADER-->
+      <tr id="sort_table_head">
+       <th>
+       </th>
+       <th>
+        <img alt="Sort Ascending" border="0" class="sort_image" data-sort_col="LASTNP" data-sort_type="1" name="s1LASTNP" src="/mrcjava/image/asc.gif"/>
+        <img alt="Sort Descending" border="0" class="sort_image" data-sort_col="LASTNP" data-sort_type="0" name="s0LASTNP" src="/mrcjava/image/desc.gif"/>
+        Last Name
+       </th>
+       <th>
+        <img alt="Sort Ascending" border="0" class="sort_image" data-sort_col="FIRSTP" data-sort_type="1" name="s1FIRSTP" src="/mrcjava/image/asc.gif"/>
+        <img alt="Sort Descending" border="0" class="sort_image" data-sort_col="FIRSTP" data-sort_type="0" name="s0FIRSTP" src="/mrcjava/image/desc.gif"/>
+        First Name
+       </th>
+       <th>
+        <!--
+<img alt="Sort Ascending" border="0" class="sort_image" data-sort_col="MIDDLP" data-sort_type="1" name="s1MIDDLP" src="/mrcjava/image/asc.gif" /> 
+<img alt="Sort Descending" border="0" class="sort_image" data-sort_col="MIDDLP" data-sort_type="0" name="s0MIDDLP" src="/mrcjava/image/desc.gif" />-->
+        Middle Name
+       </th>
+       <th>
+        <!--
+<img alt="Sort Ascending" border="0" class="sort_image" data-sort_col="SEXCOP" data-sort_type="1" name="s1SEXCOP" src="/mrcjava/image/asc.gif" /> 
+<img alt="Sort Descending" border="0" class="sort_image" data-sort_col="SEXCOP" data-sort_type="0" name="s0SEXCOP" src="/mrcjava/image/desc.gif" />-->
+        Sex
+       </th>
+       <th>
+        <!--
+<img alt="Sort Ascending" border="0" class="sort_image" data-sort_col="RACECP" data-sort_type="1" name="s1RACECP" src="/mrcjava/image/asc.gif" /> 
+<img alt="Sort Descending" border="0" class="sort_image" data-sort_col="RACECP" data-sort_type="0" name="s0RACECP" src="/mrcjava/image/desc.gif" />-->
+        Race
+       </th>
+       <th>
+        <!--
+<img alt="Sort Ascending" border="0" class="sort_image" data-sort_col="AGEBEP" data-sort_type="1" name="s1AGEBEP" src="/mrcjava/image/asc.gif" /> 
+<img alt="Sort Descending" border="0" class="sort_image" data-sort_col="AGEBEP" data-sort_type="0" name="s0AGEBEP" src="/mrcjava/image/desc.gif" />-->
+        Age
+       </th>
+       <th>
+        <!--
+<img alt="Sort Ascending" border="0" class="sort_image" data-sort_col="CITYMP" data-sort_type="1" name="s1CITYMP" src="/mrcjava/image/asc.gif" /> 
+<img alt="Sort Descending" border="0" class="sort_image" data-sort_col="CITYMP" data-sort_type="0" name="s0CITYMP" src="/mrcjava/image/desc.gif" />-->
+        City
+       </th>
+       <th>
+        <!--
+<img alt="Sort Ascending" border="0" class="sort_image" data-sort_col="STATEP" data-sort_type="1" name="s1STATEP" src="/mrcjava/image/asc.gif" /> 
+<img alt="Sort Descending" border="0" class="sort_image" data-sort_col="STATEP" data-sort_type="0" name="s0STATEP" src="/mrcjava/image/desc.gif" />-->
+        State
+       </th>
+      </tr>
+      <!--END_SORT_TABLE_HEADER-->
+      <!--BEGIN_ADVANCED_SEARCH-->
+      <!-- -->
+      <tr id="search_table_head" style="display: none;">
+       <th align="center">
+       </th>
+       <th align="center">
+        <a class="nav" href="/mrcjava/mrcclasses/filter_relationship_help.html" linkedtype="" target="_blank" title="Filter Relationship Help">
+         ?
+        </a>
+        <select class="mrcselect" id="F_C_LI_LASTNP" name="rls_LASTNP">
+         <option title="Equal" value="EQ">
+          EQ
+         </option>
+         <option title="Not equal" value="NE">
+          NE
+         </option>
+         <option title="Greater than or equal" value="GE">
+          GE
+         </option>
+         <option title="Greater than" value="GT">
+          GT
+         </option>
+         <option title="Less than or equal" value="LE">
+          LE
+         </option>
+         <option title="Less than" value="LT">
+          LT
+         </option>
+         <option title="In the list" value="LS">
+          LS
+         </option>
+         <option title="Not in the list" value="NS">
+          NS
+         </option>
+         <option title="In the range" value="RG">
+          RG
+         </option>
+         <option title="Not in the range" value="NR">
+          NR
+         </option>
+         <option selected="selected" title="Contains" value="CT">
+          CT
+         </option>
+         <option title="Contains all" value="CA">
+          CA
+         </option>
+         <option title="Contains any" value="CO">
+          CO
+         </option>
+         <option title="Starts with" value="SW">
+          SW
+         </option>
+        </select>
+       </th>
+       <th align="center">
+        <select class="mrcselect" id="F_C_LI_FIRSTP" name="rls_FIRSTP">
+         <option title="Equal" value="EQ">
+          EQ
+         </option>
+         <option title="Not equal" value="NE">
+          NE
+         </option>
+         <option title="Greater than or equal" value="GE">
+          GE
+         </option>
+         <option title="Greater than" value="GT">
+          GT
+         </option>
+         <option title="Less than or equal" value="LE">
+          LE
+         </option>
+         <option title="Less than" value="LT">
+          LT
+         </option>
+         <option title="In the list" value="LS">
+          LS
+         </option>
+         <option title="Not in the list" value="NS">
+          NS
+         </option>
+         <option title="In the range" value="RG">
+          RG
+         </option>
+         <option title="Not in the range" value="NR">
+          NR
+         </option>
+         <option selected="selected" title="Contains" value="CT">
+          CT
+         </option>
+         <option title="Contains all" value="CA">
+          CA
+         </option>
+         <option title="Contains any" value="CO">
+          CO
+         </option>
+         <option title="Starts with" value="SW">
+          SW
+         </option>
+        </select>
+       </th>
+       <th align="center">
+        <select class="mrcselect" id="F_C_LI_MIDDLP" name="rls_MIDDLP">
+         <option title="Equal" value="EQ">
+          EQ
+         </option>
+         <option title="Not equal" value="NE">
+          NE
+         </option>
+         <option title="Greater than or equal" value="GE">
+          GE
+         </option>
+         <option title="Greater than" value="GT">
+          GT
+         </option>
+         <option title="Less than or equal" value="LE">
+          LE
+         </option>
+         <option title="Less than" value="LT">
+          LT
+         </option>
+         <option title="In the list" value="LS">
+          LS
+         </option>
+         <option title="Not in the list" value="NS">
+          NS
+         </option>
+         <option title="In the range" value="RG">
+          RG
+         </option>
+         <option title="Not in the range" value="NR">
+          NR
+         </option>
+         <option title="Contains" value="CT">
+          CT
+         </option>
+         <option title="Contains all" value="CA">
+          CA
+         </option>
+         <option title="Contains any" value="CO">
+          CO
+         </option>
+         <option title="Starts with" value="SW">
+          SW
+         </option>
+        </select>
+        <input class="mrcinput" id="val_MIDDLP" name="val_MIDDLP" size="6" title="val_MIDDLP" type="text" value=""/>
+       </th>
+       <th align="center">
+        <select class="mrcselect" id="F_C_LI_SEXCOP" name="rls_SEXCOP">
+         <option title="Equal" value="EQ">
+          EQ
+         </option>
+         <option title="Not equal" value="NE">
+          NE
+         </option>
+         <option title="Greater than or equal" value="GE">
+          GE
+         </option>
+         <option title="Greater than" value="GT">
+          GT
+         </option>
+         <option title="Less than or equal" value="LE">
+          LE
+         </option>
+         <option title="Less than" value="LT">
+          LT
+         </option>
+         <option title="In the list" value="LS">
+          LS
+         </option>
+         <option title="Not in the list" value="NS">
+          NS
+         </option>
+         <option title="In the range" value="RG">
+          RG
+         </option>
+         <option title="Not in the range" value="NR">
+          NR
+         </option>
+         <option title="Contains" value="CT">
+          CT
+         </option>
+         <option title="Contains all" value="CA">
+          CA
+         </option>
+         <option title="Contains any" value="CO">
+          CO
+         </option>
+         <option title="Starts with" value="SW">
+          SW
+         </option>
+        </select>
+        <input class="mrcinput" id="val_SEXCOP" name="val_SEXCOP" size="6" title="val_SEXCOP" type="text" value=""/>
+       </th>
+       <th align="center">
+        <select class="mrcselect" id="F_C_LI_RACECP" name="rls_RACECP">
+         <option title="Equal" value="EQ">
+          EQ
+         </option>
+         <option title="Not equal" value="NE">
+          NE
+         </option>
+         <option title="Greater than or equal" value="GE">
+          GE
+         </option>
+         <option title="Greater than" value="GT">
+          GT
+         </option>
+         <option title="Less than or equal" value="LE">
+          LE
+         </option>
+         <option title="Less than" value="LT">
+          LT
+         </option>
+         <option title="In the list" value="LS">
+          LS
+         </option>
+         <option title="Not in the list" value="NS">
+          NS
+         </option>
+         <option title="In the range" value="RG">
+          RG
+         </option>
+         <option title="Not in the range" value="NR">
+          NR
+         </option>
+         <option title="Contains" value="CT">
+          CT
+         </option>
+         <option title="Contains all" value="CA">
+          CA
+         </option>
+         <option title="Contains any" value="CO">
+          CO
+         </option>
+         <option title="Starts with" value="SW">
+          SW
+         </option>
+        </select>
+        <input class="mrcinput" id="val_RACECP" name="val_RACECP" size="6" title="val_RACECP" type="text" value=""/>
+       </th>
+       <th align="center">
+        <select class="mrcselect" id="F_C_LI_AGEBEP" name="rls_AGEBEP">
+         <option title="Equal" value="EQ">
+          EQ
+         </option>
+         <option title="Not equal" value="NE">
+          NE
+         </option>
+         <option title="Greater than or equal" value="GE">
+          GE
+         </option>
+         <option title="Greater than" value="GT">
+          GT
+         </option>
+         <option title="Less than or equal" value="LE">
+          LE
+         </option>
+         <option title="Less than" value="LT">
+          LT
+         </option>
+         <option title="In the list" value="LS">
+          LS
+         </option>
+         <option title="Not in the list" value="NS">
+          NS
+         </option>
+         <option title="In the range" value="RG">
+          RG
+         </option>
+         <option title="Not in the range" value="NR">
+          NR
+         </option>
+         <option title="Contains" value="CT">
+          CT
+         </option>
+         <option title="Contains all" value="CA">
+          CA
+         </option>
+         <option title="Contains any" value="CO">
+          CO
+         </option>
+         <option title="Starts with" value="SW">
+          SW
+         </option>
+        </select>
+        <input class="mrcinput" id="val_AGEBEP" name="val_AGEBEP" size="6" title="val_AGEBEP" type="text" value=""/>
+       </th>
+       <th align="center">
+        <select class="mrcselect" id="F_C_LI_CITYMP" name="rls_CITYMP">
+         <option title="Equal" value="EQ">
+          EQ
+         </option>
+         <option title="Not equal" value="NE">
+          NE
+         </option>
+         <option title="Greater than or equal" value="GE">
+          GE
+         </option>
+         <option title="Greater than" value="GT">
+          GT
+         </option>
+         <option title="Less than or equal" value="LE">
+          LE
+         </option>
+         <option title="Less than" value="LT">
+          LT
+         </option>
+         <option title="In the list" value="LS">
+          LS
+         </option>
+         <option title="Not in the list" value="NS">
+          NS
+         </option>
+         <option title="In the range" value="RG">
+          RG
+         </option>
+         <option title="Not in the range" value="NR">
+          NR
+         </option>
+         <option title="Contains" value="CT">
+          CT
+         </option>
+         <option title="Contains all" value="CA">
+          CA
+         </option>
+         <option title="Contains any" value="CO">
+          CO
+         </option>
+         <option title="Starts with" value="SW">
+          SW
+         </option>
+        </select>
+        <input class="mrcinput" id="val_CITYMP" name="val_CITYMP" size="6" title="val_CITYMP" type="text" value=""/>
+       </th>
+       <th align="center">
+        <select class="mrcselect" id="F_C_LI_STATEP" name="rls_STATEP">
+         <option title="Equal" value="EQ">
+          EQ
+         </option>
+         <option title="Not equal" value="NE">
+          NE
+         </option>
+         <option title="Greater than or equal" value="GE">
+          GE
+         </option>
+         <option title="Greater than" value="GT">
+          GT
+         </option>
+         <option title="Less than or equal" value="LE">
+          LE
+         </option>
+         <option title="Less than" value="LT">
+          LT
+         </option>
+         <option title="In the list" value="LS">
+          LS
+         </option>
+         <option title="Not in the list" value="NS">
+          NS
+         </option>
+         <option title="In the range" value="RG">
+          RG
+         </option>
+         <option title="Not in the range" value="NR">
+          NR
+         </option>
+         <option title="Contains" value="CT">
+          CT
+         </option>
+         <option title="Contains all" value="CA">
+          CA
+         </option>
+         <option title="Contains any" value="CO">
+          CO
+         </option>
+         <option title="Starts with" value="SW">
+          SW
+         </option>
+        </select>
+        <input class="mrcinput" id="val_STATEP" name="val_STATEP" size="6" title="val_STATEP" type="text" value=""/>
+       </th>
+      </tr>
+      <!-- -->
+     </thead>
+     <!--END_ADVANCED_SEARCH-->
+     <tfoot class="tfoot">
+      <tr>
+       <th class="tfoot" colspan="10" nowrap="nowrap">
+       </th>
+      </tr>
+     </tfoot>
+     <tbody class="stripe" id="mrc_main_table">
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=77695&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        ADAM
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        OMER
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        SIRAJ
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        29
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=74927&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        ALEXANDER
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BENJAMIN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        FRANKLIN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        22
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=29944&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        AMAN
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        JUSTIN
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        TYLER
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        36
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=73442&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        ANDREWS
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        JOSEPH
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DAMON
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        39
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=77910&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        ARTEAGA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BRAYAN
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        OSIRIS-CACHO
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        H
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        25
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        JEFFERSON CITY
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=78015&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        AUSTIN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        KAY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CEE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        33
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        KANSAS CITY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=78424&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        AVALOS-AVALOS
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        JOSE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        H
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        18
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        ST.ANN
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=37037&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BAIMA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        TERESA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MAE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        45
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CLARK
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=49782&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BARRETT
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        NICHOLE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        RAYSHEA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        31
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=42578&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BENNETT
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        EMAS
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CASSELL
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        38
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        KANSAS CITY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=10197&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BENNETT
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        VONTHILLA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MARIE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        52
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=78005&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BERARDI
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DEBORAH
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        EVA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        55
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=74963&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BERETS
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        HARRISON
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        21
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=71900&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BERGESCH
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CHRISTOPHER
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        JAMES
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        25
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        FULTON
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=73590&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BLAIR
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        RYAN
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        WADE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        25
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MEXICO
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=65798&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BLAND
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        RANDY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        LAMONT
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        22
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        SPRINGFIELD
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=77797&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BODINE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        EDITH
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        JOYCE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        41
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MOBERLY
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=77899&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BOGART
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COURTNEY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        LEE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        39
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=18384&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BONAPARTE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        NATHANIEL
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        LEROY
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        38
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=27942&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BOWERS
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        ARRINGTON
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        LEE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        50
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=44762&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BRADLEY
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        JAMIE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MICHELLE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        32
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=78202&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BROOKINS
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        OSCAR
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MENTER
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        28
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=78203&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BROOKINS
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        QUANTRELL
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        TRAVEION
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        26
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=77823&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BROWN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        JARRELL
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DORAN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        19
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        KANSAS CITY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=55980&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BUCHANAN
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CHARLES
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MARLEON
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        25
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=2306&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        BURKS
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        JUSTIN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        JAY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        41
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        FULTON
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=34696&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        BURTON
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        RICK
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        DONNELL
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        53
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        ST LOUIS
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=38561&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CANNELL
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MAC
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        GARNETT
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        32
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=44116&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CARRASQUILLO-MARTINEZ
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        ANGEL
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        LUIS
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        H
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        35
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        JACKSON
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=56088&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CARTER
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DARIAN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MAURICE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        24
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=67469&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CARTER
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        DEMARCO
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        RAYDELL
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        21
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=71555&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CARTER
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        KORJANAE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        FORSTEIN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        23
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=78221&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CEFERINO
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        APAEZ
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        ESTELA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        H
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        29
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=66238&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CHASE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        JULIAN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        FULLER
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        23
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=30772&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CLARK
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        DEVIN
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        J
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        41
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=59211&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CLARKSON
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        RODNEY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        ALEXANDER
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        25
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=17253&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CLAYTON
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        DEWAYNE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        EDWARD
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        51
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=52814&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COATES
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        JOSHUA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        EDWARD
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        35
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        ROCHEPORT
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=38626&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLLINS
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        DENNIS
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CARL
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        32
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=76968&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CONTRERAS
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        JOEY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        29
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MARSHALL
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=36693&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CRUM
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CHRISTOPHER
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        KHAN
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        37
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=73762&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        CRUSBY-DANIELS
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        RAYMONDRE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MACK
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        19
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        FULTON
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=75147&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        CUNNINGHAM
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MYLONYO
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        TRAMIRE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        24
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=52727&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DALTON
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        NEIL
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        LANCE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        29
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=61234&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        DAVIS
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        KAYLA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        REBECCA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        27
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=56406&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DEACON
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DUSTIN
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        ODALE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        24
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=73797&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        DELVON
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        ANTONIO
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        KEVON
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        24
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=71050&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DENNY
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DEANDRE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        LAVELLE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        B
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        20
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="odd">
+       <td class="one td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=74231&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        DIAZ
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MARIBEL
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MARIE
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        F
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        H
+       </td>
+       <td class="one td_right" nowrap="nowrap">
+        18
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="one td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+      <tr class="even">
+       <td class="two td_left" nowrap="nowrap">
+        <a class="_lookup" height="600" href="SH01_MP.I00500s?PERKEP=47751&amp;hover_redir=&amp;height=600&amp;width=860&amp;devicetype=pc" linkedtype="I" mrc="returndata" target="_lookup" width="860">
+         <i class="fa fa-large fa-fw fa-list-alt">
+         </i>
+         Details
+        </a>
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        DORE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        ROBERT
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        LEE
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        M
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        W
+       </td>
+       <td class="two td_right" nowrap="nowrap">
+        29
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        COLUMBIA
+       </td>
+       <td class="two td_left" nowrap="nowrap">
+        MO
+       </td>
+      </tr>
+      <!-- -->
+     </tbody>
+    </table>
+    <!-- Boone County Web Counter - Start -->
+    <p style="text-align: center; display:">
+     Detainee Count 229
+     <input alt="top" disabled="" name="btn_top" src="/mrcjava/image/dtop.gif" src1="/mrcjava/image/atop.gif" title="top" type="image"/>
+     <input alt="previous" disabled="" name="btn_prev" src="/mrcjava/image/dprev.gif" src1="/mrcjava/image/aprev.gif" title="previous" type="image"/>
+     Page 1 of 5
+     <input alt="next" name="btn_next" src="/mrcjava/image/anext.gif" src1="/mrcjava/image/anext.gif" title="next" type="image"/>
+     <input alt="bottom" name="btn_btm" src="/mrcjava/image/aend.gif" src1="/mrcjava/image/aend.gif" title="bottom" type="image"/>
+    </p>
+    <div align="center">
+     <strong>
+      This page has been viewed
+      <span id="viewCount">
+       <html>
+        <head>
+         <title>
+         </title>
+        </head>
+        <body>
+         1,450,144
+        </body>
+       </html>
+      </span>
+      times since 1/3/06
+     </strong>
+    </div>
+    <!-- Boone County Web Counter - End -->
+    <!-- End data table -->
+    <!-- End Background Table -->
+    <div class="back" contenteditable="false" id="hiddenfields">
+     <input name="slnk" type="hidden" value="0"/>
+     <input name="sort_col" type="hidden" value="LASTNP"/>
+     <input name="sort_typ" type="hidden" value="1"/>
+     <input name="cur_sort_col" type="hidden" value=""/>
+     <input name="reorder" type="hidden" value=""/>
+     <input name="pageName" type="hidden" value=""/>
+     <input name="preview" type="hidden" value="0"/>
+     <input name="debug" type="hidden" value="0"/>
+     <input name="pageNum" type="hidden" value="1"/>
+     <input name="total_rows" type="hidden" value="229"/>
+     <input id="ajax_form" name="ajax_form" type="hidden" value="0"/>
+     <input id="toexcel" name="excel" type="hidden" value="0"/>
+    </div>
+   </form>
+   <script type="text/javascript">
+    if (!jQuery('#viewCount').html()) {
+  jQuery.ajax({
+    url: 'BC02_MP.R00070s?basic=1&run=2&data=1&R001=SH01_MP.I00080s',
+    cache: false
+  })
+    .done(function(html) {
+      jQuery('#viewCount').html(html);
+    });
+}
+   </script>
+  </div>
+  <!-- Begin mrc Footer -->
+  <!-- Begin Boone County Default Footer -->
+  <!-- Begin Bottom Table -->
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tr>
+    <td class="footline">
+    </td>
+   </tr>
+  </table>
+  <!-- End Bottom Table -->
+  <div class="footerMenuLinks noPrint">
+   <div class="footerMenuLinksRow">
+    <a href="https://showmeboone.com" title="www.showmeboone.com">
+     Home
+    </a>
+    |
+    <a href="https://showmeboone.com/home/accessibility.asp" title="Accessibility">
+     Accessibility
+    </a>
+    |
+    <a href="https://showmeboone.com/Home/CountyOfficials.asp" title="County Officials">
+     County Officials
+    </a>
+    |
+    <a href="https://showmeboone.com/Home/ContactUs.asp" title="Hours &amp; Location">
+     Hours &amp; Location
+    </a>
+    |
+    <a href="https://showmeboone.com/Home/sitemap.asp" title="Site Map">
+     Site Map
+    </a>
+    |
+    <a href="https://showmeboone.com/redirect.asp?url=http://oseda.missouri.edu/cgi-bin/countypage?29019" title="County Fact Sheet">
+     County Fact Sheet
+    </a>
+   </div>
+   <div class="footerMenuLinksRow">
+    <a href="https://showmeboone.com/ASSESSOR/" target="_top" title="Assessor">
+     Assessor
+    </a>
+    |
+    <a href="https://showmeboone.com/AUDITOR/" target="_top" title="Auditor">
+     Auditor
+    </a>
+    |
+    <a href="https://showmeboone.com/CLERK/" target="_top" title="County Clerk">
+     County Clerk
+    </a>
+    |
+    <a href="https://showmeboone.com/COLLECTOR/" target="_top" title="Collector">
+     Collector
+    </a>
+    |
+    <a href="https://showmeboone.com/COMMISSION/" target="_top" title="Commission">
+     Commission
+    </a>
+    |
+    <a href="https://showmeboone.com/GIS/" target="_top" title="GIS">
+     GIS
+    </a>
+    |
+    <a href="https://showmeboone.com/HR/" target="_top" title="Human Resources">
+     Human Resources
+    </a>
+   </div>
+   <div class="footerMenuLinksRow">
+    <a href="https://showmeboone.com/BCJC/" target="_top" title="Joint Communications">
+     Joint Communications
+    </a>
+    |
+    <a href="https://showmeboone.com/PA/" target="_top" title="Prosecuting Attorney">
+     Prosecuting Attorney
+    </a>
+    |
+    <a href="https://showmeboone.com/publicworks/" target="_top" title="Public Works">
+     Public Works
+    </a>
+    |
+    <a href="https://showmeboone.com/PURCHASING/" target="_top" title="Purchasing">
+     Purchasing
+    </a>
+    |
+    <a href="https://showmeboone.com/PUBLICADMIN/" target="_top" title="Public Administrator">
+     Public Administrator
+    </a>
+   </div>
+   <div class="footerMenuLinksRow">
+    <a href="https://showmeboone.com/RECORDER/" target="_top" title="Recorder of Deeds">
+     Recorder of Deeds
+    </a>
+    |
+    <a href="https://showmeboone.com/ResourceManagement/" target="_top" title="Resource Management">
+     Resource Management
+    </a>
+    |
+    <a href="https://www.boonecountymo.org/sheriff/" target="_top" title="Sheriff">
+     Sheriff
+    </a>
+    |
+    <a href="https://showmeboone.com/TREASURER/" target="_top" title="Treasurer">
+     Treasurer
+    </a>
+   </div>
+  </div>
+  <p class="noPrint" style="text-align:center;font-weight:bold;">
+   <a class="email" href="https://www.showmeboone.com/countylistserv.asp" target="_top" title="Subscribe to the Boone County News email list">
+    Subscribe
+   </a>
+   to the Boone County News email list.
+  </p>
+  <!-- Begin Bottom Lines of Text -->
+  <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tr>
+    <td class="foottext">
+     Copyright © 2017 Boone County, Missouri. All rights reserved.
+    </td>
+   </tr>
+   <tr>
+    <td class="foottext">
+     This Web application was developed by
+     <a href="https://www.boonecountymo.org">
+      Boone County
+     </a>
+     .
+    </td>
+   </tr>
+  </table>
+  <!-- End Bottom Lines of Text -->
+  <!-- End mrc Default Footer -->
+  <!-- End mrc Footer -->
+  <!-- do not delete this comment.
+-->
+  <br/>
+  <br/>
+  <br/>
+  <!--  Template date: 2012-05-08 -->
+  <br/>
+  <br/>
+  <br/>
+ </body>
+</html>

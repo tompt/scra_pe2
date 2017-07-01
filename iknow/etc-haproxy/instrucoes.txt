@@ -1,0 +1,13 @@
+sudo apt-get install haproxy hatop -y
+
+sudo nano /etc/haproxy/haproxy.cfg
+
+copiar o ficheiro dentro da pasta etc-haproxy para
+
+/etc/haproxy
+
+sudo service haproxy restart
+
+
+#para ter boas estatisticas em linha de comandos:
+sudo hatop -s /var/run/haproxy/admin.sock

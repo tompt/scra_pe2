@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html class="cufon-active cufon-ready" lang="en-US"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<title>Web Scraping with BeautifulSoup and Python | kscottz</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://www.kscottz.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="kscottz » Feed" href="http://www.kscottz.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="kscottz » Comments Feed" href="http://www.kscottz.com/comments/feed/">
+		<script type="text/javascript" async="" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/ga.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.kscottz.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.9"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/wp-emoji-release.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="ayvpp-admin-css" href="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="github-profile-display-css" href="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/github_wordpress_widget.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-syntax-css-css" href="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/wp-syntax.css" type="text/css" media="all">
+<link rel="stylesheet" id="afg_colorbox_css-css" href="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/colorbox.css" type="text/css" media="all">
+<link rel="stylesheet" id="afg_css-css" href="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/afg.css" type="text/css" media="all">
+<link rel="stylesheet" id="default-css" href="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/style.css" type="text/css" media="all">
+<!--[if IE 7]>
+<link rel='stylesheet' id='delicate-ie7-css'  href='http://www.kscottz.com/wp-content/themes/delicate/ie7.css' type='text/css' media='all' />
+<![endif]-->
+<!--[if IE 6]>
+<link rel='stylesheet' id='delicate-ie6-css'  href='http://www.kscottz.com/wp-content/themes/delicate/ie6.css' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript">var ayvpp_root = "http://www.kscottz.com";</script>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/processing-1.js"></script>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/jquery_002.js"></script>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/jquery-migrate.js"></script>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/superfish.js"></script>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/jquery_003.js"></script>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/cufon.js"></script><style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/Vegur_400.js"></script>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/jquery.js"></script>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/mycolorbox.js"></script>
+<link rel="https://api.w.org/" href="http://www.kscottz.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.kscottz.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.kscottz.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="DRAGON BOT IS GO!" href="http://www.kscottz.com/dragon-bot-is-go/">
+<link rel="next" title="Solving Autostereograms AKA Magic Eyes" href="http://www.kscottz.com/solving-autostereograms-aka-magic-eyes/">
+<meta name="generator" content="WordPress 4.4.9">
+<link rel="canonical" href="http://www.kscottz.com/web-scraping-with-beautifulsoup-and-python/">
+<link rel="shortlink" href="http://www.kscottz.com/?p=499">
+<link rel="alternate" type="application/json+oembed" href="http://www.kscottz.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.kscottz.com%2Fweb-scraping-with-beautifulsoup-and-python%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.kscottz.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.kscottz.com%2Fweb-scraping-with-beautifulsoup-and-python%2F&amp;format=xml">
+<style type="text/css">/* Start writing your custom CSS here */</style><meta name="template" content="delicate 3.5.5">
+<meta name="generator" content="NattyWP Framework Version 2.1.5">
+<meta name="description" content="Computer Vision, Image Processing, Image Analysis, Computer Graphics, Cameras, Python, C++, Education, Manufacturing, Ann Arbor, New York, Michigan,">
+<link rel="stylesheet" type="text/css" href="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/shortcodes.css" media="screen"><script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/shortcode.js"></script><style type="text/css">
+	.topnav a {
+		font-size: px;
+	}
+	.topnav a {
+		color: #;
+	}
+	.topnav a:hover, .topnav ul.children > li > a:hover, .topnav ul.children > li > a:hover span {
+		color: #;
+	}
+	body {
+		font-size: px;
+	}
+	.post {
+		color: #;
+	}
+	.post a {
+		color: #;
+	}
+	.post a:hover {
+		color: #;
+	}
+	#sidebar li.widget, #sidebar h2 {
+		color: #;
+	}
+	#sidebar li.widget a {
+		color: #;
+	}
+	#sidebar li.widget a:hover {
+		color: #;
+	}
+</style><!--[if IE 6]><style type="text/css">
+            img.png {
+            filter: expression(
+            (runtimeStyle.filter == '') ? runtimeStyle.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src='+src+', sizingMethod=scale)' : '',
+            width = width,
+            src = 'http://www.kscottz.com/wp-content/themes/delicate/images/px.gif');
+    }
+        </style><![endif]--><!--[if IE 6]><script type="text/javascript" src="http://www.kscottz.com/wp-content/themes/delicate/js/menu.js"></script><![endif]-->	<style type="text/css">
+           .head-img .tagline {color: #ff2424 !important;}
+        .content-pad,
+    .slideshow-bg .slideshow, .slideshow-bg .slideshow > div,
+    .head-img img {width:970px;}
+	</style>
+	</head>
+
+<body class="single single-post postid-499 single-format-standard"><div id="cboxOverlay" style="display: none;"></div><div id="afgcolorbox" class="" style="padding-bottom: 42px; padding-right: 42px; display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div>
+<div class="content-pad">
+<div id="header">
+	<div id="logo"><a href="http://www.kscottz.com/"><img src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/title.png" class="png" alt="kscottz" border="0"></a></div>	     
+  <div id="top_search"> 
+      <form method="get" id="searchforma" class="search" action="http://www.kscottz.com/">	
+    <input class="search-input png_crop" title="search" value="Search" onblur="if (!value)value='Search'" onclick="value=''" id="edit-search-theme-form-keys" name="s" type="text">
+    <input alt="Search" title="Search" class="search-submit png_crop" name="op" value="" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/submit.png" type="image">
+</form><div style="clear:both;"></div>  </div>
+  </div>
+
+<div class="top">
+    <div id="menu">	
+       <ul id="nav-ie" class="topnav fl fr sf-js-enabled sf-shadow"><li class="page_item page-item-2"><a href="http://www.kscottz.com/about/"><span>About</span></a></li>
+<li class="page_item page-item-11"><a href="http://www.kscottz.com/curriculum-vitae/"><span>Curriculum Vitae</span></a></li>
+</ul>    </div>                
+</div> <!-- END top -->
+<div class="clear"></div>
+<div class="head-img">
+        <div class="tagline">Pets, Plants, and Computer Vision</div>
+      <img src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/bar4.jpg" alt="Header" width="970" height="225">
+    </div>
+<!-- END Header --><div id="main">		
+	<div class="columns">	
+    <div class="narrowcolumn singlepage no">
+          							
+			<div class="post post-499 type-post status-publish format-standard hentry category-ann-arbor category-artificial-intelligence category-audio category-birds category-classification category-code category-fun category-machine-learning category-michigan category-python-2 category-signal-processing category-uncategorized">            	
+         <div class="title">
+          <h2><cufon class="cufon cufon-canvas" alt="Web " style="width: 53px; height: 24px;"><canvas width="72" height="27" style="width: 72px; height: 27px; top: -2px; left: -1px;"></canvas><cufontext>Web </cufontext></cufon><cufon class="cufon cufon-canvas" alt="Scraping " style="width: 96px; height: 24px;"><canvas width="116" height="27" style="width: 116px; height: 27px; top: -2px; left: -1px;"></canvas><cufontext>Scraping </cufontext></cufon><cufon class="cufon cufon-canvas" alt="with " style="width: 52px; height: 24px;"><canvas width="71" height="27" style="width: 71px; height: 27px; top: -2px; left: -1px;"></canvas><cufontext>with </cufontext></cufon><cufon class="cufon cufon-canvas" alt="BeautifulSoup " style="width: 152px; height: 24px;"><canvas width="171" height="27" style="width: 171px; height: 27px; top: -2px; left: -1px;"></canvas><cufontext>BeautifulSoup </cufontext></cufon><cufon class="cufon cufon-canvas" alt="and " style="width: 45px; height: 24px;"><canvas width="65" height="27" style="width: 65px; height: 27px; top: -2px; left: -1px;"></canvas><cufontext>and </cufontext></cufon><cufon class="cufon cufon-canvas" alt="Python" style="width: 73px; height: 24px;"><canvas width="85" height="27" style="width: 85px; height: 27px; top: -2px; left: -1px;"></canvas><cufontext>Python</cufontext></cufon></h2>
+                <small>July 1st, 2013 | Posted by <span class="author"><span class="author vcard"><a class="url fn n" href="http://www.kscottz.com/author/admin/" title="View all posts by admin">admin</a></span></span> in <a href="http://www.kscottz.com/category/ann-arbor/" rel="category tag">Ann Arbor</a> | <a href="http://www.kscottz.com/category/artificial-intelligence/" rel="category tag">artificial intelligence</a> | <a href="http://www.kscottz.com/category/audio/" rel="category tag">audio</a> | <a href="http://www.kscottz.com/category/birds/" rel="category tag">birds</a> | <a href="http://www.kscottz.com/category/classification/" rel="category tag">classification</a> | <a href="http://www.kscottz.com/category/code/" rel="category tag">code</a> | <a href="http://www.kscottz.com/category/fun/" rel="category tag">Fun!</a> | <a href="http://www.kscottz.com/category/machine-learning/" rel="category tag">machine learning</a> | <a href="http://www.kscottz.com/category/michigan/" rel="category tag">Michigan</a> | <a href="http://www.kscottz.com/category/python-2/" rel="category tag">python</a> | <a href="http://www.kscottz.com/category/signal-processing/" rel="category tag">signal processing</a> | <a href="http://www.kscottz.com/category/uncategorized/" rel="category tag">Uncategorized</a> </small> 
+         </div>                
+				<div class="entry">
+                          <div id="attachment_503" style="width: 650px" class="wp-caption aligncenter"><a href="http://www.kscottz.com/wp-content/uploads/2013/07/titmouse.jpg"><img src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/titmouse.jpg" alt="Tufted Titmouse - I love these guys, so cute." class="size-full wp-image-503" srcset="http://www.kscottz.com/wp-content/uploads/2013/07/titmouse-300x225.jpg 300w, http://www.kscottz.com/wp-content/uploads/2013/07/titmouse.jpg 640w" sizes="(max-width: 640px) 100vw, 640px" width="640" height="480"></a>
+<p class="wp-caption-text">Tufted Titmouse – I love these guys, so cute.</p>
+</div>
+<p>I’ve been working on building an automated bird call recognition 
+system using python. The first step in getting everything working is to 
+pull down a data set of bird calls from which to train and test my 
+ideas. To get this data I needed a lot of bird calls. It just so happens
+ that there are a couple of large repositories of this type of data 
+including the <a href="http://xeno-canto.org/">Xeno-Canto library</a> and the <a href="http://www.birds.cornell.edu/">Cornell Ornithology Library</a>.
+ The only problem is that it lives in websites with embedded players and
+ I need the raw data. I decided to try and write a basic web-scraper 
+that would pull down the data I wanted. To do this I first created a 
+list the scientific names of all of the song birds that I am pretty sure
+ live in my neighborhood (at least the common ones I’ve seen before). I 
+checked a couple of websites to cross check my assumptions and developed
+ the following list:</p>
+<ul>
+<li>    <a href="http://en.wikipedia.org/wiki/Cyanocitta_cristata" target="_blank"><em>Cyanocitta cristata</em> – blue jay</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Northern_Cardinal" target="_blank"><em>Cardinalis cardinalis</em> – cardinal</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Zenaida_macroura" target="_blank"><em>Zenaida macroura</em> – morning dove</a></li>
+<li>   <a href="http://en.wikipedia.org/wiki/Turdus_migratorius" target="_blank"><em>Turdus migratorius</em> – robin</a></li><a href="http://en.wikipedia.org/wiki/Turdus_migratorius" target="_blank">
+</a><li><a href="http://en.wikipedia.org/wiki/Turdus_migratorius" target="_blank">    </a><a href="http://en.wikipedia.org/wiki/Turdus_migratorius" target="_blank"><em>Turdus migratorius</em> – robin</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Carduelis_tristis" target="_blank"><em>Carduelis tristis</em> – gold finch</a>
+</li>
+<li>    <a href="http://en.wikipedia.org/wiki/Passer_domesticus" target="_blank"><em>Passer domesticus</em> – house sparrow</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Quiscalus_quiscula" target="_blank"><em>Quiscalus quiscula</em>  – common grackle</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Archilochus_colubris" target="_blank"><em>Archilochus colubris</em> – ruby throated humming bird</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Picoides_pubescens" target="_blank"><em>Picoides pubescens</em> – downy wood pecker</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Columba_livia" target="_blank"><em>Columba livia</em> – rock pigeon</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Sitta_carolinensis" target="_blank"><em>Sitta carolinensis</em> – white breasted nut-hatch</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Poecile_atricapillus" target="_blank"><em>Poecile atricapillus</em> – Black-capped chickadee</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Agelaius_phoeniceus" target="_blank"><em>Agelaius phoeniceus</em> – Red-winged black bird</a></li>
+<li>    <a href="http://en.wikipedia.org/wiki/Haemorhous_purpureus" target="_blank"><em>Haemorhous purpureus</em> – Purple Finch</a>
+</li>
+<li>    <a href="http://en.wikipedia.org/wiki/Baeolophus_bicolor" target="_blank"><em>Baeolophus bicolor</em> – tufted titmouse</a></li>
+</ul>
+<p>To do the scraping I used the <a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup python library</a>
+ to help me navigate the DOM from xeno-canto bird library. The code 
+works by crafting a query for each bird species, and parsing the DOM to 
+look for the xc-button-audio in a div element. In that div element there
+ is a sub tag called data-xc-filepath which points to the mp3 file URL. 
+My friend <a href="http://theworkdept.com/about" target="_blank">Ben</a>
+ helped me figure out that last little bit as I am barely competent as a
+ web money. Once I have the mp3 file URL I use os.system to call wget on
+ the mp3 url. I also do some book keeping to keep all the bird calls in 
+different directories and navigate the multiple pages of results. If I 
+get some more time I will try to extract all of the metadata and save it
+ to a CSV file, but for right now this works. You can see the code 
+below:</p>
+<p><script src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/9e244cdcf92569995ee0.js"></script><link rel="stylesheet" href="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/gist-embed-9f0a4ad9c85ca776e669003688baa9d55f9db315562ce4d23.css"></p><div id="gist5897224" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-souptonuts-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-souptonuts-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-souptonuts-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">from</span> BeautifulSoup <span class="pl-k">import</span> BeautifulSoup </td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-souptonuts-py-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> urllib2</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-souptonuts-py-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> os</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-souptonuts-py-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-souptonuts-py-LC5" class="blob-code blob-code-inner js-file-line">dataPath <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>rawData<span class="pl-pds">'</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-souptonuts-py-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-souptonuts-py-LC7" class="blob-code blob-code-inner js-file-line">birdList <span class="pl-k">=</span> [</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-souptonuts-py-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Cyanocitta+cristata<span class="pl-pds">'</span></span>,<span class="pl-c"><span class="pl-c">#</span>blue jay</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-souptonuts-py-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Cardinalis+cardinalis<span class="pl-pds">'</span></span>,<span class="pl-c"><span class="pl-c">#</span>cardinal</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-souptonuts-py-LC10" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Zenaida+macroura<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span>morning dove</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-souptonuts-py-LC11" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Turdus+migratorius<span class="pl-pds">'</span></span>,<span class="pl-c"><span class="pl-c">#</span>robin</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-souptonuts-py-LC12" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Carduelis+tristis<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span>gold finch</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-souptonuts-py-LC13" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Passexu+domesticus<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span>house sparrow</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-souptonuts-py-LC14" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Quiscalus+quiscula<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span>common grackle</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-souptonuts-py-LC15" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Archilochus+colubris<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span>ruby throated humming bird</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-souptonuts-py-LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Picoides+pubescens<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span> downy wood pecker</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-souptonuts-py-LC17" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Columba+livia<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span> rock pigeon</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-souptonuts-py-LC18" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Sitta+carolinensis<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span> white breasted nut-hatch</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-souptonuts-py-LC19" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Poecile+atricapillus<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span> Black-capped chickadee</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-souptonuts-py-LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Agelaius+phoeniceus<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span> Red-winged black bird</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-souptonuts-py-LC21" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Haemorhous+purpureus<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span>Purple Finch</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-souptonuts-py-LC22" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">'</span>Baeolophus+bicolor<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">#</span>tufted titmouse</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-souptonuts-py-LC23" class="blob-code blob-code-inner js-file-line">    ]</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-souptonuts-py-LC24" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-souptonuts-py-LC25" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-souptonuts-py-LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">downloadBirdCalls</span>(<span class="pl-smi">stub</span>, <span class="pl-smi">bird</span>,<span class="pl-smi">path</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-souptonuts-py-LC27" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span><span class="pl-k">*</span><span class="pl-c1">30</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-souptonuts-py-LC28" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>DOWNLOADING <span class="pl-c1">{0}</span> to <span class="pl-c1">{1}</span><span class="pl-pds">"</span></span>.format(bird,path)</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-souptonuts-py-LC29" class="blob-code blob-code-inner js-file-line">    os.chdir(path)</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-souptonuts-py-LC30" class="blob-code blob-code-inner js-file-line">    n <span class="pl-k">=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-souptonuts-py-LC31" class="blob-code blob-code-inner js-file-line">    page <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>&amp;pg=<span class="pl-pds">'</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-souptonuts-py-LC32" class="blob-code blob-code-inner js-file-line">    foundStuff <span class="pl-k">=</span> <span class="pl-c1">True</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-souptonuts-py-LC33" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">while</span> foundStuff:</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-souptonuts-py-LC34" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>DOING PAGE <span class="pl-c1">{0}</span><span class="pl-pds">"</span></span>.format(n)</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-souptonuts-py-LC35" class="blob-code blob-code-inner js-file-line">        url <span class="pl-k">=</span> stub<span class="pl-k">+</span>bird<span class="pl-k">+</span>page<span class="pl-k">+</span><span class="pl-c1">str</span>(n)</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-souptonuts-py-LC36" class="blob-code blob-code-inner js-file-line">        n <span class="pl-k">=</span> n <span class="pl-k">+</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-souptonuts-py-LC37" class="blob-code blob-code-inner js-file-line">        url <span class="pl-k">=</span> urllib2.urlopen(url)</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-souptonuts-py-LC38" class="blob-code blob-code-inner js-file-line">        content <span class="pl-k">=</span> url.read()</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-souptonuts-py-LC39" class="blob-code blob-code-inner js-file-line">        soup <span class="pl-k">=</span> BeautifulSoup(content)</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-souptonuts-py-LC40" class="blob-code blob-code-inner js-file-line">        found <span class="pl-k">=</span> soup.findAll(<span class="pl-s"><span class="pl-pds">"</span>div<span class="pl-pds">"</span></span>, {<span class="pl-s"><span class="pl-pds">"</span>class<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>xc-button-audio<span class="pl-pds">"</span></span>})</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-souptonuts-py-LC41" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>( <span class="pl-c1">len</span>(found) <span class="pl-k">&lt;</span> <span class="pl-c1">1</span> ):</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-souptonuts-py-LC42" class="blob-code blob-code-inner js-file-line">            foundStuff <span class="pl-k">=</span> <span class="pl-c1">False</span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-souptonuts-py-LC43" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span> foundSound <span class="pl-k">in</span> found:</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-souptonuts-py-LC44" class="blob-code blob-code-inner js-file-line">            soundUrl <span class="pl-k">=</span> [f[<span class="pl-c1">1</span>] <span class="pl-k">for</span> f <span class="pl-k">in</span> foundSound.attrs <span class="pl-k">if</span> f[<span class="pl-c1">0</span>]<span class="pl-k">==</span><span class="pl-s"><span class="pl-k">u</span><span class="pl-pds">'</span>data-xc-filepath<span class="pl-pds">'</span></span>]</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-souptonuts-py-LC45" class="blob-code blob-code-inner js-file-line">            grabThis <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>wget <span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-souptonuts-py-LC46" class="blob-code blob-code-inner js-file-line">            grabThis <span class="pl-k">=</span> grabThis <span class="pl-k">+</span> soundUrl[<span class="pl-c1">0</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="file-souptonuts-py-LC47" class="blob-code blob-code-inner js-file-line">            os.system(grabThis)</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="file-souptonuts-py-LC48" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="file-souptonuts-py-LC49" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="file-souptonuts-py-LC50" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="file-souptonuts-py-LC51" class="blob-code blob-code-inner js-file-line"><span class="pl-k">if</span> <span class="pl-k">not</span> os.path.exists(os.path.join(os.getcwd(), dataPath)):</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="file-souptonuts-py-LC52" class="blob-code blob-code-inner js-file-line">    os.mkdir(os.path.join(os.getcwd(),dataPath))</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="file-souptonuts-py-LC53" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="file-souptonuts-py-LC54" class="blob-code blob-code-inner js-file-line">os.chdir(os.path.join(os.getcwd(),dataPath))</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="file-souptonuts-py-LC55" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="file-souptonuts-py-LC56" class="blob-code blob-code-inner js-file-line">paths <span class="pl-k">=</span> []</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="file-souptonuts-py-LC57" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="file-souptonuts-py-LC58" class="blob-code blob-code-inner js-file-line"><span class="pl-k">for</span> bird <span class="pl-k">in</span> birdList:</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="file-souptonuts-py-LC59" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> <span class="pl-k">not</span> os.path.exists(os.path.join(os.getcwd(), bird)):</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="file-souptonuts-py-LC60" class="blob-code blob-code-inner js-file-line">        os.mkdir(os.path.join(os.getcwd(),bird))</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="file-souptonuts-py-LC61" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Creating <span class="pl-pds">"</span></span> <span class="pl-k">+</span> os.path.join(os.getcwd(),bird)</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="file-souptonuts-py-LC62" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">else</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="file-souptonuts-py-LC63" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Found <span class="pl-pds">"</span></span> <span class="pl-k">+</span> os.path.join(os.getcwd(),bird)</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="file-souptonuts-py-LC64" class="blob-code blob-code-inner js-file-line">    paths.append(os.path.join(os.getcwd(),bird))</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="file-souptonuts-py-LC65" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="file-souptonuts-py-LC66" class="blob-code blob-code-inner js-file-line">stub <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>http://www.xeno-canto.org/browse.php?species_nr=&amp;query=<span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td id="file-souptonuts-py-LC67" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td id="file-souptonuts-py-LC68" class="blob-code blob-code-inner js-file-line"><span class="pl-k">for</span> bird,path <span class="pl-k">in</span> <span class="pl-c1">zip</span>(birdList,paths):</td>
+      </tr>
+      <tr>
+        <td id="file-souptonuts-py-L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td id="file-souptonuts-py-LC69" class="blob-code blob-code-inner js-file-line">    downloadBirdCalls(stub, bird,path)</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/kscottz/9e244cdcf92569995ee0/raw/a770d870d2a2b8dd0aa524ec6a7d6c68e1834e36/SoupToNuts.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/kscottz/9e244cdcf92569995ee0#file-souptonuts-py">SoupToNuts.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+<p>Now that I have the data I need to figure out how to extract 
+individual calls from each file that can contain multiple calls. My 
+working idea is to look for regions where the peak-to-peak audio values 
+are low enough to be considered silence. I will use these silence 
+intervals to split the files into individual calls. Once I get to the 
+short individual calls I am thinking I will run an FFT over the audio 
+and then bin different regions of the spectrum to create a feature 
+vector. I will also probably keep some information about the call length
+ and maybe try to determine the “warblyness” of the call (i.e. how many 
+different sub-tweets make up a call). I am thinking that it may be 
+useful to do the binned FFT over fixed time slices of the call and 
+calculate the FFT on that (e.g. break the call up into five time chunks 
+and get the FFT values for each chunk). I have an idea that a binary 
+descriptor can be used to compress each time slice if I set an 
+appropriate threshold at each frequency (e.g. use a 32 bit int to encode
+ if one of 32 chunks the frequency space are discernible). If I can get 
+that idea to work I could probably encode each call very succinctly in 
+only a few bytes of memory. Once I have my data I suspect that a K 
+Nearest Neighbors classifier will work reasonably well. I may combine 
+the KNN with a final correlation with the truth data to choose between 
+the K best matches.  </p>
+    
+             <div class="clear"></div>
+        </div>              
+                
+				<p class="postmetadata">	               
+                        			
+                <span class="category"></span>	
+				</p>
+        
+        <p><small>You can follow any responses to this entry through the <a href="http://www.kscottz.com/web-scraping-with-beautifulsoup-and-python/feed/">RSS 2.0</a>													Both comments and pings are currently closed.							
+											</small>
+         </p>	
+                
+			</div>	
+            <div class="post">
+        		
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are closed. -->
+		<p class="nocomments"></p>
+
+	
+      	
+       		</div>				
+		
+	</div> <!-- END Narrowcolumn -->
+
+  <div id="sidebar" class="profile no">
+      <ul>
+<li id="linkcat-2" class="widget png_scale"><h2 class="blocktitle"><span>Blogroll</span></h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://alexbw.posterous.com/" rel="contact met colleague" title="Mad crazy programmer. " target="_blank">Alex Wiltschko</a></li>
+<li><a href="http://www.backyardbrains.com/Home.aspx" rel="contact met colleague" title="DIY Neuroscience!" target="_blank">Backyard Brains</a></li>
+<li><a href="http://www.jessicahillphotography.com/blog/" rel="friend met colleague" target="_blank">Jessica Hill Photography</a></li>
+<li><a href="http://www.joshuabandphotography.com/" rel="contact met co-worker colleague" title="Fine art photography!" target="_blank">Josh Band Photography</a></li>
+<li><a href="http://standingpoint.org/" rel="contact met colleague" title="Great Documentaries" target="_blank">Standing Point Films</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-3" class="widget png_scale"><h2 class="blocktitle"><span>Links</span></h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://canv.as/user/kscottz" title="It is like 4chan, but work safe. ">canv.as</a></li>
+<li><a href="http://www.cybernet.com/" rel="co-worker" title="Where I cut my teeth as an engineer. ">Cybernet Systems</a></li>
+<li><a href="http://www.essess.com/" rel="co-worker" title="Former Employer">Essess</a></li>
+<li><a href="http://www.facebook.com/kscottz" title="Social Network" target="_blank">facebook</a></li>
+<li><a href="http://www.flickr.com/photos/kscottz/" rel="me" target="_blank">flickr</a></li>
+<li><a href="https://github.com/kscottz" title="My github work. " target="_blank">github</a></li>
+<li><a href="http://www.linkedin.com/pub/katherine-scott/b/480/2a7" title="Lame business social network" target="_blank">linkedin</a></li>
+<li><a href="http://pinterest.com/kscottz/" title="I guess I am a girl.">pintrest</a></li>
+<li><a href="http://www.reddit.com/user/kscottz" title="I should be working">reddit</a></li>
+<li><a href="http://www.sightmachine.com/" rel="me" title="My company. " target="_blank">Sight Machine</a></li>
+<li><a href="http://www.simplecv.org/" title="SimpleCV">SimpleCV</a></li>
+<li><a href="http://shop.oreilly.com/product/0636920024057.do" title="Practical Computer Vision">SimpleCV Book</a></li>
+<li><a href="http://help.simplecv.org/users/4/kscottz/" title="SimpleCV Help">SimpleCV Help</a></li>
+<li><a href="http://careers.stackoverflow.com/kscottz" title="Need some computer vision help?" target="_blank">Stack Overflow Careers</a></li>
+<li><a href="http://stackoverflow.com/users/182733/kscottz" title="Stack Overflow" target="_blank">stackoverflow</a></li>
+<li><a href="http://tempoautomation.com/" rel="co-worker" title="Current Employer">Tempo Automation</a></li>
+<li><a href="http://twitter.com/#%21/kscottz" rel="me" title="Useless Drivel" target="_blank">twitter</a></li>
+<li><a href="http://www.youtube.com/kscottz/" title="YouTube ">youtube</a></li>
+
+	</ul>
+</li>
+<li id="flickrWidget" class="widget png_scale">	
+				<h2 class="blocktitle"><span>Recent Photos</span></h2>				
+				<div class="flickr-pic">	
+					<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/badge_code_v2.js"></script><div class="flickr_badge_image" id="flickr_badge_image1"><a href="http://www.flickr.com/photos/kscottz/11716666176/"><img src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/11716666176_c5e8170662_s.jpg" alt="Uma foto no Flickr" title="Screenshot from 2014-01-01 22:14:11" width="75" height="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image2"><a href="http://www.flickr.com/photos/kscottz/11716151863/"><img src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/11716151863_6b70924985_s.jpg" alt="Uma foto no Flickr" title="Screenshot from 2014-01-01 22:14:01" width="75" height="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image3"><a href="http://www.flickr.com/photos/kscottz/11716152253/"><img src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/11716152253_4389653d9e_s.jpg" alt="Uma foto no Flickr" title="Screenshot from 2014-01-01 22:12:34" width="75" height="75"></a></div><span style="position:absolute;left:-999em;top:-999em;visibility:hidden" class="flickr_badge_beacon"><img src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/p.gif" alt="" width="0" height="0"></span>        
+				</div>
+			<div style="clear:both;"></div>
+</li><li id="widget_search" class="widget png_scale"><form method="get" id="searchforma" class="search" action="http://www.kscottz.com/">	
+    <input class="search-input png_crop" title="search" value="Search" onblur="if (!value)value='Search'" onclick="value=''" id="edit-search-theme-form-keys" name="s" type="text">
+    <input alt="Search" title="Search" class="search-submit png_crop" name="op" value="" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/submit.png" type="image">
+</form><div style="clear:both;"></div></li><li id="twitterWidget" class="widget png_scale">	
+		<div id="twitter">
+		<h2 class="blocktitle"><span>Twitter Updates</span></h2>		<ul id="twitter_update_list"><li></li></ul>
+		<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/blogger.htm"></script>
+		<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/kscottz.json"></script>
+        <div class="dasheddivider"></div>
+        <p><a href="http://www.twitter.com/kscottz/" class="rightlink png_crop">Follow us on Twitter</a></p>
+		</div>
+
+
+	</li><li id="widget_latest_commits-widget" class="widget png_scale"></li><li id="widget_archive" class="widget png_scale"><h2 class="blocktitle"><span>Archive</span></h2>		<ul>
+			<li><a href="http://www.kscottz.com/2014/05/">May 2014</a></li>
+	<li><a href="http://www.kscottz.com/2014/03/">March 2014</a></li>
+	<li><a href="http://www.kscottz.com/2014/02/">February 2014</a></li>
+	<li><a href="http://www.kscottz.com/2013/08/">August 2013</a></li>
+	<li><a href="http://www.kscottz.com/2013/07/">July 2013</a></li>
+	<li><a href="http://www.kscottz.com/2013/06/">June 2013</a></li>
+	<li><a href="http://www.kscottz.com/2013/05/">May 2013</a></li>
+	<li><a href="http://www.kscottz.com/2013/04/">April 2013</a></li>
+	<li><a href="http://www.kscottz.com/2013/03/">March 2013</a></li>
+	<li><a href="http://www.kscottz.com/2013/02/">February 2013</a></li>
+	<li><a href="http://www.kscottz.com/2013/01/">January 2013</a></li>
+	<li><a href="http://www.kscottz.com/2012/08/">August 2012</a></li>
+	<li><a href="http://www.kscottz.com/2012/07/">July 2012</a></li>
+	<li><a href="http://www.kscottz.com/2012/06/">June 2012</a></li>
+	<li><a href="http://www.kscottz.com/2012/05/">May 2012</a></li>
+	<li><a href="http://www.kscottz.com/2012/04/">April 2012</a></li>
+	<li><a href="http://www.kscottz.com/2012/02/">February 2012</a></li>
+	<li><a href="http://www.kscottz.com/2011/08/">August 2011</a></li>
+	<li><a href="http://www.kscottz.com/2011/06/">June 2011</a></li>
+	<li><a href="http://www.kscottz.com/2011/05/">May 2011</a></li>
+	<li><a href="http://www.kscottz.com/2011/04/">April 2011</a></li>
+	<li><a href="http://www.kscottz.com/2011/03/">March 2011</a></li>
+	<li><a href="http://www.kscottz.com/2011/02/">February 2011</a></li>
+	<li><a href="http://www.kscottz.com/2010/12/">December 2010</a></li>
+	<li><a href="http://www.kscottz.com/2010/06/">June 2010</a></li>
+	<li><a href="http://www.kscottz.com/2010/04/">April 2010</a></li>
+	<li><a href="http://www.kscottz.com/2010/03/">March 2010</a></li>
+	<li><a href="http://www.kscottz.com/2009/12/">December 2009</a></li>
+	<li><a href="http://www.kscottz.com/2008/04/">April 2008</a></li>
+	<li><a href="http://www.kscottz.com/2008/02/">February 2008</a></li>
+		</ul>
+		</li><li id="widget_meta" class="widget png_scale"><h2 class="blocktitle"><span>Meta</span></h2>			<ul>
+						<li><a href="http://www.kscottz.com/wp-login.php">Log in</a></li>
+			<li><a href="http://www.kscottz.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.kscottz.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</li> 
+</ul>  </div>
+<div class="clear"></div>
+<div id="footer">
+<div class="lt">
+  Copyright © 2017 All rights reserved.  <ul class="social">
+          <li id="rss"><a class="ss png_crop" href="http://feeds.feedburner.com/Kscottz"></a></li>
+        <li id="fb"><a class="ss png_crop" href="https://www.facebook.com/kscottz"></a></li>    <li id="tw"><a class="ss png_crop" href="http://twitter.com/kscottz"></a></li>  </ul>
+</div>
+<div class="rt">Designed by <a href="http://www.nattywp.com/" title="NattyWP"><img src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/natty-logo.png" valign="3px" class="png" alt="NattyWP" width="82" align="middle" height="17"></a></div>		
+<div class="clear"></div>			
+</div>
+</div> <!-- END Columns --> 
+</div><!-- END main -->
+</div>  
+<div class="clear"></div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32814792-1']);
+  _gaq.push(['_setDomainName', 'kscottz.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><!--[if gte IE 9]><script type="text/javascript">/*<![CDATA[*/Cufon.set('engine', 'canvas'); /*]]>*/</script><![endif]--><script type="text/javascript">/*<![CDATA[*/Cufon.replace('.singlepost
+ .post .title h2, .singlepage .post .title h2, .post .title h2 a', 
+{hover:true}); Cufon.now();/*]]>*/</script><script type="text/javascript" charset="utf-8">/*<![CDATA[*/ 
+    jQuery(document).ready(function() {
+        jQuery(".slideshow").cycle({
+          fx: "fade",
+          timeout: 6000,
+          pager: "#slideshow-nav",
+          speed: 1000,
+          pagerEvent: "click",
+          pauseOnPagerHover: true,
+          cleartypeNoBg: true });						
+      });
+      /*]]>*/</script><script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/comment-reply.js"></script>
+<script type="text/javascript" src="Web%20Scraping%20with%20BeautifulSoup%20and%20Python%20_%20kscottz_ficheiros/wp-embed.js"></script>
+   
+
+ </body></html>

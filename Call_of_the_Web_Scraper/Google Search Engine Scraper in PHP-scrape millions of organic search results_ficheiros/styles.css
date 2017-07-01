@@ -1,0 +1,612 @@
+  * {
+	margin: 0px;
+	padding: 0px;
+	}
+li {
+	margin-left: 10px;
+}
+small {
+	font-size:14px;
+	font-style:italic;
+	}
+ul {
+	margin-top:5px;
+	margin-left:20px;
+}
+ol {
+	margin-top:5px;
+	margin-left:20px;
+}
+body {
+  	font-family: Geneva, Arial, Helvetica, sans-serif;
+	  font-size: 14px;
+    line-height: 1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+	 
+}
+pre {
+  	font-family: Geneva, Arial, Helvetica, sans-serif;
+	  font-size: 14px;	
+}
+a{text-decoration:none;font-family:arial,sans-serif;}
+a:link { text-decoration:underline; color:#0000CC;}
+a:visited { text-decoration:underline; color:#0000CC;}
+a:hover { text-decoration:none; color:#044EFF;}
+a.active { text-decoration:none; color:#000000; font-weight: bold; }
+form {
+	display: inline;
+}
+
+table, table * {white-space: nowrap}
+
+table
+{
+  	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+span
+{
+  	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	margin-top:10px;
+	margin-bottom:5px;
+	font-size:26px;
+	color: #5D5D5D;
+} 
+
+h1#hype
+{
+	font-size:26px;
+}
+
+p#hype
+{
+	font-size:22px;
+}
+div#seperator
+{
+   display:block;
+   padding-top:5px;
+   padding-bottom:5px;
+   width:100%
+}
+
+p#shype
+{
+	font-size:18px;
+}
+
+h2 {
+	color: #5D5D5D;
+	margin-top:10px;
+	margin-bottom:5px;
+	font-size:18px;
+} 
+h3 {
+	color: #5D5D5D;
+	margin-right:5px;
+	line-height:20px;
+	font-size:16px;
+	display: inline;
+} 
+
+h4 {
+   color: #5D5D5D;
+	margin-right:5px;
+	display: inline;
+	font-weight: bold;
+} 
+
+/*div#spacer1 {
+	background-image:"modix-datadir/kopf_mitte.jpg";
+} */
+
+
+
+
+
+/* ====================================== HEADER ============================================== */
+
+div#header
+{
+	height:55px;
+	height:35px;
+	font-size:14px;
+	text-align: left;
+	padding-left: 0px;
+	border-bottom:solid 1px #5F45AB;
+	padding-top:1px;
+	padding-bottom:2px;
+	overflow:hidden;
+}
+div#linkbar
+{
+	padding-left: 25px;
+	float: left;
+}
+
+.header_link
+{
+	padding-right: 20px;
+	padding-bottom: 9px;
+	white-space: nowrap;
+	font-size:26px;
+	color: #4B3788;
+}
+a.header_link:link 
+{ 
+	color: #4B3788;
+   text-decoration:none;
+}
+a.header_link:visited 
+{ 
+	color: #4B3788;
+   text-decoration:none;
+}
+a.header_link:hover 
+{
+	color: #4B47F8;
+   text-decoration:underline;
+}
+
+.vheader_link
+{
+	padding-right: 30px;
+	padding-bottom: 9px;
+	white-space: nowrap;
+	font-size:20px;
+	color: #4B3788;
+}
+a.vheader_link:link 
+{ 
+	color: #4B3788;
+   text-decoration:none;
+}
+a.vheader_link:visited 
+{ 
+	color: #4B3788;
+   text-decoration:none;
+}
+a.vheader_link:hover 
+{
+	color: #4B47F8;
+   text-decoration:underline;
+}
+
+
+
+div#header_right
+{
+	padding-right: 10px;
+	float: right;
+	padding-top:4px;
+}
+
+
+div#footer
+{
+	position: relative;
+	height:13px;
+	width:100%;
+	text-align:left;
+	bottom: 0px;
+	font-size: 8pt;
+	color: #AAAAAA;
+	border-top: solid 1px #AAAAAA;
+}
+
+
+
+
+div#page
+{
+   padding-left:10px;
+   padding-right:10px;
+   padding-top: 20px;
+   padding-bottom:50px;
+}
+div#fp_rightcolum
+{
+   width:240px;
+   /*border:solid 1px #000;*/
+   border:none;
+   border-left:solid 2px #4B8837;
+   padding-left:5px;
+   overflow:hidden;
+   float:right;
+   position:fixed;
+   right:20px;
+   
+}
+div#fp_leftcolum
+{
+   overflow:hidden;
+   /*float:left;*/
+   
+}
+
+
+
+
+
+table#list_table
+{
+   margin-top:15px;
+   margin-left:10px;
+   margin-bottom:30px;
+}
+td#list_sign
+{
+   width:50px;
+   text-align:center;
+   vertical-align:center;
+   padding-top:15px;
+}
+td#list_cont
+{
+   text-align:left;
+   vertical-align:top;
+   padding-top:15px;
+}
+td#list_head
+{
+   text-align:center;
+   font-size:20px;
+   padding-top:20px;
+}
+
+
+
+table#legal_table
+{
+   margin-top:15px;
+   margin-left:10px;
+   margin-bottom:30px;
+   text-align:left;
+}
+td#legal_cont
+{
+   font-size:11px;
+   text-align:left;
+   vertical-align:top;
+   padding-top:5px;
+   width:870px;
+}
+td#legal_sign
+{
+   width:20px;
+   text-align:center;
+   vertical-align:top;
+   padding-top:5px;
+}
+td#legal_head
+{
+   text-align:center;
+   font-size:16px;
+   padding-top:15px;
+   font-weight:bold;
+   margin:0;
+}
+
+
+
+#tdhead2
+{
+	margin-top:10px;
+   font-weight:bold;
+	 border-style:solid;
+   border-bottom:2px;
+   border-left:0px;
+   border-top:0px;
+   border-right:0px;
+   padding-left:10px;
+   padding-right:10px;
+   text-align:center;
+}
+#tdhead 
+{
+   font-weight:bold;
+	border-style:solid;
+   border-bottom:2px;
+   border-left:0px;
+   border-top:0px;
+   border-right:0px;
+   padding-left:10px;
+   padding-right:10px;
+   text-align:center;
+}
+#deftd 
+{
+	border-style:solid;
+   border-bottom:0px;
+   border-left:0px;
+   border-top:0px;
+   border-right:0px;
+   padding-left:2px;
+   padding-right:10px;
+   text-align:left;
+   white-space: nowrap;
+}
+
+#deftable
+{
+   border: solid 1px #000;
+   white-space: nowrap;
+   text-align: left;	
+}
+#deftable_tr
+{
+border: solid 10px #000;
+}
+#deftd_head
+{
+   background-color:#4B3887;
+   color:#A7E9FE;
+   font-weight:bold;
+   text-align:center;
+}
+#deftd_center
+{
+   text-align:center;
+}
+#span_comment
+{
+   font-style:italic;
+}
+
+
+#iptable
+{
+   font-family: "Courier New";
+   font-size:12px;
+   border: solid 1px #000;
+   border-left:0px;
+   border-right:0px;
+   border-bottom:0px;
+   white-space: nowrap;
+   text-align: left;
+}
+#iptd
+{
+	border: solid 1px #000;
+   border-bottom:1px;
+   border-left:0px;
+   border-top:0px;
+   border-right:0px;
+   padding-left:2px;
+   padding-right:10px;
+   text-align:left;
+   overflow:hidden;
+}
+#iptdbrown
+{
+	border: solid 1px #000;
+   border-bottom:1px;
+   border-left:0px;
+   border-top:0px;
+   border-right:0px;
+   background-color:#7D4E31;
+   color:#FD8686;
+   padding-left:2px;
+   padding-right:10px;
+   text-align:left;
+   overflow:hidden;
+}
+#iptdc
+{
+	border: solid 1px #000;
+   border-bottom:1px;
+   border-left:0px;
+   border-top:0px;
+   border-right:0px;
+   padding-left:2px;
+   padding-right:10px;
+   text-align:center;
+   overflow:hidden;
+}
+
+#commandbtn
+{
+   color: #781351;
+   background: #fee3ad;
+   border: 1px solid #781351;
+   font-size:10px;
+   font-weight:bold;
+   height:16px;
+   text-align:center;
+   padding:0px;
+   margin-top:1px;
+   margin-left:1px;
+}
+
+#commandbtn_dis
+{
+   color: #BECD01;
+   background: #676767;
+   border: 1px solid #000000;
+   font-size:10px;
+   font-weight:bold;
+   height:16px;
+   text-align:center;
+   padding:0px;
+   margin-top:1px;
+   margin-left:1px;
+}
+
+/* ********* New account table *************/
+.rtab {
+   border: solid 1px #000;
+   white-space: nowrap;
+   text-align: left;
+}
+.rtltd {
+   width:150px;
+   
+   border-right:1px;
+   border-bottom:0px;
+   border-left:0px;
+   border-top:0px;
+   font-weight: bold;
+   font-size:14px;
+   white-space: nowrap;
+   
+}
+.rtrtd {
+   border-bottom:0px;
+   border-left:0px;
+   border-top:0px;
+   border-right:1px;
+   /*white-space: nowrap;*/
+}
+.rtctd {
+   border-bottom:0px;
+   border-left:0px;
+   border-top:0px;
+   border-right:1px;
+   text-align:center;
+   color: #4B8837;
+   padding-top:4px;
+   /*white-space: nowrap;*/
+}
+.rtitd {
+   width: 100px;
+
+   border-bottom:0px;
+   border-left:0px;
+   border-top:0px;
+   border-right:0px;
+   white-space: nowrap;
+}
+.rtrtr {
+    /*
+  width:250px;
+   border-bottom:0px;
+   border-left:0px;
+   border-right:0px;
+   border-top:0px; */
+}
+.rtrhl {
+   border-bottom:0px;
+   border-left:0px;
+   border-right:0px;
+   border-top:0px;
+   background-color: #6666EE;
+   font-size:14px;
+   font-weight: bold;
+}
+
+
+input
+{
+color: #781351;
+background: #fee3ad;
+border: 1px solid #781351
+}
+.input
+{
+color: #781351;
+background: #fee3ad;
+border: 1px solid #781351
+}
+
+.submit input
+{
+color: #000;
+background: #ffa20f;
+border: 2px outset #d7b9c9
+} 
+
+
+/* Shockwave movies */
+#media
+{
+    margin-top: 40px;
+}
+#noUpdate
+{
+    margin: 0 auto;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-small;
+    color: #cccccc;
+    text-align: left;
+    width: 210px; 
+    height: 200px;	
+    padding: 40px;
+}
+
+
+.drsElement {
+ position: absolute;
+ border: 1px solid #333;
+}
+.drsMoveHandle {
+ height: 20px;
+ background-color: #CCC;
+ border-bottom: 1px solid #666;
+ cursor: move;
+}
+
+.dragresize {
+ position: absolute;
+ width: 5px;
+ height: 5px;
+ font-size: 1px;
+ background: #EEE;
+ border: 1px solid #333;
+}
+.dragresize-tl {
+ top: -8px;
+ left: -8px;
+ cursor: nw-resize;
+}
+.dragresize-tm {
+ top: -8px;
+ left: 50%;
+ margin-left: -4px;
+ cursor: n-resize;
+}
+.dragresize-tr {
+ top: -8px;
+ right: -8px;
+ cursor: ne-resize;
+}
+
+.dragresize-ml {
+ top: 50%;
+ margin-top: -4px;
+ left: -8px;
+ cursor: w-resize;
+}
+.dragresize-mr {
+ top: 50%;
+ margin-top: -4px;
+ right: -8px;
+ cursor: e-resize;
+}
+
+.dragresize-bl {
+ bottom: -8px;
+ left: -8px;
+ cursor: sw-resize;
+}
+.dragresize-bm {
+ bottom: -8px;
+ left: 50%;
+ margin-left: -4px;
+ cursor: s-resize;
+}
+.dragresize-br {
+ bottom: -8px;
+ right: -8px;
+ cursor: se-resize;
+}
+
+
+.post pre {
+white-space: pre-wrap; /* This is for IE and other browsers that just have to be different */
+white-space: -moz-pre-wrap; /* This is for FireFox and Mozilla Browsers */
+white-space: o-pre-wrap; /* This is for Opera */
+}
