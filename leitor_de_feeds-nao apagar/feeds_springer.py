@@ -122,8 +122,9 @@ print ("#----------------------------------------------- livros springer -------
 url4 = "https://link.springer.com/search.rss?facet-discipline=%22Computer+Science%22&query=osint"
 feed = feedparser.parse(url4)
 for key in feed["entries"]:
-    print ("Nome:%s\nLink:%s\nDescrição:%s\n" % (key["title"],key["link"],key["description"]))
+    print ("Nome:%s\nLink:%s\nDescrição:%s\nData:%s\n" % (key["title"],key["link"],key["description"],key["published"]))
 print ("#----------------------------------------------- pacotes livros springer -------------------")
+
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
 #pp.pprint(feed)

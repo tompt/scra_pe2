@@ -4,9 +4,9 @@
 # -*- coding: utf-8 -*-
 
 import os
-print "Gerando ficheiro pdf com os resultados..."
+print ("Gerando ficheiro pdf com os resultados...")
 try:
 	os.system("wkhtmltopdf http://www.openbsd.org relatorio_osint.pdf")
-	print "Ficheiro \"relatorio_osint.pdf\" gerado com sucesso"
+	print ("Ficheiro \"relatorio_osint.pdf\" gerado com sucesso")
 except:
-	print "Ocorreu um erro. Verifique se o ficheiro relatorio.htm existe"
+	print ("Ocorreu um erro. Verifique se o ficheiro relatorio.htm existe")
