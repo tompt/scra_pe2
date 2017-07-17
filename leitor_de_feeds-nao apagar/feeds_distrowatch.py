@@ -13,7 +13,7 @@ import time
 from subprocess import check_output
 import sys
 
-feed_name="Jornal de Neg�cios"
+feed_name="Jornal de Negocios"
 url='http://www.jornaldenegocios.pt/funcionalidades/Rss.aspx'
 url1="http://www.sti.nasa.gov/scan/rss99-01.xml"
 
@@ -42,7 +42,7 @@ def post_is_in_db_with_old_timestamp(title):
     with open(db, 'r') as database:
         for line in database:
             if title in line:
-                print("Noticia j� existe na BD. Saltando..")
+                print("Noticia já existe na BD. Saltando..")
                 #ts_as_string = line.split('|', 3)[1]
                 #ts = int(ts_as_string)
                 #if current_timestamp - ts > limit:

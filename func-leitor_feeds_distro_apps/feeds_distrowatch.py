@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __author__ = "tomás"
-
+"""
 #codificacao:
 texto = "uma linha de texto"
 #print("Encoded String bas64: " , texto.encode('base64','strict'))
@@ -13,7 +13,7 @@ import time
 from subprocess import check_output
 import sys
 
-feed_name="Jornal de Neg�cios"
+feed_name="Jornal de Negocios"
 url='http://www.jornaldenegocios.pt/funcionalidades/Rss.aspx'
 url1="http://www.sti.nasa.gov/scan/rss99-01.xml"
 
@@ -42,7 +42,7 @@ def post_is_in_db_with_old_timestamp(title):
     with open(db, 'r') as database:
         for line in database:
             if title in line:
-                print("Noticia j� existe na BD. Saltando..")
+                print("Noticia já existe na BD. Saltando..")
                 #ts_as_string = line.split('|', 3)[1]
                 #ts = int(ts_as_string)
                 #if current_timestamp - ts > limit:
@@ -142,4 +142,3 @@ for key in feed["entries"]:
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
 #pp.pprint(feed)
-"""
