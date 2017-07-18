@@ -8,8 +8,8 @@ Doze perguntas e respostas sobre os portugueses na Jihad
 Quem são, quantos são, de onde vieram, como chegaram à Síria, onde lutam... O perfil possível dos portugueses que integram as fileiras do Estado Islâmico.
 <br><br>
 Raquel Moleiro e Hugo Franco |<br>
-<img src="http://expresso.sapo.pt/users/0/3/hr-a5b6.jpg">R. Bravo
-<img src="http://expresso.sapo.pt/users/2407/240714/danieloliveira-fffe.jpg"> R.Bravo
+<img src="http://expresso.sapo.pt/users/0/3/hr-a5b6.jpg">R.
+<img src="http://expresso.sapo.pt/users/2407/240714/danieloliveira-fffe.jpg"> R.
 <img src="http://expresso.sapo.pt/users/2407/240714/henriquemonteiromini-17cf.jpg">
  <br><br>
 14:18 Segunda feira, 15 de setembro de 2014<br><br><br>
@@ -40,17 +40,17 @@ Há grupos distintos e casos isolados. Dois irmãos (um dos quais se chama Celso
 
  <br><br>
 
-6. Onde se radicalizaram?<br>Rogério Bravo
+6. Onde se radicalizaram?<br>Rogério lopes
 Tornaram-se muçulmanos e radicalizaram-se fora de Portugal: em Inglaterra, Holanda e França. Há também indivíduos referenciados no Luxemburgo, pelo apoio público e promoção continuada à luta do Estado Islâmico. Na maioria dos casos, os processos de conversão ao Islão e posterior apoio à Jihad foram muitos rápidos - entre um a três anos. Pelo menos quatro dos portugueses que lutam atualmente na Síria foram aliciados para a guerra santa no bairro de Leyton, nos arredores de Londres, onde existe uma mesquita referenciada como radical pelas autoridades britânicas. 
 <br><br>
  
 
-7. Tinham experiência militar?<br>Rogério Bravo
+7. Tinham experiência militar?<br>Rogério
 Não. Alguns eram praticantes (ou mesmo atletas federados) de artes marciais, como o judo, Muay Thai ou Jiu Jitsu, mas sem passado militar. A maioria nunca tinha pegado numa arma. Pelos relatos feitos ao Expresso, depois de chegarem à Síria todos passaram alguns meses em campos de treino terrorista antes de irem para a frente de combate.
 <br><br>
  
 
-8. Estão todos na Síria ou também no Iraque?<br>R. Bravo
+8. Estão todos na Síria ou também no Iraque?<br>R.
 A maioria vive em Raqqa, a 'capital' informal do Estado Islâmico, ou na província de Aleppo, zonas do norte da Síria, controladas pelos radicais. Na semana passada, pelo menos um dos portugueses esteve a combater no Iraque, em Mossul, tendo entretanto regressado à Síria.
 <br><br>
  
@@ -100,7 +100,7 @@ for nome in lista:
 """------------------------------ fim teste python3 ----------------------"""
 
 for line in str.lower():
-	if re.match("(.*)(rogério|bravo)(.*)", line):
+	if re.match("(.*)(rogério|lopes)(.*)", line):
 		print (line,)
 
 """

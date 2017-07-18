@@ -13,15 +13,14 @@ import time
 from subprocess import check_output
 import sys
 
-feed_name="Distribuições Linux/BSD/..."
+#feed_name="Distribuições Linux/BSD/..."
 url='http://www.jornaldenegocios.pt/funcionalidades/Rss.aspx'
-url1="http://www.sti.nasa.gov/scan/rss99-01.xml"
 url='http://distrowatch.com/news/dwd.xml'
 #feed_name = sys.argv[1]
 #url = sys.argv[2]
 
 #db = '/var/www/radio/data/feeds.db'
-db= "./feeds_distrowatch.db"
+#db= "./feeds_distrowatch.db"
 limit = 12 * 3600 * 1000
 
 #
@@ -48,6 +47,7 @@ def post_is_in_db_with_old_timestamp(title):
                 #if current_timestamp - ts > limit:
                 #    return True
     return False
+
 
 def principal(url,feed_name,db):
     #
@@ -132,20 +132,28 @@ for key in feed["entries"]:
 
 """ tentar mostrar ultimos e bd"""
 db="./feeds_distrowatch.db"
-principal('http://distrowatch.com/news/dwd.xml',"Distribuições Linux/BSD/...",db)
+#principal('http://distrowatch.com/news/dwd.xml',"Distribuições Linux/BSD/...",db)
 db="./feeds_pacotes_e_apps.db"
-principal('http://distrowatch.com/news/dwp.xml',"Pacotes e aplicações",db)
+#principal('http://distrowatch.com/news/dwp.xml',"Pacotes e aplicações",db)
 
-
-#///////---------------------------------------- /distr linux/bsd -------------------
-#----------------------------------------------- pacotes linux/bsd -------------------
-#print ("#----------------------------------------------- pacotes linux/bsd -------------------")
+print ("#----------------------------------------------- pacotes linux/bsd -------------------")
 url3 = 'https://distrowatch.com/news/dwp.xml'
 feed = feedparser.parse(url3)
 for key in feed["entries"]:
     print ("Nome:%s\nLink:%s\nDescrição:%s\n" % (key["title"],key["link"],key["description"]))
-print ("#----------------------------------------------- pacotes linux/bsd -------------------")
 #print(feed)
+print ("#----------------------------------------------- pacotes linux/bsd -------------------")
+
+print ("#----------------------------------------------- NAS A -------------------")
+db="./feeds_nas.db"
+URL4='http://www.sti.nasa.gov/scan/rss99-01.xml'
+principal(URL4,'nas a',db)
+feed = feedparser.parse(URL4)
+for key in feed["entries"]:
+    print ("Publicado/Actualizado:%s\nTitulo:%s\nLink:%s\nDescrição:%s\n" % (key["updated"],key["title"],key["link"],key["description"]))
+#print(feed)
+print ("#----------------------------------------------- // NAS A -------------------")
+
 
 """
 #///////--------------------------------------- /pacotes linux/bsd -------------------
