@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-## coding: utf8
+# coding: utf8
 __author__ = "Tomás"
 
 import feedparser
 import time
 from subprocess import check_output
-
 import sys
-print(sys.getdefaultencoding())
-#    setdefaultencoding('utf8')
+
 
 feed_name="Jornal de Negócios"
 url='http://www.jornaldenegocios.pt/funcionalidades/Rss.aspx'
@@ -36,17 +34,21 @@ def post_is_in_db(title):
 
 # return true if the title is in the database with a timestamp > limit
 def post_is_in_db_with_old_timestamp(title):
-    with open(db, 'r') as database:
+    print("utf ----------------------------------- title:%s" % title)
+    title=title.encode('latin-1')
+    print("latin ----------------------------------- title:%s" % title)
+    with open(db, 'r', encoding="latin-1") as database:
         for line in database:
-            print(line)
+            line=line.encode('utf-8')
+            print ("def post is in db----------------------------" % line)
             if title in line:
-                print("Noticia ja existe na BD. Saltando..")
+                print("Noticia já existe na BD. Saltando..")
                 #ts_as_string = line.split('|', 3)[1]
                 #ts = int(ts_as_string)
                 #if current_timestamp - ts > limit:
                 #    return True
     return False
-
+    
 #
 # get the feed data from the url
 #
@@ -104,7 +106,6 @@ for post in feed.entries:
 #
 f = open(db, 'a')
 HTML = open(PAGINA_WEB, 'a')
-
 x=0
 for i in posts_to_print:
     print(x,i,LISTA_DATA[x],LISTA_RESUMO[x],LISTA_LINK[x],LISTA_IMAGENS[x])
