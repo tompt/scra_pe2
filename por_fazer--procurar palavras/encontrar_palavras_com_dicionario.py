@@ -76,9 +76,9 @@ def SUBSTITUIR(TEXTO,PALAVRA_A_ENCONTRAR,PALAVRA_NOVA):
 def removeStopwords(wordlist, stopwords):
     return [w for w in wordlist if w not in stopwords]
 
+
+
 # Given a list of words, return a dictionary of word-frequency pairs.
-
-
 def stripTags(pageContents):
     startLoc = pageContents.find("<p>")
     endLoc = pageContents.rfind("<br/>")
@@ -99,6 +99,8 @@ def stripTags(pageContents):
             text += char
 
     return text
+
+
 
 # Given a text string, remove all non-alphanumeric characters (using Unicode definition of alphanumeric).
 def stripNonAlphaNum(text):
@@ -132,6 +134,8 @@ def LISTA_FREQUENCIAS(TEXTO):
     #for s in sorteddict:
     #    print(str(s))
     return sorteddict
+
+"""-----------------------------------------------------------------------------------"""
 
 """exemplo:"""
 html = '''
@@ -178,6 +182,7 @@ for s in frequencia:
 
 
 """ teste com html2 """
+"""
 text = html2.lower()
 wordlist = stripNonAlphaNum(text)
 fullwordlist = stripNonAlphaNum(text)
@@ -190,4 +195,75 @@ frequencia = LISTA_FREQUENCIAS(text)
 for s in range(10):
     s=s+1
     print("%s %s" % (s,frequencia[s]))
+"""
 """ // teste com html2 """
+
+
+
+def PROCURAR_PALAVRAS_E_LISTAR_CONTEUDOS_EM_PAGINAS_WEB(LISTA_DO_QUE_PROCURAMOS, URL,TOP_DE_FREQUENCIAS_QUE_QUEREMOS):
+    import requests
+    from bs4 import BeautifulSoup
+    import lxml
+
+    #usamos um user-agent para nao sermos barrados pelo browser
+    user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
+    header = {'User-Agent': user_agent}
+
+    req = requests.get(URL, headers=header)
+    print("Codigo obtido (se for 200 eh sucesso):%s" % req.status_code)
+
+    soup = BeautifulSoup(req.text, "html.parser")
+    """print(soup)"""
+    text=soup.text.lower()
+
+    wordlist = stripNonAlphaNum(text)
+    print("wordlist:%s" % wordlist)
+
+    fullwordlist = stripNonAlphaNum(text)
+    print("fullwordlist:%s" % fullwordlist)
+
+    wordlist = removeStopwords(fullwordlist, stopwords)
+    print("wordlist:%s" % wordlist)
+
+    dictionary = wordListToFreqDict(wordlist)
+    print("dictionary:%s" % dictionary)
+
+    print("\nTop %s de Frequencias:" % TOP_DE_FREQUENCIAS_QUE_QUEREMOS)
+    frequencia = LISTA_FREQUENCIAS(text)
+    for s in range(TOP_DE_FREQUENCIAS_QUE_QUEREMOS):
+        s = s + 1
+        #print("%sº- %s - %s" % (s, frequencia[s][0],frequencia[s][1]))
+        print("\t%s - %s" % (frequencia[s][0],frequencia[s][1]))
+
+    """print("Frequencias:")
+    frequencia = LISTA_FREQUENCIAS(text)
+    for s in frequencia:
+        print(str(s))
+    """
+
+    #encontrar coisas no dicionario. Habilitar abaixo para funcionar como exemplo
+    #LISTA_DO_QUE_PROCURAMOS=["whitebear","securelist","twitter_account","merda"]
+
+    print("\nPalavras encontradas:")
+    for PALAVRA in LISTA_DO_QUE_PROCURAMOS:
+        vezes = [value for key, value in dictionary.items() if PALAVRA in key.lower()]
+        if vezes:
+            print("\t%s: %s vezes" % (PALAVRA, vezes[0]))
+        #else:
+        #    print ("Palavra %s nunca apareceu" % PALAVRA)
+
+    print("\nTermos nunca encontrados:")
+    for PALAVRA in LISTA_DO_QUE_PROCURAMOS:
+        vezes = [value for key, value in dictionary.items() if PALAVRA in key.lower()]
+        if vezes:
+            pass
+        else:
+            print ("\t%s: nunca apareceu" % PALAVRA)
+
+
+
+LISTA_DO_QUE_PROCURAMOS=["whitebear","securelist","twitter_account","merda"]
+URL = "https://securelist.com/introducing-whitebear/81638/"
+TOP_DE_FREQUENCIAS_QUE_QUEREMOS=10
+PROCURAR_PALAVRAS_E_LISTAR_CONTEUDOS_EM_PAGINAS_WEB(LISTA_DO_QUE_PROCURAMOS, URL,TOP_DE_FREQUENCIAS_QUE_QUEREMOS)
+
