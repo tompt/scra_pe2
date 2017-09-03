@@ -8,6 +8,7 @@ NOME="root"
 PASSE=""
 BD="teste1"
 
+
 def CRIAR_TABELA(TABELA):
     db = pymysql.connect(HOST, NOME, PASSE, BD)
 
@@ -81,6 +82,6 @@ def INSERIR_REGISTO(TABELA,NOME1,NOME2,IDADE):
 
 
 ####################################### aqui começa tudo ##############
-#CRIAR_BD("teste1") #teste1
+CRIAR_BD("teste1") #teste1
 CRIAR_TABELA("EMPLOYEE") #EMPLOYEE
 INSERIR_REGISTO("EMPLOYEE","Jonas","CENAS",23)

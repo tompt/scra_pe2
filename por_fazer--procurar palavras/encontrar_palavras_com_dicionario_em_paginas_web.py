@@ -101,7 +101,6 @@ def stripTags(pageContents):
     return text
 
 
-
 # Given a text string, remove all non-alphanumeric characters (using Unicode definition of alphanumeric).
 def stripNonAlphaNum(text):
     import re
@@ -113,6 +112,7 @@ def wordListToFreqDict(wordlist):
     wordfreq = [wordlist.count(p) for p in wordlist]
     return dict(zip(wordlist,wordfreq))
 
+
 # Sort a dictionary of word-frequency pairs in
 # order of descending frequency.
 
@@ -121,6 +121,7 @@ def sortFreqDict(freqdict):
     aux.sort()
     aux.reverse()
     return aux
+
 
 def LISTA_FREQUENCIAS(TEXTO):
     wordlist = stripNonAlphaNum(TEXTO)
@@ -135,6 +136,13 @@ def LISTA_FREQUENCIAS(TEXTO):
     #    print(str(s))
     return sorteddict
 
+
+def OBTER_LINKS(SOPA):
+    LINKS=[]
+    for link in SOPA.find_all('a'):
+        print(link.get('href'))
+        LINKS.append((link))
+    return LINKS
 """-----------------------------------------------------------------------------------"""
 
 """exemplo:"""
@@ -260,10 +268,25 @@ def PROCURAR_PALAVRAS_E_LISTAR_CONTEUDOS_EM_PAGINAS_WEB(LISTA_DO_QUE_PROCURAMOS,
         else:
             print ("\t%s: nunca apareceu" % PALAVRA)
 
+    OBTER_LINKS(soup)
 
+""" COMECA AQUI"""
 
 LISTA_DO_QUE_PROCURAMOS=["whitebear","securelist","twitter_account","merda"]
 URL = "https://securelist.com/introducing-whitebear/81638/"
 TOP_DE_FREQUENCIAS_QUE_QUEREMOS=10
-PROCURAR_PALAVRAS_E_LISTAR_CONTEUDOS_EM_PAGINAS_WEB(LISTA_DO_QUE_PROCURAMOS, URL,TOP_DE_FREQUENCIAS_QUE_QUEREMOS)
+#PROCURAR_PALAVRAS_E_LISTAR_CONTEUDOS_EM_PAGINAS_WEB(LISTA_DO_QUE_PROCURAMOS, URL,TOP_DE_FREQUENCIAS_QUE_QUEREMOS)
+""" acaba aqui"""
+
+"""IDEIAS: obter listagem de sites ainda nao vistos"""
+print("\n\nLista de sites ainda nao crawlados nem verificados por texto que pretendemos:")
+import mysql_obter_sites
+"""FIM de ideia 1"""
+
+
+"""IDEIAS 2: HASH DE TEXTO DE SITE"""
+import hashlib
+texto='asfsans oafhao pihapsif apisfj piajfpsiaj pfiasjpsaij paisjf apisjfpaisjpasjf aspfji apsif aspij aspi ipas aspf'.encode("utf-8")
+#ou texto=texto.encode("utf-8")
+print("sha 256: %s" % (hashlib.sha256(texto).hexdigest()))
 
