@@ -1,0 +1,12 @@
+- vai obter uma lista de sites ao mysql
+- tem funcao para fazer hash a strings
+- tem a funcao"def PROCURAR_PALAVRAS_E_LISTAR_CONTEUDOS_EM_PAGINAS_WEB(LISTA_DO_QUE_PROCURAMOS, URL,TOP_DE_FREQUENCIAS_QUE_QUEREMOS):
+" que permite procurar palavras em paginas web (a ideia é ir buscar a lista e depois aplicar esta ideia)
+
+
+Feito com base no encontrar_palavras.py:
+
+- contem palavras que nao serao pesquisadas (stopwords)
+- remove palavras esquisitas que poderao dar errros
+- remove palavras nao alfa-numericas stripNonAlphaNum
+- corta o texto, ordena as palavras e faz listagem de frequencias

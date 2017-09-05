@@ -9,10 +9,12 @@ import string
 import re
 import lxml #para usar como  parser html
 import urllib
-
+import feedparser
 #
 # function to get the current time
 #
+import time
+import datetime
 current_time_millis = lambda: int(round(time.time() * 1000))
 current_timestamp = current_time_millis()
 
@@ -42,6 +44,7 @@ def post_is_in_db_with_old_timestamp(title):
 #
 # get the feed data from the url
 #
+
 feed = feedparser.parse(url)
 
 #
