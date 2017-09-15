@@ -90,7 +90,7 @@ print ("\n\n")
 
 """----------------------------teste python3-------------------------"""
 x=0
-lista=["rogéroio","tomás","Tondela","rui","rogério"]
+lista=["rogéroio","tomás","Tondela","rui","rogério","rogerio"]
 str2=str.lower()
 for nome in lista:
 	sub=nome.lower()
