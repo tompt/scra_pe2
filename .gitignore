@@ -52,3 +52,4 @@ euroMostWanted.htm
 .idea/vcs.xml
 .idea/workspace.xml
 __pycache__/scrape10_historial.cpython-36.pyc
+*.stackdump
