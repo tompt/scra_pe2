@@ -4,8 +4,8 @@ __author__ = "tomás"
 
 #codificacao:
 texto = "uma linha de texto"
-#print("Encoded String bas64: " , texto.encode('base64','strict'))
-print("Encoded String utf  : " , texto.encode('utf-8','strict'))
+#print("String codada bas64: " , texto.encode('base64','strict'))
+print("String codada utf  : " , texto.encode('utf-8','strict'))
 
 
 import feedparser
